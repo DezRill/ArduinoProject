@@ -1,0 +1,77 @@
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.exe.config
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.exe
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csprojResolveAssemblyReference.cache
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Resources.resources
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.GenerateResource.Cache
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.exe
+c:\users\jamil\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
+C:\Users\JAMIL\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
+C:\Users\JAMIL\documents\visual studio 2015\Projects\UiDesignDemo\UiDesignDemo\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.exe.config
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.exe
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csprojResolveAssemblyReference.cache
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Resources.resources
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.GenerateResource.Cache
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.exe
+C:\Users\User\Downloads\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.exe.config
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.exe
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Resources.resources
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.GenerateResource.Cache
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.CoreCompileInputs.cache
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.exe
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\UiDesignDemo\UiDesignDemo\UiDesignDemo\obj\Debug\UiDesignDemo.csprojResolveAssemblyReference.cache
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.csprojResolveAssemblyReference.cache
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Login.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Resources.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.GenerateResource.Cache
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.CoreCompileInputs.cache
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.exe
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\bin\Debug\UiDesignDemo.exe.config
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\bin\Debug\UiDesignDemo.exe
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Form3.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Form3_1.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Form4.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Form4_2.resources
+D:\+1_Disc_1+\Курсовий\Hos\UiDesignDemo\obj\Debug\UiDesignDemo.Form5.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\bin\Debug\UiDesignDemo.exe.config
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\bin\Debug\UiDesignDemo.exe
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form2.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form3.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form3_1.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form4.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form4_2.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form5.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Form6.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Login.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Resources.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.GenerateResource.Cache
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.csproj.CoreCompileInputs.cache
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.exe
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.csprojResolveAssemblyReference.cache
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.diagnoses.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.All_doctors.resources
+D:\+1_Disc_1+\Курсовий\3\UiDesignDemo\obj\Debug\UiDesignDemo.Diagram.resources
