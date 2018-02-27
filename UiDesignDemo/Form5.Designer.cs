@@ -250,7 +250,6 @@
             this.textBox7.TabIndex = 39;
             this.textBox7.Text = "22.02.2017";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox6
             // 
@@ -551,7 +550,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 65);
             this.panel1.TabIndex = 29;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button15
             // 

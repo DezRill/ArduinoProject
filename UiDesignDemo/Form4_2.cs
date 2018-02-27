@@ -28,14 +28,12 @@ namespace UiDesignDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 frm = new Form2(this);
-            frm.Show();
-            this.Hide();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            diagnoses frm = new diagnoses();
+            diagnoses frm = new diagnoses(this);
             frm.Show();
             this.Hide();
         }

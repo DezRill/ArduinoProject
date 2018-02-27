@@ -12,9 +12,18 @@ namespace UiDesignDemo
 {
     public partial class diagnoses : Form
     {
-        public diagnoses()
+        Form4_2 f;
+
+        public diagnoses(Form4_2 f)
         {
             InitializeComponent();
+            this.f = f;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            f.Show();
         }
     }
 }

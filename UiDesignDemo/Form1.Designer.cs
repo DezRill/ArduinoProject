@@ -318,7 +318,6 @@
             this.firstUC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuTransition1.SetDecoration(this.firstUC1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.firstUC1, BunifuAnimatorNS.DecorationType.None);
-            this.firstUC1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.firstUC1.Location = new System.Drawing.Point(0, 0);
             this.firstUC1.Name = "firstUC1";
             this.firstUC1.Size = new System.Drawing.Size(1052, 525);

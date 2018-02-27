@@ -22,7 +22,7 @@ namespace UiDesignDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form5 frm = new Form5(l);
+            Form5 frm = new Form5(this);
             frm.Show();
             this.Hide();
         }
@@ -32,6 +32,13 @@ namespace UiDesignDemo
             Form1 frm = new Form1(l);
             frm.Show();
             this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1(l);
+            frm.Show();
+            this.Close();
         }
     }
 }

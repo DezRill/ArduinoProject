@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(1028, 683);
             this.Name = "Diagram";
             this.Text = "Diagram";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Diagram_FormClosing);
             this.ResumeLayout(false);
 
         }

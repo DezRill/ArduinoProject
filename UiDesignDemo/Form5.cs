@@ -12,34 +12,24 @@ namespace UiDesignDemo
 {
     public partial class Form5 : Form
     {
-        Login l;
+        All_doctors d;
 
-        public Form5(Login l)
+        public Form5(All_doctors d)
         {
             InitializeComponent();
-            this.l = l;
+            this.d = d;
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            d.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            All_doctors frm = new All_doctors(l);
-            frm.Show();
-            this.Hide();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
+            d.Show();
         }
     }
 }

@@ -12,9 +12,18 @@ namespace UiDesignDemo
 {
     public partial class Diagram : Form
     {
-        public Diagram()
+        Login l;
+
+        public Diagram(Login l)
         {
             InitializeComponent();
+            this.l = l;
+        }
+
+        private void Diagram_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 frm = new Form1(l);
+            frm.Show();
         }
     }
 }
