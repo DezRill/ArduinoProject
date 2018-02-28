@@ -12,7 +12,7 @@ namespace UiDesignDemo
 {
     public partial class All_doctors : Form
     {
-        Login l;
+        public Login l;
 
         public All_doctors(Login l)
         {
