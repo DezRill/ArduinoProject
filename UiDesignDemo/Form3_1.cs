@@ -76,13 +76,11 @@ namespace UiDesignDemo
         private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
         {
             UploadImage();
-            label1.Visible = false;
         }
 
         private void label1_MouseClick(object sender, MouseEventArgs e)
         {
             UploadImage();
-            label1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

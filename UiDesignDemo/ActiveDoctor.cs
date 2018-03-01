@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +9,11 @@ namespace UiDesignDemo
 {
     public class ActiveDoctor
     {
-        int id, diploma_num;
-        string name, gender, town, phone, mail, adress, passport, specialty, position, short_char;
+        string name, gender, town, phone, mail, adress, passport, specialty, position, short_char, diploma_num;
+        Image photo;
         DateTime birth, invite_date;
 
-        public int Id
-        {
-            set { id = value; }
-            get { return id; }
-        }
-
-        public int Diploma
+        public string Diploma
         {
             set { diploma_num = value; }
             get { return diploma_num; }
@@ -58,6 +53,12 @@ namespace UiDesignDemo
         {
             set { adress = value; }
             get { return adress; }
+        }
+
+        public Image Photo
+        {
+            set { photo = value; }
+            get { return photo; }
         }
 
         public string Passport

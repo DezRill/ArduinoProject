@@ -46,9 +46,7 @@
             this.textBox1.Size = new System.Drawing.Size(258, 39);
             this.textBox1.TabIndex = 6;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "НВ123456";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // button1
             // 

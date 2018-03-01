@@ -388,6 +388,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(732, 88);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(180, 211);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 32;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseClick);
@@ -442,8 +443,7 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Image files|*jpg;png;bmp;jpeg";
+            this.openFileDialog1.Filter = "Image files|*.jpg;*.png;*.bmp;*.jpeg";
             // 
             // dateTimePicker1
             // 

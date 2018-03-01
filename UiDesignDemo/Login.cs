@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace UiDesignDemo
 {
@@ -16,7 +17,7 @@ namespace UiDesignDemo
         public SqlConnection connection;
         public ActiveDoctor doc;
 
-        private void connectToDataBase()
+        private void ConnectToDataBase()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "arduino.zapto.org";
@@ -27,43 +28,49 @@ namespace UiDesignDemo
             connection.Open();
         }
 
-        private void singIn(string login, string password)
+        private Image ConvertBinaryToImage(byte[] data)
         {
-            bool isFound = false;
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void SingIn(string login, string password)
+        {
             SqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT * FROM dbo.doctors";
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            command.CommandText = "SELECT * FROM dbo.doctors WHERE login=@login AND password=@password";
+            command.Parameters.AddWithValue("@login", login);
+            command.Parameters.AddWithValue("@password", password);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            for (int i=0;i<table.Rows.Count;i++)
+            if (table.Rows.Count != 0)
             {
-                if (login==table.Rows[i]["login"].ToString() && password==table.Rows[i]["password"].ToString())
-                {
-                    doc = new ActiveDoctor();
-                    doc.Id = Convert.ToInt32(table.Rows[i]["id"].ToString());
-                    doc.Name = table.Rows[i]["name"].ToString();
-                    doc.Birth = Convert.ToDateTime(table.Rows[i]["birth"].ToString());
-                    doc.Gender = table.Rows[i]["gender"].ToString();
-                    doc.Town = table.Rows[i]["town"].ToString();
-                    doc.Phone = table.Rows[i]["phone"].ToString();
-                    doc.Mail = table.Rows[i]["mail"].ToString();
-                    doc.Adress = table.Rows[i]["adress"].ToString();
-                    doc.Passport = table.Rows[i]["passport"].ToString();
-                    doc.Diploma = Convert.ToInt32(table.Rows[i]["diploma_num"].ToString());
-                    doc.Specialty = table.Rows[i]["specialty"].ToString();
-                    doc.Position = table.Rows[i]["position"].ToString();
-                    doc.Invite = Convert.ToDateTime(table.Rows[i]["invite_date"].ToString());
-                    doc.Characteristic = table.Rows[i]["short_char"].ToString();
-                    isFound = true;
-                    Form1 frm = new Form1(this);
-                    frm.Show();
-                    this.Hide();
-                    break;
-                }
+                doc = new ActiveDoctor();
+                doc.Name = table.Rows[0]["name"].ToString();
+                doc.Birth = Convert.ToDateTime(table.Rows[0]["birth"].ToString());
+                doc.Gender = table.Rows[0]["gender"].ToString();
+                doc.Town = table.Rows[0]["town"].ToString();
+                doc.Phone = table.Rows[0]["phone"].ToString();
+                doc.Mail = table.Rows[0]["mail"].ToString();
+                doc.Adress = table.Rows[0]["adress"].ToString();
+                doc.Photo = ConvertBinaryToImage((byte[])table.Rows[0]["photo"]);
+                doc.Passport = table.Rows[0]["passport"].ToString();
+                doc.Diploma = table.Rows[0]["diploma_num"].ToString();
+                doc.Specialty = table.Rows[0]["specialty"].ToString();
+                doc.Position = table.Rows[0]["position"].ToString();
+                doc.Invite = Convert.ToDateTime(table.Rows[0]["invite_date"].ToString());
+                doc.Characteristic = table.Rows[0]["short_char"].ToString();
+                adapter.Dispose();
+                table.Dispose();
+                Form1 frm = new Form1(this);
+                frm.Show();
+                this.Hide();
             }
-            if (!isFound)
+            else
             {
-                MessageBox.Show("Помилка", "Невірний логін або пароль", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Невірний логін або пароль", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -72,7 +79,7 @@ namespace UiDesignDemo
             InitializeComponent();
             try
             {
-                connectToDataBase();
+                ConnectToDataBase();
             }
             catch(Exception ex)
             {
@@ -82,9 +89,7 @@ namespace UiDesignDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1(this);
-            frm.Show();
-            this.Hide();
+            SingIn(textBox1.Text, textBox2.Text);
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
