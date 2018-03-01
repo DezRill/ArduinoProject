@@ -36,6 +36,15 @@ namespace UiDesignDemo
             this.patient = patient;
         }
 
+        private void UploadImage()
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox2.Image = new Bitmap(openFileDialog1.FileName);
+                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+
         private void Switcher()
         {
             if (!isEditing)
@@ -96,12 +105,17 @@ namespace UiDesignDemo
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Switcher();
+        }
+
+        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (isEditing) UploadImage();
         }
     }
 }
