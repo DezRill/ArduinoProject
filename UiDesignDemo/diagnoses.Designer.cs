@@ -106,7 +106,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(340, 313);
+            this.label17.Location = new System.Drawing.Point(380, 359);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(312, 23);
             this.label17.TabIndex = 105;
