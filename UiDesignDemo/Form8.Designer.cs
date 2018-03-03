@@ -313,6 +313,7 @@ namespace UiDesignDemo
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form8";
             this.Text = "Form8";
+            this.Load += new System.EventHandler(this.Form8_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);

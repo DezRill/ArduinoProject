@@ -12,7 +12,7 @@ namespace UiDesignDemo
 {
     public partial class Form7 : Form
     {
-      
+        
         public Login l;
 
         public Form7(Login l)
@@ -29,9 +29,14 @@ namespace UiDesignDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form8 frm = new Form8(l);
-            frm.Show();
-            this.Close();
+            if (l.doc.Position == "Головний лікар")
+            {
+                Form8 frm = new Form8(this);
+                frm.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("У вас немає права додавати лікарів", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          
         }
 
         private void button15_Click(object sender, EventArgs e)

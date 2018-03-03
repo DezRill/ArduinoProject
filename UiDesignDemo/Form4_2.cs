@@ -33,9 +33,10 @@ namespace UiDesignDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            diagnoses frm = new diagnoses(this);
+          
+            Form9 frm = new Form9(this);
             frm.Show();
-            this.Hide();
+            
         }
     }
 }

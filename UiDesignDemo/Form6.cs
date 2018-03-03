@@ -33,5 +33,12 @@ namespace UiDesignDemo
             frm.Show();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form9 frm = new Form9();
+            frm.Show();
+            this.Close();
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace UiDesignDemo
     {
         Form8 d;
         public Login l;
+        private Form7 form7;
+
         //private bool isEditing = false;
 
         public Form8(Login l)
@@ -30,6 +32,11 @@ namespace UiDesignDemo
             textBox9.Text = l.doc.Adress;
             textBox10.Clear();
             pictureBox2.Image = l.doc.Photo;
+        }
+
+        public Form8(Form7 form7)
+        {
+            this.form7 = form7;
         }
 
         //private void Switcher()
@@ -97,6 +104,15 @@ namespace UiDesignDemo
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
+        }
+
+        private void Form8_Load(object sender, EventArgs e)
+        {
+            int ScreenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int ScreenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            this.Location = new Point((ScreenWidth / 2) - (this.Width / 2),
+                (ScreenHeight / 2) - (this.Height / 2));
         }
     }
 }
