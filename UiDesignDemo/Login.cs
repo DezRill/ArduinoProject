@@ -107,6 +107,15 @@ namespace UiDesignDemo
         {
             Application.Exit();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            int ScreenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int ScreenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            this.Location = new Point((ScreenWidth / 2) - (this.Width / 2),
+                (ScreenHeight / 2) - (this.Height / 2));
+        }
     }
 }
 
