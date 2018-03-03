@@ -12,11 +12,13 @@ namespace UiDesignDemo
 {
     public partial class All_doctors : Form
     {
+     
         public Login l;
         //private bool isEditing = false;
 
         public All_doctors(Login l)
         {
+            
             InitializeComponent();
             this.l = l;
             textBox1.Text = l.doc.Name;

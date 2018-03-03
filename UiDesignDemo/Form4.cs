@@ -26,7 +26,7 @@ namespace UiDesignDemo
             textBox6.Text = patient.Gender;
             comboBox1.SelectedItem = patient.Gender;
             textBox5.Text = patient.Town;
-            textBox10.Clear();
+            
             textBox8.Text = patient.Phone;
             textBox2.Text = patient.Mail;
             textBox9.Text = patient.Adress;
