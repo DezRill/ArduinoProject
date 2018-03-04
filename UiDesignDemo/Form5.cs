@@ -14,16 +14,24 @@ namespace UiDesignDemo
 {
     public partial class Form5 : Form
     {
-        Form8 d;
+        Login l;
+        bool editing = false;
+        int id;
 
-        public Form5(Form8 d)
+        public Form5(Login l)
         {
             InitializeComponent();
-            this.d = d;
+            this.l = l;
         }
 
-        public Form5(All_doctors all_doctors)
+        public Form5(Login l, int id)
         {
+            InitializeComponent();
+            this.l = l;
+            editing = true;
+            label1.Visible = false;
+            this.id = id;
+            GetDoctor();
         }
 
         private void UploadImage()
@@ -45,30 +53,70 @@ namespace UiDesignDemo
             }
         }
 
+        private Image ConvertBinaryToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void GetDoctor()
+        {
+            SqlCommand command = l.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM dbo.doctors WHERE id=@id";
+            command.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            dateTimePicker1.Value=Convert.ToDateTime(table.Rows[0]["invite_date"].ToString());
+            textBox6.Text = table.Rows[0]["name"].ToString();
+            dateTimePicker2.Value = Convert.ToDateTime(table.Rows[0]["birth"].ToString());
+            comboBox1.SelectedItem = table.Rows[0]["gender"].ToString();
+            textBox10.Text = table.Rows[0]["town"].ToString();
+            textBox8.Text = table.Rows[0]["adress"].ToString();
+            textBox2.Text = table.Rows[0]["phone"].ToString();
+            textBox5.Text = table.Rows[0]["mail"].ToString();
+            textBox9.Text = table.Rows[0]["passport"].ToString();
+            textBox11.Text = table.Rows[0]["diploma_num"].ToString();
+            textBox13.Text = table.Rows[0]["specialty"].ToString();
+            textBox15.Text = table.Rows[0]["position"].ToString();
+            textBox1.Text = table.Rows[0]["short_char"].ToString();
+            textBox16.Text = table.Rows[0]["login"].ToString();
+            textBox17.Text = table.Rows[0]["password"].ToString();
+            pictureBox2.Image = new Bitmap(ConvertBinaryToImage((byte[])table.Rows[0]["photo"]));
+        }
+
         private void AddDoctor()
         {
-            SqlCommand command = d.l.connection.CreateCommand();
+            SqlCommand command = l.connection.CreateCommand();
             command.CommandText = "INSERT INTO dbo.doctors(name, birth, gender, town, phone, mail, adress, photo, passport, diploma_num, specialty, position, invite_date, short_char, login, password) VALUES (@name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @passport, @diploma_num, @specialty, @position, @invite_date, @short_char, @login, @password)";
-            command.Parameters.AddWithValue("@name", textBox6.Text);
-            command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
-            command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-            command.Parameters.AddWithValue("@town", textBox10.Text);
-            command.Parameters.AddWithValue("@phone", textBox2.Text);
-            command.Parameters.AddWithValue("@mail", textBox5.Text);
-            command.Parameters.AddWithValue("@adress", textBox8.Text);
-            command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
-            command.Parameters.AddWithValue("@passport", textBox9.Text);
-            command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
-            command.Parameters.AddWithValue("@specialty", textBox13.Text);
-            command.Parameters.AddWithValue("@position", textBox15.Text);
-            command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
-            command.Parameters.AddWithValue("@short_char", textBox1.Text);
-            command.Parameters.AddWithValue("@login", textBox16.Text);
-            command.Parameters.AddWithValue("@password", textBox17.Text);
             try
             {
+                command.Parameters.AddWithValue("@name", textBox6.Text);
+                command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
+                command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@town", textBox10.Text);
+                command.Parameters.AddWithValue("@phone", textBox2.Text);
+                command.Parameters.AddWithValue("@mail", textBox5.Text);
+                command.Parameters.AddWithValue("@adress", textBox8.Text);
+                command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
+                command.Parameters.AddWithValue("@passport", textBox9.Text);
+                command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
+                command.Parameters.AddWithValue("@specialty", textBox13.Text);
+                command.Parameters.AddWithValue("@position", textBox15.Text);
+                command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
+                command.Parameters.AddWithValue("@short_char", textBox1.Text);
+                command.Parameters.AddWithValue("@login", textBox16.Text);
+                command.Parameters.AddWithValue("@password", textBox17.Text);
+
                 command.ExecuteNonQuery();
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Form8 frm = new Form8(l);
+                frm.Show();
+                this.Close();
             }
             catch
             {
@@ -76,17 +124,55 @@ namespace UiDesignDemo
             }
         }
 
+        private void UpdateDoctor()
+        {
+            SqlCommand command = l.connection.CreateCommand();
+            command.CommandText = "UPDATE dbo.doctors SET name=@name, birth=@birth, gender=@gender, town=@town, phone=@phone, mail=@mail, adress=@adress, photo=@photo, passport=@passport, diploma_num=@diploma_num, specialty=@specialty, position=@position, invite_date=@invite_date, short_char=@short_char, login=@login, password=@password WHERE id=@id";
+            try
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@name", textBox6.Text);
+                command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
+                command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@town", textBox10.Text);
+                command.Parameters.AddWithValue("@phone", textBox2.Text);
+                command.Parameters.AddWithValue("@mail", textBox5.Text);
+                command.Parameters.AddWithValue("@adress", textBox8.Text);
+                command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
+                command.Parameters.AddWithValue("@passport", textBox9.Text);
+                command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
+                command.Parameters.AddWithValue("@specialty", textBox13.Text);
+                command.Parameters.AddWithValue("@position", textBox15.Text);
+                command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
+                command.Parameters.AddWithValue("@short_char", textBox1.Text);
+                command.Parameters.AddWithValue("@login", textBox16.Text);
+                command.Parameters.AddWithValue("@password", textBox17.Text);
+
+                command.ExecuteNonQuery();
+                MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Form8 frm = new Form8(l);
+                frm.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не всі дані заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         private void button15_Click(object sender, EventArgs e)
         {
+            Form8 frm = new Form8(l);
+            frm.Show();
             this.Close();
-            d.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddDoctor();
-            this.Close();
-            d.Show();
+            if (editing) UpdateDoctor();
+            else AddDoctor();
         }
 
         private void label1_MouseClick(object sender, MouseEventArgs e)
@@ -97,186 +183,6 @@ namespace UiDesignDemo
         private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
         {
             UploadImage();
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox15_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox16_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

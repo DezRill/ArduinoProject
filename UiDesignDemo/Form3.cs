@@ -42,6 +42,7 @@ namespace UiDesignDemo
             if (table.Rows.Count!=0)
             {
                 patient = new Patient();
+                patient.Id = Convert.ToInt32(table.Rows[0]["id"].ToString());
                 patient.Passport = table.Rows[0]["passport"].ToString();
                 patient.Name = table.Rows[0]["name"].ToString();
                 patient.Birth = Convert.ToDateTime(table.Rows[0]["birth"].ToString());

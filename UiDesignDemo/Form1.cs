@@ -32,10 +32,7 @@ namespace UiDesignDemo
         {
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
-            //All_doctors frm = new All_doctors(l);
-            //frm.Show();
-            //this.Close();
-            Form7 frm = new Form7(l);
+            All_doctors frm = new All_doctors(l);
             frm.Show();
             this.Close();
         }

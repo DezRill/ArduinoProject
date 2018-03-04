@@ -9,9 +9,16 @@ namespace UiDesignDemo
 {
     public class Patient
     {
+        int id;
         string passport, name, gender, town, phone, mail, adress;
         DateTime birth, reg_date;
         Image photo;
+
+        public int Id
+        {
+            set { id = value; }
+            get { return id; }
+        }
 
         public string Passport
         {

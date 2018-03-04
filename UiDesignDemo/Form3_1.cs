@@ -45,20 +45,25 @@ namespace UiDesignDemo
         {
             SqlCommand command = l.connection.CreateCommand();
             command.CommandText = "INSERT INTO dbo.patients(passport, name, birth, gender, town, phone, mail, adress, photo, reg_date) VALUES(@passport, @name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @reg_date)";
-            command.Parameters.AddWithValue("@passport", textBox11.Text);
-            command.Parameters.AddWithValue("@name", textBox6.Text);
-            command.Parameters.AddWithValue("@birth", dateTimePicker1.Value.Date.ToString());
-            command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-            command.Parameters.AddWithValue("@town", textBox10.Text);
-            command.Parameters.AddWithValue("@adress", textBox8.Text);
-            command.Parameters.AddWithValue("@phone", textBox2.Text);
-            command.Parameters.AddWithValue("@mail", textBox5.Text);
-            command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
-            command.Parameters.AddWithValue("@reg_date", dateTimePicker2.Value.Date.ToString());
             try
             {
+                command.Parameters.AddWithValue("@passport", textBox11.Text);
+                command.Parameters.AddWithValue("@name", textBox6.Text);
+                command.Parameters.AddWithValue("@birth", dateTimePicker1.Value.Date.ToString());
+                command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@town", textBox10.Text);
+                command.Parameters.AddWithValue("@adress", textBox8.Text);
+                command.Parameters.AddWithValue("@phone", textBox2.Text);
+                command.Parameters.AddWithValue("@mail", textBox5.Text);
+                command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
+                command.Parameters.AddWithValue("@reg_date", dateTimePicker2.Value.Date.ToString());
+
                 command.ExecuteNonQuery();
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Form1 frm = new Form1(l);
+                frm.Show();
+                this.Close();
             }
             catch
             {
@@ -86,9 +91,6 @@ namespace UiDesignDemo
         private void button1_Click(object sender, EventArgs e)
         {
             AddPatient();
-            Form1 frm = new Form1(l);
-            frm.Show();
-            this.Close();
         }
     }
 }

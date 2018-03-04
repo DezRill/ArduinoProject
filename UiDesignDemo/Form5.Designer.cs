@@ -97,7 +97,6 @@
             this.textBox10.Size = new System.Drawing.Size(277, 33);
             this.textBox10.TabIndex = 52;
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label11
             // 
@@ -109,7 +108,6 @@
             this.label11.Size = new System.Drawing.Size(266, 25);
             this.label11.TabIndex = 51;
             this.label11.Text = "Адреса проживання:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -121,7 +119,6 @@
             this.label10.Size = new System.Drawing.Size(222, 25);
             this.label10.TabIndex = 50;
             this.label10.Text = "Номер телефона:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBox9
             // 
@@ -133,7 +130,6 @@
             this.textBox9.Size = new System.Drawing.Size(277, 33);
             this.textBox9.TabIndex = 49;
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // textBox8
             // 
@@ -145,7 +141,6 @@
             this.textBox8.Size = new System.Drawing.Size(277, 33);
             this.textBox8.TabIndex = 48;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label9
             // 
@@ -157,7 +152,6 @@
             this.label9.Size = new System.Drawing.Size(85, 25);
             this.label9.TabIndex = 47;
             this.label9.Text = "Стать:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -169,7 +163,6 @@
             this.label8.Size = new System.Drawing.Size(335, 25);
             this.label8.TabIndex = 46;
             this.label8.Text = "Дата прийняття на роботу:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -181,7 +174,6 @@
             this.label7.Size = new System.Drawing.Size(236, 25);
             this.label7.TabIndex = 45;
             this.label7.Text = "Дата народження:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -193,7 +185,6 @@
             this.label6.Size = new System.Drawing.Size(216, 25);
             this.label6.TabIndex = 44;
             this.label6.Text = "Номер паспорта:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -205,7 +196,6 @@
             this.label5.Size = new System.Drawing.Size(244, 25);
             this.label5.TabIndex = 43;
             this.label5.Text = "Місто проживання:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -217,7 +207,6 @@
             this.label4.Size = new System.Drawing.Size(59, 25);
             this.label4.TabIndex = 42;
             this.label4.Text = "ПІП";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -229,7 +218,6 @@
             this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 41;
             this.label3.Text = "Email:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox6
             // 
@@ -241,7 +229,6 @@
             this.textBox6.Size = new System.Drawing.Size(277, 33);
             this.textBox6.TabIndex = 38;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox5
             // 
@@ -253,7 +240,6 @@
             this.textBox5.Size = new System.Drawing.Size(277, 33);
             this.textBox5.TabIndex = 37;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox2
             // 
@@ -265,7 +251,6 @@
             this.textBox2.Size = new System.Drawing.Size(277, 33);
             this.textBox2.TabIndex = 34;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -275,7 +260,6 @@
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 33;
             this.label1.Text = "ФОТО";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
             // 
             // textBox11
@@ -288,7 +272,6 @@
             this.textBox11.Size = new System.Drawing.Size(277, 33);
             this.textBox11.TabIndex = 55;
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label12
             // 
@@ -300,7 +283,6 @@
             this.label12.Size = new System.Drawing.Size(210, 25);
             this.label12.TabIndex = 54;
             this.label12.Text = "Номер диплома:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // textBox13
             // 
@@ -312,7 +294,6 @@
             this.textBox13.Size = new System.Drawing.Size(277, 33);
             this.textBox13.TabIndex = 59;
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // label14
             // 
@@ -324,7 +305,6 @@
             this.label14.Size = new System.Drawing.Size(189, 25);
             this.label14.TabIndex = 58;
             this.label14.Text = "Спеціальність:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textBox15
             // 
@@ -336,7 +316,6 @@
             this.textBox15.Size = new System.Drawing.Size(277, 33);
             this.textBox15.TabIndex = 63;
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // label16
             // 
@@ -348,7 +327,6 @@
             this.label16.Size = new System.Drawing.Size(108, 25);
             this.label16.TabIndex = 62;
             this.label16.Text = "Посада:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // textBox16
             // 
@@ -360,7 +338,6 @@
             this.textBox16.Size = new System.Drawing.Size(277, 33);
             this.textBox16.TabIndex = 65;
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
             // label17
             // 
@@ -372,7 +349,6 @@
             this.label17.Size = new System.Drawing.Size(84, 25);
             this.label17.TabIndex = 64;
             this.label17.Text = "Login:";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // textBox17
             // 
@@ -384,7 +360,6 @@
             this.textBox17.Size = new System.Drawing.Size(277, 33);
             this.textBox17.TabIndex = 67;
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox17.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
             // label18
             // 
@@ -396,7 +371,6 @@
             this.label18.Size = new System.Drawing.Size(133, 25);
             this.label18.TabIndex = 66;
             this.label18.Text = "Password:";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label13
             // 
@@ -408,12 +382,10 @@
             this.label13.Size = new System.Drawing.Size(318, 25);
             this.label13.TabIndex = 73;
             this.label13.Text = "Коротка характеристика:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "Image files|*.jpg;*.png;*.bmp;*.jpeg";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // dateTimePicker1
             // 
@@ -427,7 +399,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(277, 40);
             this.dateTimePicker1.TabIndex = 75;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -441,7 +412,6 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(277, 40);
             this.dateTimePicker2.TabIndex = 76;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // comboBox1
             // 
@@ -456,7 +426,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(276, 40);
             this.comboBox1.TabIndex = 77;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -465,7 +434,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(277, 393);
             this.textBox1.TabIndex = 78;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pictureBox2
             // 
@@ -475,7 +443,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 32;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseClick);
             // 
             // panel3
@@ -486,7 +453,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1015, 28);
             this.panel3.TabIndex = 30;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel1
             // 
@@ -498,7 +464,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 65);
             this.panel1.TabIndex = 29;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button15
             // 
@@ -527,7 +492,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form5
             // 

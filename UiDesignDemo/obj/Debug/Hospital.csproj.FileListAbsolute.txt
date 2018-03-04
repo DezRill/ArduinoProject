@@ -113,3 +113,6 @@ D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDem
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form7.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
+D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
+D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
+D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
