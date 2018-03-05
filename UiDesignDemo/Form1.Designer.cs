@@ -306,10 +306,9 @@
             this.panel5.Controls.Add(this.secondUC1);
             this.bunifuTransition2.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(233, 95);
+            this.panel5.Location = new System.Drawing.Point(233, 88);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1052, 525);
+            this.panel5.Size = new System.Drawing.Size(1052, 532);
             this.panel5.TabIndex = 4;
             // 
             // firstUC1
@@ -318,9 +317,10 @@
             this.firstUC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuTransition1.SetDecoration(this.firstUC1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.firstUC1, BunifuAnimatorNS.DecorationType.None);
+            this.firstUC1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.firstUC1.Location = new System.Drawing.Point(0, 0);
             this.firstUC1.Name = "firstUC1";
-            this.firstUC1.Size = new System.Drawing.Size(1052, 525);
+            this.firstUC1.Size = new System.Drawing.Size(1052, 532);
             this.firstUC1.TabIndex = 1;
             this.firstUC1.Visible = false;
             // 
@@ -334,7 +334,7 @@
             this.secondUC1.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondUC1.Location = new System.Drawing.Point(0, 0);
             this.secondUC1.Name = "secondUC1";
-            this.secondUC1.Size = new System.Drawing.Size(1052, 525);
+            this.secondUC1.Size = new System.Drawing.Size(1052, 532);
             this.secondUC1.TabIndex = 0;
             // 
             // panel1
@@ -406,6 +406,7 @@
             this.bunifuTransition2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";

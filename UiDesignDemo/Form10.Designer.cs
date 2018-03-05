@@ -55,6 +55,7 @@
             this.ClientSize = new System.Drawing.Size(1119, 609);
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form10";
             this.Text = "Form10";
             this.ResumeLayout(false);

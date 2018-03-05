@@ -110,9 +110,9 @@ D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.cs
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form7.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
 D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
 D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
 D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
