@@ -48,6 +48,7 @@ namespace UiDesignDemo
             if (table.Rows.Count != 0)
             {
                 doc = new ActiveDoctor();
+                doc.Id = Convert.ToInt32(table.Rows[0]["id"].ToString());
                 doc.Name = table.Rows[0]["name"].ToString();
                 doc.Birth = Convert.ToDateTime(table.Rows[0]["birth"].ToString());
                 doc.Gender = table.Rows[0]["gender"].ToString();

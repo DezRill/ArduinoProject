@@ -9,9 +9,16 @@ namespace UiDesignDemo
 {
     public class ActiveDoctor
     {
+        int id;
         string name, gender, town, phone, mail, adress, passport, specialty, position, short_char, diploma_num;
         Image photo;
         DateTime birth, invite_date;
+
+        public int Id
+        {
+            set { id = value; }
+            get { return id; }
+        }
 
         public string Diploma
         {

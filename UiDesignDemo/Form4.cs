@@ -15,7 +15,7 @@ namespace UiDesignDemo
     public partial class Form4 : Form
     {
         public Login l;
-        private Patient patient;
+        public Patient patient;
         private bool isEditing = false;
 
         public Form4(Login l, Patient patient)
