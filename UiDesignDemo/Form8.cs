@@ -170,5 +170,14 @@ namespace UiDesignDemo
             frm.Show();
             this.Close();
         }
+
+        private void Form8_Load(object sender, EventArgs e)
+        {
+            int ScreenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int ScreenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            this.Location = new Point((ScreenWidth / 2) - (this.Width / 2),
+                (ScreenHeight / 2) - (this.Height / 2));
+        }
     }
 }
