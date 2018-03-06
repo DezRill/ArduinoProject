@@ -83,5 +83,10 @@ namespace UiDesignDemo
             frm.Show();
             this.Close();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
