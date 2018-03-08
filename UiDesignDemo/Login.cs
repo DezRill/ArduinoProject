@@ -16,6 +16,7 @@ namespace UiDesignDemo
     {
         public SqlConnection connection;
         public ActiveDoctor doc;
+        private Login l;
 
         private void ConnectToDataBase()
         {
@@ -116,6 +117,13 @@ namespace UiDesignDemo
 
             this.Location = new Point((ScreenWidth / 2) - (this.Width / 2),
                 (ScreenHeight / 2) - (this.Height / 2));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form10 frm = new Form10(l);
+            frm.Show();
+            this.Close();
         }
     }
 }

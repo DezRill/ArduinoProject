@@ -87,14 +87,19 @@ D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDe
 D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.GenerateResource.Cache
 D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
+D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
+D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
+D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.exe.config
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.exe
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\TouchlessLib.dll
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\WebCamLib.dll
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.All_doctors.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.diagnoses.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Diagram.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form2.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form3.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form3_1.resources
@@ -102,17 +107,15 @@ D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDem
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form4_2.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form5.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form6.resources
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Login.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Resources.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.WebCamera.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.GenerateResource.Cache
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
-D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
-D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form8.resources
-D:\Учёба\4 курс\Курсак\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form9.resources
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csprojResolveAssemblyReference.cache

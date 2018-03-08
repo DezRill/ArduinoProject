@@ -68,9 +68,15 @@ namespace UiDesignDemo
         {
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
-            Diagram frm = new Diagram(l);
+            //Diagram frm = new Diagram(l);
+            Form10 frm = new Form10(l);
             frm.Show();
             this.Close();
+        }
+
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

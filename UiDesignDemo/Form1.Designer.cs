@@ -225,6 +225,7 @@
             this.button16.Text = "Довідка";
             this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click_1);
             // 
             // button17
             // 

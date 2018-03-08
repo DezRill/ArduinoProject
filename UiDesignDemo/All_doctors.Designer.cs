@@ -57,10 +57,10 @@
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox9.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9.Location = new System.Drawing.Point(756, 285);
+            this.textBox9.Location = new System.Drawing.Point(785, 285);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(288, 24);
+            this.textBox9.Size = new System.Drawing.Size(335, 24);
             this.textBox9.TabIndex = 66;
             // 
             // textBox8
@@ -68,10 +68,10 @@
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox8.Location = new System.Drawing.Point(756, 159);
+            this.textBox8.Location = new System.Drawing.Point(785, 159);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(288, 24);
+            this.textBox8.Size = new System.Drawing.Size(335, 24);
             this.textBox8.TabIndex = 65;
             // 
             // textBox6
@@ -82,7 +82,7 @@
             this.textBox6.Location = new System.Drawing.Point(405, 224);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(288, 24);
+            this.textBox6.Size = new System.Drawing.Size(335, 24);
             this.textBox6.TabIndex = 63;
             // 
             // textBox2
@@ -90,10 +90,10 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(756, 224);
+            this.textBox2.Location = new System.Drawing.Point(785, 224);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(288, 24);
+            this.textBox2.Size = new System.Drawing.Size(335, 24);
             this.textBox2.TabIndex = 60;
             // 
             // textBox1
@@ -104,7 +104,7 @@
             this.textBox1.Location = new System.Drawing.Point(405, 89);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(288, 24);
+            this.textBox1.Size = new System.Drawing.Size(335, 24);
             this.textBox1.TabIndex = 58;
             // 
             // textBox5
@@ -115,7 +115,7 @@
             this.textBox5.Location = new System.Drawing.Point(405, 285);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(288, 24);
+            this.textBox5.Size = new System.Drawing.Size(335, 24);
             this.textBox5.TabIndex = 62;
             // 
             // panel1
@@ -168,7 +168,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker1.Location = new System.Drawing.Point(405, 159);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(288, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(335, 27);
             this.dateTimePicker1.TabIndex = 69;
             this.dateTimePicker1.Visible = false;
             // 
@@ -180,7 +180,7 @@
             this.textBox3.Location = new System.Drawing.Point(405, 159);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(288, 24);
+            this.textBox3.Size = new System.Drawing.Size(335, 24);
             this.textBox3.TabIndex = 70;
             // 
             // pictureBox2
@@ -249,10 +249,10 @@
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox10.Location = new System.Drawing.Point(756, 89);
+            this.textBox10.Location = new System.Drawing.Point(785, 89);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(288, 24);
+            this.textBox10.Size = new System.Drawing.Size(335, 24);
             this.textBox10.TabIndex = 71;
             // 
             // All_doctors
