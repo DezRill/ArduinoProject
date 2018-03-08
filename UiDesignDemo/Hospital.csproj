@@ -246,12 +246,6 @@
     <Compile Include="UserControls\SecondUC.Designer.cs">
       <DependentUpon>SecondUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="WebCamera.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WebCamera.Designer.cs">
-      <DependentUpon>WebCamera.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="All_doctors.resx">
       <DependentUpon>All_doctors.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,9 +306,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SecondUC.resx">
       <DependentUpon>SecondUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WebCamera.resx">
-      <DependentUpon>WebCamera.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

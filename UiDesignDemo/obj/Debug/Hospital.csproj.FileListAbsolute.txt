@@ -113,7 +113,6 @@ D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDem
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Resources.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.WebCamera.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.GenerateResource.Cache
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
