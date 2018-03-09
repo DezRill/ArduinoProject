@@ -14,13 +14,15 @@ namespace UiDesignDemo
     public partial class Form6 : Form
     {
         Login l;
+        string begin, end;
+
+        bool control = false;
 
         public Form6(Login l)
         {
             InitializeComponent();
             this.l = l;
-            dateTimePicker1.Value = DateTime.Now;
-            dateTimePicker2.Value = DateTime.Now;
+            begin = DateTime.Now.ToString("HH:mm");
         }
 
         private void SaveSession()
@@ -29,8 +31,8 @@ namespace UiDesignDemo
             command.CommandText = "INSERT INTO dbo.sessions(doctor_id, session_begin, session_end, date) VALUES (@doctor_id, @session_begin, @session_end, @date)";
 
             command.Parameters.AddWithValue("@doctor_id", l.doc.Id);
-            command.Parameters.AddWithValue("@session_begin", dateTimePicker1.Value.ToString("HH:mm"));
-            command.Parameters.AddWithValue("@session_end", dateTimePicker2.Value.ToString("HH:mm"));
+            command.Parameters.AddWithValue("@session_begin", begin);
+            command.Parameters.AddWithValue("@session_end", end);
             command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
 
             command.ExecuteNonQuery();
@@ -39,17 +41,18 @@ namespace UiDesignDemo
         private void SaveHistory()
         {
             SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis) VALUES (@name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis)";
+            command.CommandText = "INSERT INTO dbo.history(doctor_name, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis) VALUES (@doctor_name, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis)";
 
+            command.Parameters.AddWithValue("@doctor_name", l.doc.Name);
             command.Parameters.AddWithValue("@name", textBox11.Text);
             command.Parameters.AddWithValue("@birth", dateTimePicker3.Value.Date.ToString());
             command.Parameters.AddWithValue("@email", textBox13.Text);
             command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-            command.Parameters.AddWithValue("@temperature", textBox7.Text);
-            command.Parameters.AddWithValue("@oxygen", textBox6.Text);
-            command.Parameters.AddWithValue("@pressure", textBox4.Text);
-            command.Parameters.AddWithValue("@growth", textBox10.Text);
-            command.Parameters.AddWithValue("@weight", textBox8.Text);
+            command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
+            command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
+            command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));
+            command.Parameters.AddWithValue("@growth", Convert.ToDouble(textBox10.Text));
+            command.Parameters.AddWithValue("@weight", Convert.ToDouble(textBox8.Text));
             command.Parameters.AddWithValue("@symptoms", textBox2.Text);
             command.Parameters.AddWithValue("@recommendations", textBox3.Text);
             command.Parameters.AddWithValue("diagnosis", textBox9.Text);
@@ -62,11 +65,13 @@ namespace UiDesignDemo
         {
             try
             {
+                end = DateTime.Now.ToString("HH:mm");
                 SaveSession();
                 SaveHistory();
 
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                control = true;
                 Form1 frm = new Form1(l);
                 frm.Show();
                 this.Close();
@@ -77,16 +82,19 @@ namespace UiDesignDemo
             }
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void Form6_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form1 frm = new Form1(l);
-            frm.Show();
-            this.Close();
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button15_Click(object sender, EventArgs e)
         {
-            Form9 frm = new Form9();
+            control = true;
+            Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
         }

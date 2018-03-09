@@ -13,6 +13,7 @@ namespace UiDesignDemo
     public partial class diagnoses : Form
     {
         Form4_2 f;
+        bool control = false;
 
         public diagnoses(Form4_2 f)
         {
@@ -22,8 +23,18 @@ namespace UiDesignDemo
 
         private void button15_Click(object sender, EventArgs e)
         {
+            control = true;
             this.Close();
             f.Show();
+        }
+
+        private void diagnoses_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

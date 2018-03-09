@@ -18,6 +18,8 @@ namespace UiDesignDemo
         public Patient patient;
         private bool isEditing = false;
 
+        bool control = false;
+
         public Form4(Login l, Patient patient)
         {
             InitializeComponent();
@@ -127,6 +129,7 @@ namespace UiDesignDemo
 
         private void button5_Click(object sender, EventArgs e)
         {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
@@ -134,6 +137,7 @@ namespace UiDesignDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
@@ -148,7 +152,9 @@ namespace UiDesignDemo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            Form7 frm = new Form7(this);
+            frm.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -178,6 +184,15 @@ namespace UiDesignDemo
                 UpdatePatient();
             }
             else MessageBox.Show("Всі поля повинні бути заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Form4_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

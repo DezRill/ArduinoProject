@@ -18,6 +18,8 @@ namespace UiDesignDemo
         bool editing = false;
         int id;
 
+        bool control = false;
+
         public Form5(Login l)
         {
             InitializeComponent();
@@ -114,6 +116,7 @@ namespace UiDesignDemo
                 command.ExecuteNonQuery();
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                control = true;
                 Form8 frm = new Form8(l);
                 frm.Show();
                 this.Close();
@@ -151,6 +154,7 @@ namespace UiDesignDemo
                 command.ExecuteNonQuery();
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                control = true;
                 Form8 frm = new Form8(l);
                 frm.Show();
                 this.Close();
@@ -164,6 +168,7 @@ namespace UiDesignDemo
 
         private void button15_Click(object sender, EventArgs e)
         {
+            control = true;
             Form8 frm = new Form8(l);
             frm.Show();
             this.Close();
@@ -183,6 +188,15 @@ namespace UiDesignDemo
         private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
         {
             UploadImage();
+        }
+
+        private void Form5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

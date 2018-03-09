@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-          
             // 
             // button2
             // 
@@ -63,13 +58,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form10";
             this.Text = "Form10";
-            this.Load += new System.EventHandler(this.Form10_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Timer timer1;
     }
 }

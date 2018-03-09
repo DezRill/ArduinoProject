@@ -9,16 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using AForge.Video;
-using AForge.Video.DirectShow;
+
 namespace UiDesignDemo
 {
     public partial class Form3_1 : Form
     {
         Login l;
 
-        private FilterInfoCollection videoDevices; //отримання списоку пристороїв камер 
-        private VideoCaptureDevice videoSource; // 
+        bool control = false;
 
         public Form3_1(Login l)
         {
@@ -65,6 +63,7 @@ namespace UiDesignDemo
                 command.ExecuteNonQuery();
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                control = true;
                 Form1 frm = new Form1(l);
                 frm.Show();
                 this.Close();
@@ -77,6 +76,7 @@ namespace UiDesignDemo
 
         private void button15_Click(object sender, EventArgs e)
         {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
@@ -97,81 +97,12 @@ namespace UiDesignDemo
             AddPatient();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form3_1_Load(object sender, EventArgs e)
-        {
-            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            if (videoDevices.Count > 0)
-            {
-                foreach (FilterInfo device in videoDevices)
-                {
-                    lbCams.Items.Add(device.Name);
-                }
-                lbCams.SelectedIndex = 0;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            videoSource = new VideoCaptureDevice(videoDevices[lbCams.SelectedIndex].MonikerString); //вибір камери зі списку
-            videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame); // обробка відео
-            videoSource.Start();
-        }
-        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-            pictureBox2.Image = bitmap;
-
-        }
-
         private void Form3_1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (videoSource != null)
+            if (e.CloseReason == CloseReason.UserClosing && !control)
             {
-                videoSource.SignalToStop();
-                videoSource.WaitForStop();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.pictureBox2.Image.Save("123");
-            videoSource.SignalToStop();
-            videoSource.WaitForStop();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (pictureBox2.Image != null) //если в pictureBox есть изображение
-            {
-                //создание диалогового окна "Сохранить как..", для сохранения изображения
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Title = "Зберенти як ....";
-                //отображать ли предупреждение, если пользователь указывает имя уже существующего файла
-                savedialog.OverwritePrompt = true;
-                //отображать ли предупреждение, если пользователь указывает несуществующий путь
-                savedialog.CheckPathExists = true;
-                savedialog.FileName = textBox6.Text;
-                //список форматов файла, отображаемый в поле "Тип файла"
-                savedialog.Filter = "Image Files(*.JPG)|*.JPG|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
-                //отображается ли кнопка "Справка" в диалоговом окне
-                savedialog.ShowHelp = true;
-                if (savedialog.ShowDialog() == DialogResult.OK) //если в диалоговом окне нажата кнопка "ОК"
-                {
-                    try
-                    {
-                        pictureBox2.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Неможливо зберегти зображення", "Помилка",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
             }
         }
     }

@@ -14,15 +14,17 @@ namespace UiDesignDemo
     public partial class Form4_2 : Form
     {
         Form4 f;
+        string begin, end;
+
+        bool control = false;
 
         public Form4_2(Form4 f)
         {
             InitializeComponent();
             this.f = f;
-            dateTimePicker1.Value = DateTime.Now;
-            dateTimePicker2.Value = DateTime.Now;
             dateTimePicker3.Value = DateTime.Now.Date;
             dateTimePicker4.Value = DateTime.Now.Date;
+            begin = DateTime.Now.ToString("HH:mm");
         }
 
         private void SaveSession()
@@ -32,8 +34,8 @@ namespace UiDesignDemo
 
             command.Parameters.AddWithValue("@doctor_id", f.l.doc.Id);
             command.Parameters.AddWithValue("@patient_id", f.patient.Id);
-            command.Parameters.AddWithValue("@session_begin", dateTimePicker1.Value.ToString("HH:mm"));
-            command.Parameters.AddWithValue("@session_end", dateTimePicker2.Value.ToString("HH:mm"));
+            command.Parameters.AddWithValue("@session_begin", begin);
+            command.Parameters.AddWithValue("@session_end", end);
             command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
 
             command.ExecuteNonQuery();
@@ -42,9 +44,10 @@ namespace UiDesignDemo
         private void SaveHistory()
         {
             SqlCommand command = f.l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(patient_id, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end) VALUES (@patient_id, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end)";
+            command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end) VALUES (@patient_id, @doctor_name, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end)";
 
             command.Parameters.AddWithValue("@patient_id", f.patient.Id);
+            command.Parameters.AddWithValue("@doctor_name", f.l.doc.Name);
             command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
             command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
             command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));
@@ -61,19 +64,31 @@ namespace UiDesignDemo
 
         private void button15_Click(object sender, EventArgs e)
         {
+            control = true;
             f.Show();
             this.Close();
+        }
+
+        private void Form4_2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                end = DateTime.Now.ToString("HH:mm");
                 SaveSession();
                 SaveHistory();
 
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                control = true;
                 f.Show();
                 this.Close();
             }
@@ -81,13 +96,6 @@ namespace UiDesignDemo
             {
                 MessageBox.Show("Не всі поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form9 frm = new Form9(this);
-            frm.Show();
         }
     }
 }

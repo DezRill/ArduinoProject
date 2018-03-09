@@ -15,6 +15,8 @@ namespace UiDesignDemo
     {
         public Login l;
 
+        bool control = false;
+
         public Form8(Login l)
         {
             InitializeComponent();
@@ -79,6 +81,7 @@ namespace UiDesignDemo
 
             void editEvent(object sender, EventArgs e)
             {
+                control = true;
                 Form5 frm = new Form5(l, id);
                 frm.Show();
                 this.Close();
@@ -125,24 +128,13 @@ namespace UiDesignDemo
                     else CreateCommandButtons(i, Convert.ToInt32(table.Rows[i]["id"].ToString()), false);
                 }
             }
-
-            //for (int i = 3; i < 50; i++)
-            //{
-            //    Label name = new Label();
-            //    name.AutoSize = true;
-            //    name.Font = new Font("Microsoft Sans Serif", 11.25F);
-            //    name.Location = new Point(17, 60 + 30 * i);
-            //    name.Size = new Size(46, 18);
-            //    name.Name = "name" + i.ToString();
-            //    name.Text = "test test test test test test test test test test test";
-            //    panel4.Controls.Add(name);
-            //}
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (l.doc.Position == "Головний лікар")
             {
+                control = true;
                 Form5 frm = new Form5(l);
                 frm.Show();
                 this.Close();
@@ -152,13 +144,7 @@ namespace UiDesignDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1(l);
-            frm.Show();
-            this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
@@ -166,6 +152,7 @@ namespace UiDesignDemo
 
         private void button15_Click(object sender, EventArgs e)
         {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
@@ -178,6 +165,15 @@ namespace UiDesignDemo
 
             this.Location = new Point((ScreenWidth / 2) - (this.Width / 2),
                 (ScreenHeight / 2) - (this.Height / 2));
+        }
+
+        private void Form8_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

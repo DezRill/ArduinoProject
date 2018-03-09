@@ -13,6 +13,7 @@ namespace UiDesignDemo
     public partial class All_doctors : Form
     {
         Login l;
+        bool control = false;
 
         public All_doctors(Login l)
         {
@@ -51,21 +52,27 @@ namespace UiDesignDemo
 
         private void button5_Click(object sender, EventArgs e)
         {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Можна зробити так:\nЦю кнопку видалити, а редагування буде відбуватись через список усіх лікарів у таблиці.\nТільки головний лікар зможе редагувати. Якщо ж він вибере редагування, тоді відкриється нова форма, схожа до цеї з редагуванням.", "Ахтунг!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
+            control = true;
             Form8 frm = new Form8(l);
             frm.Show();
             this.Close();
+        }
+
+        private void All_doctors_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason==CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

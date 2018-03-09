@@ -14,6 +14,8 @@ namespace UiDesignDemo
     {
         public Login l;
 
+        bool control = false;
+
         public Form1(Login l)
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace UiDesignDemo
         {
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
+            control = true;
             Form3 frm = new Form3(l);
             frm.Show();
             this.Close();
@@ -32,6 +35,7 @@ namespace UiDesignDemo
         {
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
+            control = true;
             All_doctors frm = new All_doctors(l);
             frm.Show();
             this.Close();
@@ -58,7 +62,7 @@ namespace UiDesignDemo
         {
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
-
+            control = true;
             Form6 frm = new Form6(l);
             frm.Show();
             this.Close();
@@ -68,15 +72,19 @@ namespace UiDesignDemo
         {
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
-            //Diagram frm = new Diagram(l);
-            Form10 frm = new Form10(l);
+            control = true;
+            Diagram frm = new Diagram(l);
             frm.Show();
             this.Close();
         }
 
-        private void button16_Click_1(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

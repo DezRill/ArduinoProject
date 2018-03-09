@@ -127,6 +127,7 @@
             this.Name = "diagnoses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "diagnoses";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.diagnoses_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -17,6 +17,8 @@ namespace UiDesignDemo
         public Login l;
         private Patient patient;
 
+        bool control = false;
+
         public Form3(Login l)
         {
             InitializeComponent();
@@ -72,6 +74,7 @@ namespace UiDesignDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            control = true;
             Form3_1 frm = new Form3_1(l);
             frm.Show();
             this.Close();
@@ -79,14 +82,19 @@ namespace UiDesignDemo
 
         private void button5_Click(object sender, EventArgs e)
         {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (e.CloseReason == CloseReason.UserClosing && !control)
+            {
+                MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }
