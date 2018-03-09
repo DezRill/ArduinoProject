@@ -387,7 +387,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4_2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_2_FormClosing);
-            this.Load += new System.EventHandler(this.Form4_2_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

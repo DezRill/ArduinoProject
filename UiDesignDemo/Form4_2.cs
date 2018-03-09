@@ -17,7 +17,6 @@ namespace UiDesignDemo
     {
         Form4 f;
         string begin, end;
-       // private bool isEditing = false;
         public Login l;
         public Patient patient;
 
@@ -31,6 +30,7 @@ namespace UiDesignDemo
             dateTimePicker3.Value = DateTime.Now.Date;
             dateTimePicker4.Value = DateTime.Now.Date;
             begin = DateTime.Now.ToString("HH:mm");
+            textBox2.Text = f.patient.Mail;
            
         }
 
@@ -83,11 +83,6 @@ namespace UiDesignDemo
                 MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
-        }
-
-        private void Form4_2_Load(object sender, EventArgs e)
-        {
-            //patient.Mail = textBox2.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
