@@ -57,6 +57,7 @@ namespace UiDesignDemo
                 patient.Reg_Date = Convert.ToDateTime(table.Rows[0]["reg_date"].ToString());
                 adapter.Dispose();
                 table.Dispose();
+                control = true;
                 Form4 frm = new Form4(l, patient);
                 frm.Show();
                 this.Close();
