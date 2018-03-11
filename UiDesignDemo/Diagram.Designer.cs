@@ -59,7 +59,7 @@
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(0, 0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(903, 27);
+            this.button5.Size = new System.Drawing.Size(803, 27);
             this.button5.TabIndex = 5;
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = false;
@@ -69,11 +69,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(903, 489);
+            this.tabControl1.Size = new System.Drawing.Size(804, 458);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
@@ -82,7 +81,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(895, 463);
+            this.tabPage1.Size = new System.Drawing.Size(796, 432);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "За весь час";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -102,7 +101,7 @@
             series1.Name = "Ills";
             series1.YValuesPerPoint = 3;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(889, 457);
+            this.chart1.Size = new System.Drawing.Size(790, 426);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             // 
@@ -112,7 +111,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(895, 463);
+            this.tabPage2.Size = new System.Drawing.Size(796, 431);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "За останній місяць";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -132,7 +131,7 @@
             series2.Name = "Ills";
             series2.YValuesPerPoint = 3;
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(889, 457);
+            this.chart2.Size = new System.Drawing.Size(790, 425);
             this.chart2.TabIndex = 3;
             this.chart2.Text = "chart2";
             // 
@@ -140,12 +139,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 516);
+            this.ClientSize = new System.Drawing.Size(803, 515);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Diagram";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Diagram";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Diagram_FormClosing);
             this.tabControl1.ResumeLayout(false);

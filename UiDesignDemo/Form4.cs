@@ -10,6 +10,15 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 
+using AForge.Video.DirectShow;
+using System.Text.RegularExpressions;
+
+using AForge.Video;
+
+
+using System.Net;
+using System.Net.Mail;
+
 namespace UiDesignDemo
 {
     public partial class Form4 : Form
@@ -19,7 +28,8 @@ namespace UiDesignDemo
         private bool isEditing = false;
 
         bool control = false;
-
+        private FilterInfoCollection videoDevices;
+        private VideoCaptureDevice videoSource;
         public Form4(Login l, Patient patient)
         {
             InitializeComponent();
@@ -194,5 +204,45 @@ namespace UiDesignDemo
                 e.Cancel = true;
             }
         }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (isEditing) UploadImage();
+        }
+
+        private void label1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (isEditing) UploadImage();
+        }
+
+        private void label2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (isEditing) UploadImage();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            videoSource = new VideoCaptureDevice(videoDevices[comboBox2.SelectedIndex].MonikerString);
+            videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
+            videoSource.Start();
+        }
+        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+            pictureBox2.Image = bitmap;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            videoSource.Stop();
+            videoSource.SignalToStop();
+            this.pictureBox2.Image.Save("123");
+        }
     }
-}
+    }
+

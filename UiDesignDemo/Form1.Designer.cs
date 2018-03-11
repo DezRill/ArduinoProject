@@ -34,10 +34,6 @@
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
@@ -54,6 +50,7 @@
             this.button15 = new System.Windows.Forms.Button();
             this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -66,9 +63,6 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label1);
             this.bunifuTransition2.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
@@ -85,67 +79,11 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(233, 62);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // button4
-            // 
-            this.bunifuTransition1.SetDecoration(this.button4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.button4, BunifuAnimatorNS.DecorationType.None);
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(1158, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 59);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "4";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.bunifuTransition1.SetDecoration(this.button3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.button3, BunifuAnimatorNS.DecorationType.None);
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1037, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 59);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "3";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.bunifuTransition1.SetDecoration(this.button2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.button2, BunifuAnimatorNS.DecorationType.None);
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(916, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 59);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.bunifuTransition1.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(806, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 59);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "1";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -393,6 +331,21 @@
             this.bunifuElipse1.ElipseRadius = 0;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // button4
+            // 
+            this.bunifuTransition1.SetDecoration(this.button4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.button4, BunifuAnimatorNS.DecorationType.None);
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(1158, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 59);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "4";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -426,10 +379,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
@@ -445,6 +394,7 @@
         private System.Windows.Forms.Button button20;
         private UserControls.SecondUC secondUC1;
         private UserControls.FirstUC firstUC1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

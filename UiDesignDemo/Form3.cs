@@ -37,7 +37,7 @@ namespace UiDesignDemo
         {
             SqlCommand command = l.connection.CreateCommand();
             command.CommandText = "SELECT * FROM dbo.patients WHERE passport=@passport";
-            command.Parameters.AddWithValue("@passport", textBox1.Text);
+            command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -96,6 +96,11 @@ namespace UiDesignDemo
                 MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
+        }
+
+        private void maskedTextBox1_Enter(object sender, EventArgs e)
+        {
+            if (maskedTextBox1.Text == "АА000000") maskedTextBox1.Clear();
         }
     }
 }

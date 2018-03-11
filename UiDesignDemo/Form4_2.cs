@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+using System.Net;
+using System.Net.Mail;
+
 using System.IO;
 
 namespace UiDesignDemo
@@ -31,7 +34,7 @@ namespace UiDesignDemo
             dateTimePicker4.Value = DateTime.Now.Date;
             begin = DateTime.Now.ToString("HH:mm");
             textBox2.Text = f.patient.Mail;
-           
+
         }
 
         private void SaveSession()
@@ -85,24 +88,64 @@ namespace UiDesignDemo
             }
         }
 
+        private void Form4_2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                end = DateTime.Now.ToString("HH:mm");
-                SaveSession();
-                SaveHistory();
 
-                MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // kuzichkaa @gmail.com"
+            //ankuzmynykh @gmail.com
+            //olusjkalike@gmail.com
+            MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+            //   MailAddress toAddress = new MailAddress(f.patient.Mail);
+            MailAddress toAddress = new MailAddress(textBox2.Text);
 
-                control = true;
-                f.Show();
-                this.Close();
-            }
-            catch
+            using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+            using (SmtpClient smtpClient = new SmtpClient())
             {
-                MessageBox.Show("Не всі поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mailMessage.Subject = "Рекомендації від приватній клініці Hospital";
+                mailMessage.Body = textBox5.Text;
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = true;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                smtpClient.Send(mailMessage);
             }
+                try
+                {
+                    end = DateTime.Now.ToString("HH:mm");
+                    SaveSession();
+                    SaveHistory();
+
+                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    control = true;
+                    f.Show();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Не всі поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+
+
+
+
+
+
+            
         }
     }
 }

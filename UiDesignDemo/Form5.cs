@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using System.Text.RegularExpressions;
+
+using System.Net;
+using System.Net.Mail;
 
 namespace UiDesignDemo
 {
@@ -19,6 +25,8 @@ namespace UiDesignDemo
         int id;
 
         bool control = false;
+        private FilterInfoCollection videoDevices;
+        private VideoCaptureDevice videoSource;
 
         public Form5(Login l)
         {
@@ -35,6 +43,7 @@ namespace UiDesignDemo
             this.id = id;
             GetDoctor();
         }
+        //main_doctor
 
         private void UploadImage()
         {
@@ -152,6 +161,31 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@password", textBox17.Text);
 
                 command.ExecuteNonQuery();
+
+                //MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //// kuzichkaa @gmail.com"
+                ////ankuzmynykh @gmail.com
+                ////olusjkalike@gmail.com
+                //MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+                ////   MailAddress toAddress = new MailAddress(f.patient.Mail);
+                //MailAddress toAddress = new MailAddress(textBox5.Text);
+
+                //using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+                //using (SmtpClient smtpClient = new SmtpClient())
+                //{
+
+                //    mailMessage.Subject = "Приватна клініка Hospital";
+                //    mailMessage.IsBodyHtml = true;
+                //    mailMessage.Body = "<h>"+textBox16.Text+"</h>" + "<br></br>"+ "<h>" + textBox17.Text + "</h>";
+                //    smtpClient.Host = "smtp.gmail.com";
+                //    smtpClient.Port = 587;
+                //    smtpClient.EnableSsl = true;
+                //    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                //    smtpClient.UseDefaultCredentials = false;
+                //    smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                //    smtpClient.Send(mailMessage);
+                //}
+
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 control = true;
@@ -178,6 +212,29 @@ namespace UiDesignDemo
         {
             if (editing) UpdateDoctor();
             else AddDoctor();
+            MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // kuzichkaa @gmail.com"
+            //ankuzmynykh @gmail.com
+            //olusjkalike@gmail.com
+            MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+            //   MailAddress toAddress = new MailAddress(f.patient.Mail);
+            MailAddress toAddress = new MailAddress(textBox5.Text);
+
+            using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+            using (SmtpClient smtpClient = new SmtpClient())
+            {
+
+                mailMessage.Subject = "Приватна клініка Hospital";
+                mailMessage.IsBodyHtml = true;
+                mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>"+ "password:" + textBox17.Text + "</h>";
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = true;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                smtpClient.Send(mailMessage);
+            }
         }
 
         private void label1_MouseClick(object sender, MouseEventArgs e)
@@ -198,5 +255,66 @@ namespace UiDesignDemo
                 e.Cancel = true;
             }
         }
+
+        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        {
+            UploadImage();
+        }
+
+        private void pictureBox2_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            UploadImage();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (pictureBox2.Image != null) //если в pictureBox есть изображение
+            {
+                //создание диалогового окна "Сохранить как..", для сохранения изображения
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Title = "Зберегти як ...";
+                //отображать ли предупреждение, если пользователь указывает имя уже существующего файла
+                savedialog.OverwritePrompt = true;
+                //отображать ли предупреждение, если пользователь указывает несуществующий путь
+                savedialog.CheckPathExists = true;
+                savedialog.FileName = textBox9.Text;
+                //список форматов файла, отображаемый в поле "Тип файла"
+                savedialog.Filter = "Image Files(*.JPG)|*.JPG|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
+                //отображается ли кнопка "Справка" в диалоговом окне
+                savedialog.ShowHelp = true;
+                if (savedialog.ShowDialog() == DialogResult.OK) //если в диалоговом окне нажата кнопка "ОК"
+                {
+                    try
+                    {
+                        pictureBox2.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Неможливо зберегти зображення", "Помилка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            videoSource = new VideoCaptureDevice(videoDevices[comboBox2.SelectedIndex].MonikerString);
+            videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
+            videoSource.Start();
+        }
+        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+            pictureBox2.Image = bitmap;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            videoSource.Stop();
+            videoSource.SignalToStop();
+            this.pictureBox2.Image.Save("123");
+        }
     }
-}
+    }
+

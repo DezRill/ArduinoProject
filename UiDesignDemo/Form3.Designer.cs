@@ -29,24 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox1.Location = new System.Drawing.Point(55, 235);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 39);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TabStop = false;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -105,6 +93,20 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 24F);
+            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.maskedTextBox1.Location = new System.Drawing.Point(55, 235);
+            this.maskedTextBox1.Mask = ">LL000000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(258, 39);
+            this.maskedTextBox1.TabIndex = 86;
+            this.maskedTextBox1.Text = "АА000000";
+            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTextBox1.Enter += new System.EventHandler(this.maskedTextBox1_Enter);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,11 +115,11 @@
             this.BackgroundImage = global::UiDesignDemo.Properties.Resources.mini1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(367, 472);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -131,11 +133,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
