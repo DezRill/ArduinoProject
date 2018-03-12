@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3_1));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,17 +80,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "ФОТО ";
             this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Verdana", 14F);
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox5.Location = new System.Drawing.Point(23, 443);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(370, 23);
-            this.textBox5.TabIndex = 12;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox6
             // 
@@ -468,6 +457,19 @@
             this.maskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBox3.Enter += new System.EventHandler(this.maskedTextBox3_Enter);
             // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Verdana", 14F);
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.textBox5.Location = new System.Drawing.Point(23, 443);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(370, 23);
+            this.textBox5.TabIndex = 12;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox5.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5_Validating);
+            this.textBox5.Validated += new System.EventHandler(this.textBox5_Validated);
+            // 
             // Form3_1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -526,7 +528,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -555,5 +556,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

@@ -27,7 +27,7 @@ namespace UiDesignDemo
 
         private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoSource;
-
+        public event CancelEventHandler Validating;
         public Form3_1(Login l)
         {
             InitializeComponent();
@@ -88,7 +88,7 @@ namespace UiDesignDemo
                     mailMessage.Body = "<h1>Дякую, що Ви обрали нас.</h1>" +
                         "<p>ВІДПОВІДАЛЬНІСТЬ - ЦЕ ГОЛОВНЕ КРЕДО КОЛЕКТИВУ «HOSPITAL» І МИ ГОТОВІ ЇЇ НЕСТИ!</p>" +
                         "<h1>ЧОМУ САМЕ HOSPITAL?</h1>" +
-                        "<b>ДЦ «HOSPITAL» почав свою діяльність 7 липня 2009 року. За роки своєї роботи наша клініка значно збільшила свої виробничі можливості, завдяки чому стало можливим виконання широкого спектру лабораторних досліджень. Високі виробничі потужності дозволили створити широку мережу маніпуляційних кабінетів для забору біоматеріалу для лабораторного обстеження. Девізом ДЦ «Hospital» є: «Якість у нас в крові». <u>Якісне лікування – запорука успішного лікування.</u></b>";
+                        "<b>ДЦ «HOSPITAL» почав свою діяльність 12 січня 2018 року. За роки своєї роботи наша клініка значно збільшила свої виробничі можливості, завдяки чому стало можливим виконання широкого спектру лабораторних досліджень. Високі виробничі потужності дозволили створити широку мережу маніпуляційних кабінетів для забору біоматеріалу для лабораторного обстеження. Девізом ДЦ «Hospital» є: «Якість у нас в крові». <u>Якісне лікування – запорука успішного лікування.</u></b>";
                     smtpClient.Host = "smtp.gmail.com";
                     smtpClient.Port = 587;
                     smtpClient.EnableSsl = true;
@@ -140,6 +140,7 @@ namespace UiDesignDemo
         private void button1_Click(object sender, EventArgs e)
         {
             AddPatient();
+            ErrorProvider.ReferenceEquals(textBox5, "");
 
             if (videoSource != null)
             {
@@ -147,7 +148,7 @@ namespace UiDesignDemo
                 videoSource.WaitForStop();
             }
 
-            
+    
 
         }
 
@@ -258,6 +259,50 @@ namespace UiDesignDemo
         private void panel2_MouseClick(object sender, MouseEventArgs e)
         {
             UploadImage();
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            //string errorMsg;
+            //if (!ValidEmailAddress(textBox5.Text, out errorMsg))
+            //{
+            //    // Cancel the event and select the text to be corrected by the user.
+            //    e.Cancel = true;
+            //    textBox5.Select(0, textBox5.Text.Length);
+
+            //    // Set the ErrorProvider error with the text to display. 
+            //   // this.errorProvider1.SetError(textBox5, errorMsg);
+            //}
+        }
+
+        private void textBox5_Validated(object sender, EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            ErrorProvider.ReferenceEquals(textBox5, "");
+           // errorProvider1.SetError(textBox5, "");
+        }
+        public bool ValidEmailAddress(string emailAddress, out string errorMessage)
+        {
+            // Confirm that the e-mail address string is not empty.
+            if (emailAddress.Length == 0)
+            {
+                errorMessage = "e-mail address is required.";
+                return false;
+            }
+
+            // Confirm that there is an "@" and a "." in the e-mail address, and in the correct order.
+            if (emailAddress.IndexOf("@") > -1)
+            {
+                if (emailAddress.IndexOf(".", emailAddress.IndexOf("@")) > emailAddress.IndexOf("@"))
+                {
+                    errorMessage = "";
+                    return true;
+                }
+            }
+
+            errorMessage = "e-mail address must be valid e-mail address format.\n" +
+               "For example 'someone@example.com' ";
+            return false;
         }
     }
 }

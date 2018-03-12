@@ -98,6 +98,11 @@ namespace UiDesignDemo
 
         }
 
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -111,8 +116,10 @@ namespace UiDesignDemo
             using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
             using (SmtpClient smtpClient = new SmtpClient())
             {
+                mailMessage.IsBodyHtml = true;
                 mailMessage.Subject = "Рекомендації від приватній клініці Hospital";
-                mailMessage.Body = textBox5.Text;
+                mailMessage.Body = "<h>РЕКОМЕНДАЦЇ ЛІКАРЯ:</h>" +
+                "<br></br>" + textBox5.Text;
                 smtpClient.Host = "smtp.gmail.com";
                 smtpClient.Port = 587;
                 smtpClient.EnableSsl = true;
