@@ -118,7 +118,7 @@ namespace UiDesignDemo
             {
                 mailMessage.IsBodyHtml = true;
                 mailMessage.Subject = "Рекомендації від приватній клініці Hospital";
-                mailMessage.Body = "<h>РЕКОМЕНДАЦЇ ЛІКАРЯ:</h>" +
+                mailMessage.Body = "<b>РЕКОМЕНДАЦЇ ЛІКАРЯ:</b>" +
                 "<br></br>" + textBox5.Text;
                 smtpClient.Host = "smtp.gmail.com";
                 smtpClient.Port = 587;
