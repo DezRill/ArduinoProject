@@ -375,12 +375,14 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(191, 428);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(348, 28);
             this.comboBox2.TabIndex = 92;
+            this.comboBox2.Visible = false;
             // 
             // button8
             // 
@@ -395,6 +397,7 @@
             this.button8.TabIndex = 91;
             this.button8.Text = "Сфотографувати";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
@@ -410,6 +413,7 @@
             this.button9.TabIndex = 90;
             this.button9.Text = "Увімкнути камеру";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Visible = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // pictureBox2
@@ -430,6 +434,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(348, 345);
             this.panel4.TabIndex = 94;
+            this.panel4.Visible = false;
             this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseClick);
             // 
             // label2

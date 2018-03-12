@@ -113,6 +113,14 @@ namespace UiDesignDemo
                 textBox11.Visible = false;
                 dateTimePicker1.Visible = true;
                 button6.Visible = true;
+                panel4.Visible = true;
+                if (videoDevices.Count>0)
+                {
+                    
+                    comboBox2.Visible = true;
+                    button8.Visible = true;
+                    button9.Visible = true;
+                }
                 isEditing = true;
             }
             else
@@ -133,6 +141,10 @@ namespace UiDesignDemo
                 textBox11.Text = dateTimePicker1.Value.Date.ToShortDateString();
                 dateTimePicker1.Visible = false;
                 button6.Visible = false;
+                panel4.Visible = false;
+                comboBox2.Visible = false;
+                button8.Visible = false;
+                button9.Visible = false;
                 isEditing = false;
             }
         }
@@ -172,11 +184,6 @@ namespace UiDesignDemo
             Switcher();
         }
 
-        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (isEditing) UploadImage();
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox5.Text != "" && textBox8.Text != "" && textBox9.Text != "")
@@ -203,11 +210,31 @@ namespace UiDesignDemo
                 MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
+            if (videoSource != null)
+            {
+                videoSource.SignalToStop();
+                videoSource.WaitForStop();
+            }
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            if (videoDevices.Count > 0)
+            {
+                foreach (FilterInfo device in videoDevices)
+                {
+                    comboBox2.Items.Add(device.Name);
+                }
 
+                comboBox2.SelectedIndex = 1;
+            }
+            else
+            {
+                comboBox2.Visible = false;
+                button8.Visible = false;
+                button9.Visible = false;
+            }
         }
 
         private void panel4_MouseClick(object sender, MouseEventArgs e)

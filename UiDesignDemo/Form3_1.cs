@@ -56,7 +56,7 @@ namespace UiDesignDemo
         private void AddPatient()
         {
             SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.patients(passport, name, birth, gender, town, phone, mail, adress, photo, reg_date) VALUES(@passport, @name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @reg_date)";
+            command.CommandText = "INSERT INTO dbo.patients(passport, name, birth, gender, town, phone, mail, adress, photo, reg_date, birth_pass) VALUES(@passport, @name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @reg_date, @birth_pass)";
             try
             {
                 command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
@@ -69,6 +69,7 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@mail", textBox5.Text);
                 command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
                 command.Parameters.AddWithValue("@reg_date", dateTimePicker2.Value.Date.ToString());
+                command.Parameters.AddWithValue("@birth_date", maskedTextBox3.Text);
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -122,16 +123,6 @@ namespace UiDesignDemo
             }
         }
 
-        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            UploadImage();
-            if (videoSource != null)
-            {
-                videoSource.SignalToStop();
-                videoSource.WaitForStop();
-            }
-        }
-
         private void label1_MouseClick(object sender, MouseEventArgs e)
         {
             UploadImage();
@@ -147,9 +138,6 @@ namespace UiDesignDemo
                 videoSource.SignalToStop();
                 videoSource.WaitForStop();
             }
-
-    
-
         }
 
         private void Form3_1_FormClosing(object sender, FormClosingEventArgs e)
@@ -159,9 +147,11 @@ namespace UiDesignDemo
                 MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
-
-          
-
+            if (videoSource != null)
+            {
+                videoSource.SignalToStop();
+                videoSource.WaitForStop();
+            }
         }
 
         private void Form3_1_Load(object sender, EventArgs e)
@@ -176,8 +166,12 @@ namespace UiDesignDemo
                 
              comboBox2.SelectedIndex = 1;
             }
-            else 
-                MessageBox.Show("Немає підключених камер!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                comboBox2.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

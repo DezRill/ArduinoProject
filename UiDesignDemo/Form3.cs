@@ -55,6 +55,7 @@ namespace UiDesignDemo
                 patient.Adress = table.Rows[0]["adress"].ToString();
                 patient.Photo = ConvertBinaryToImage((byte[])table.Rows[0]["photo"]);
                 patient.Reg_Date = Convert.ToDateTime(table.Rows[0]["reg_date"].ToString());
+                patient.Birth_Pass = table.Rows[0]["birth_pass"].ToString();
                 adapter.Dispose();
                 table.Dispose();
                 control = true;

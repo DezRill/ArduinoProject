@@ -10,7 +10,7 @@ namespace UiDesignDemo
     public class Patient
     {
         int id;
-        string passport, name, gender, town, phone, mail, adress;
+        string passport, name, gender, town, phone, mail, adress, birth_pass;
         DateTime birth, reg_date;
         Image photo;
 
@@ -78,6 +78,12 @@ namespace UiDesignDemo
         {
             set { reg_date = value; }
             get { return reg_date; }
+        }
+
+        public string Birth_Pass
+        {
+            set { birth_pass = value; }
+            get { return birth_pass; }
         }
     }
 }
