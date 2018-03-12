@@ -58,7 +58,7 @@
             this.DG1.Location = new System.Drawing.Point(12, 34);
             this.DG1.Name = "DG1";
             this.DG1.ReadOnly = true;
-            this.DG1.Size = new System.Drawing.Size(1289, 374);
+            this.DG1.Size = new System.Drawing.Size(1289, 636);
             this.DG1.TabIndex = 6;
             // 
             // label1
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 420);
+            this.ClientSize = new System.Drawing.Size(1308, 682);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DG1);
             this.Controls.Add(this.button5);

@@ -227,7 +227,7 @@ namespace UiDesignDemo
                     comboBox2.Items.Add(device.Name);
                 }
 
-                comboBox2.SelectedIndex = 1;
+                comboBox2.SelectedIndex = 0;
             }
             else
             {

@@ -375,10 +375,11 @@
             // 
             // dateTimePicker3
             // 
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(329, 161);
+            this.dateTimePicker3.Location = new System.Drawing.Point(329, 154);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(202, 20);
+            this.dateTimePicker3.Size = new System.Drawing.Size(212, 29);
             this.dateTimePicker3.TabIndex = 131;
             // 
             // comboBox1
