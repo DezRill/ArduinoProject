@@ -66,10 +66,11 @@ namespace UiDesignDemo
         private void SaveHistory()
         {
             SqlCommand command = f.l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end, inspection, direction) VALUES (@patient_id, @doctor_name, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end, @inspection, @direction)";
+            command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, doctor_position, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end, inspection, direction) VALUES (@patient_id, @doctor_name, @doctor_position, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end, @inspection, @direction)";
 
             command.Parameters.AddWithValue("@patient_id", f.patient.Id);
             command.Parameters.AddWithValue("@doctor_name", f.l.doc.Name);
+            command.Parameters.AddWithValue("@doctor_position", f.l.doc.Position);
             command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
             command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
             command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));

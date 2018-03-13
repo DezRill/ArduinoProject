@@ -41,9 +41,10 @@ namespace UiDesignDemo
         private void SaveHistory()
         {
             SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(doctor_name, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis) VALUES (@doctor_name, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis)";
+            command.CommandText = "INSERT INTO dbo.history(doctor_name, doctor_position, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis) VALUES (@doctor_name, @doctor_position, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis)";
 
             command.Parameters.AddWithValue("@doctor_name", l.doc.Name);
+            command.Parameters.AddWithValue("@doctor_position", l.doc.Position);
             command.Parameters.AddWithValue("@name", textBox11.Text);
             command.Parameters.AddWithValue("@birth", dateTimePicker3.Value.Date.ToString());
             command.Parameters.AddWithValue("@email", textBox13.Text);
@@ -76,9 +77,10 @@ namespace UiDesignDemo
                 frm.Show();
                 this.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Не всі поля заповнено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Не всі поля заповнено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message+"\n\nВася, доповни інтерфейс, я почіню", ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

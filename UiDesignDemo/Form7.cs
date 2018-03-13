@@ -27,7 +27,7 @@ namespace UiDesignDemo
         private void GetHistory(int id)
         {
             SqlCommand command = f.l.connection.CreateCommand();
-            command.CommandText = "SELECT temperature AS Температура, oxygen AS [Рівень кисню], pressure AS [Артеріальний тиск], growth AS Ріст, weight AS Вага, symptoms AS Симптоми, diagnosis AS Діагноз, recommendations AS Рекомендації, doctor_name AS [Лікар, який поставив діагноз], position AS [Посада лікаря], date AS [Дата, коли був поставлений діагноз], hos_begin AS [Початок лікарняного], hos_end AS [Кінець лікарняного] FROM dbo.history INNER JOIN dbo.sessions ON dbo.history.patient_id=dbo.sessions.patient_id WHERE dbo.history.patient_id=@patient_id";
+            command.CommandText = "SELECT temperature AS Температура, oxygen AS [Рівень кисню], pressure AS [Артеріальний тиск], growth AS Ріст, weight AS Вага, symptoms AS Симптоми, diagnosis AS Діагноз, recommendations AS Рекомендації, doctor_name AS [Лікар, який поставив діагноз], doctor_position AS [Посада лікаря], date AS [Дата, коли був поставлений діагноз], hos_begin AS [Початок лікарняного], hos_end AS [Кінець лікарняного] FROM dbo.history INNER JOIN dbo.sessions ON dbo.history.patient_id=dbo.sessions.patient_id WHERE dbo.history.patient_id=@patient_id";
             command.Parameters.AddWithValue("@patient_id", id);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
