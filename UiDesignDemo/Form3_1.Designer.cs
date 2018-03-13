@@ -43,7 +43,6 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,13 +60,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -232,17 +227,6 @@
             this.label12.Size = new System.Drawing.Size(186, 22);
             this.label12.TabIndex = 29;
             this.label12.Text = "Номер паспорта:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(431, 487);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(370, 22);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Номер свідоцтва про народження:";
             // 
             // pictureBox2
             // 
@@ -448,20 +432,6 @@
             this.maskedTextBox2.TabIndex = 86;
             this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox3.Font = new System.Drawing.Font("Verdana", 14F);
-            this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.maskedTextBox3.Location = new System.Drawing.Point(435, 522);
-            this.maskedTextBox3.Mask = ">LL000000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(371, 23);
-            this.maskedTextBox3.TabIndex = 87;
-            this.maskedTextBox3.Text = "АА000000";
-            this.maskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.maskedTextBox3.Enter += new System.EventHandler(this.maskedTextBox3_Enter);
-            // 
             // textBox5
             // 
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -472,8 +442,6 @@
             this.textBox5.Size = new System.Drawing.Size(370, 23);
             this.textBox5.TabIndex = 12;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox5.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5_Validating);
-            this.textBox5.Validated += new System.EventHandler(this.textBox5_Validated);
             // 
             // maskedTextBox4
             // 
@@ -481,7 +449,7 @@
             this.maskedTextBox4.Font = new System.Drawing.Font("Verdana", 14F);
             this.maskedTextBox4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.maskedTextBox4.Location = new System.Drawing.Point(435, 441);
-            this.maskedTextBox4.Mask = "00000000";
+            this.maskedTextBox4.Mask = "000000000";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(371, 23);
             this.maskedTextBox4.TabIndex = 89;
@@ -499,47 +467,13 @@
             this.label6.TabIndex = 88;
             this.label6.Text = "ID номер паспорта:";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.checkBox1.Location = new System.Drawing.Point(811, 364);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 90;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.checkBox2.Location = new System.Drawing.Point(811, 447);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 91;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.checkBox3.Location = new System.Drawing.Point(812, 526);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 92;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
             // Form3_1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1248, 640);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.maskedTextBox4);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.maskedTextBox3);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.button4);
@@ -549,7 +483,6 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox10);
@@ -607,7 +540,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -620,12 +552,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
     }
 }

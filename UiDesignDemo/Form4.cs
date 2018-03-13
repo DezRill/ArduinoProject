@@ -114,9 +114,9 @@ namespace UiDesignDemo
                 dateTimePicker1.Visible = true;
                 button6.Visible = true;
                 panel4.Visible = true;
-                if (videoDevices.Count>0)
+                if (videoDevices.Count > 0)
                 {
-                    
+
                     comboBox2.Visible = true;
                     button8.Visible = true;
                     button9.Visible = true;
@@ -271,5 +271,5 @@ namespace UiDesignDemo
             this.pictureBox2.Image.Save("123");
         }
     }
-    }
+}
 
