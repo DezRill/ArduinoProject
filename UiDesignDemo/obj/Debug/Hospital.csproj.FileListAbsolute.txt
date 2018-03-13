@@ -94,10 +94,8 @@ D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDem
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.exe
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.All_doctors.resources
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.diagnoses.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Diagram.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form2.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form3.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form3_1.resources
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form4.resources
@@ -115,8 +113,6 @@ D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.cs
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form11.resources
-D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.exe.config
 D:\Programs\C#\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.exe
 D:\Programs\C#\ArduinoProject\UiDesignDemo\bin\Debug\UiDesignDemo.pdb
@@ -141,3 +137,5 @@ D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.S
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.GenerateResource.Cache
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\ru\Microsoft.VisualStudio.DebuggerVisualizers.resources.dll

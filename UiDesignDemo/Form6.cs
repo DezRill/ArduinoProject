@@ -93,6 +93,11 @@ namespace UiDesignDemo
             }
         }
 
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button15_Click(object sender, EventArgs e)
         {
             control = true;
