@@ -23,6 +23,22 @@ namespace UiDesignDemo
             InitializeComponent();
             this.l = l;
             begin = DateTime.Now.ToString("HH:mm");
+            GetDoctors();
+        }
+
+        private void GetDoctors()
+        {
+            SqlCommand command = l.connection.CreateCommand();
+            command.CommandText = "SELECT position FROM dbo.doctors GROUP BY position";
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                comboBox2.Items.Add(table.Rows[i]["position"].ToString());
+            }
+            comboBox2.SelectedIndex = 0;
         }
 
         private void SaveSession()
@@ -41,7 +57,7 @@ namespace UiDesignDemo
         private void SaveHistory()
         {
             SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(doctor_name, doctor_position, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis) VALUES (@doctor_name, @doctor_position, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis)";
+            command.CommandText = "INSERT INTO dbo.history(doctor_name, doctor_position, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, inspection, direction) VALUES (@doctor_name, @doctor_position, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @inspection, @direction)";
 
             command.Parameters.AddWithValue("@doctor_name", l.doc.Name);
             command.Parameters.AddWithValue("@doctor_position", l.doc.Position);
@@ -49,14 +65,22 @@ namespace UiDesignDemo
             command.Parameters.AddWithValue("@birth", dateTimePicker3.Value.Date.ToString());
             command.Parameters.AddWithValue("@email", textBox13.Text);
             command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-            command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
-            command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
-            command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));
-            command.Parameters.AddWithValue("@growth", Convert.ToDouble(textBox10.Text));
-            command.Parameters.AddWithValue("@weight", Convert.ToDouble(textBox8.Text));
+            if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
+            else command.Parameters.AddWithValue("@temperature", "");
+            if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
+            else command.Parameters.AddWithValue("@oxygen", "");
+            if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));
+            else command.Parameters.AddWithValue("@pressure", "");
+            if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", Convert.ToDouble(textBox10.Text));
+            else command.Parameters.AddWithValue("@growth", "");
+            if (textBox8.Text != "") command.Parameters.AddWithValue("weight", Convert.ToDouble(textBox8.Text));
+            else command.Parameters.AddWithValue("weight", "");
             command.Parameters.AddWithValue("@symptoms", textBox2.Text);
             command.Parameters.AddWithValue("@recommendations", textBox3.Text);
             command.Parameters.AddWithValue("diagnosis", textBox9.Text);
+            command.Parameters.AddWithValue("@inspection", textBox1.Text);
+            if (checkBox1.Checked) command.Parameters.AddWithValue("@direction", comboBox2.SelectedItem.ToString());
+            else command.Parameters.AddWithValue("@direction", "");
 
             command.ExecuteNonQuery();
 
@@ -77,10 +101,9 @@ namespace UiDesignDemo
                 frm.Show();
                 this.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                //MessageBox.Show("Не всі поля заповнено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show(ex.Message+"\n\nВася, доповни інтерфейс, я почіню", ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Не всі обов'язкові поля заповнено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -93,9 +116,10 @@ namespace UiDesignDemo
             }
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBox1.Checked) comboBox2.Enabled = true;
+            else comboBox2.Enabled = false;
         }
 
         private void button15_Click(object sender, EventArgs e)

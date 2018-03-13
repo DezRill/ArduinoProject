@@ -18,7 +18,6 @@ namespace UiDesignDemo
     {
         Form4 f;
         string begin, end;
-        public Patient patient;
 
         bool control = false;
 
@@ -61,6 +60,7 @@ namespace UiDesignDemo
             {
                 comboBox1.Items.Add(table.Rows[i]["position"].ToString());
             }
+            comboBox1.SelectedIndex = 0;
         }
 
         private void SaveHistory()
@@ -71,11 +71,16 @@ namespace UiDesignDemo
             command.Parameters.AddWithValue("@patient_id", f.patient.Id);
             command.Parameters.AddWithValue("@doctor_name", f.l.doc.Name);
             command.Parameters.AddWithValue("@doctor_position", f.l.doc.Position);
-            command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
-            command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
-            command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));
-            command.Parameters.AddWithValue("@growth", Convert.ToDouble(textBox10.Text));
-            command.Parameters.AddWithValue("weight", Convert.ToDouble(textBox8.Text));
+            if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
+            else command.Parameters.AddWithValue("@temperature", "");
+            if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
+            else command.Parameters.AddWithValue("@oxygen", "");
+            if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));
+            else command.Parameters.AddWithValue("@pressure", "");
+            if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", Convert.ToDouble(textBox10.Text));
+            else command.Parameters.AddWithValue("@growth", "");
+            if (textBox8.Text != "") command.Parameters.AddWithValue("weight", Convert.ToDouble(textBox8.Text));
+            else command.Parameters.AddWithValue("weight", "");
             command.Parameters.AddWithValue("@symptoms", textBox1.Text);
             command.Parameters.AddWithValue("@recommendations", textBox5.Text);
             command.Parameters.AddWithValue("@diagnosis", textBox9.Text);
@@ -148,7 +153,7 @@ namespace UiDesignDemo
             }
             catch
             {
-                MessageBox.Show("Не всі поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Не всі обов'язкові поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

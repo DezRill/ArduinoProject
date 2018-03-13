@@ -32,6 +32,7 @@ namespace UiDesignDemo
         {
             InitializeComponent();
             this.l = l;
+            this.Text = "Створення нового лікаря";
         }
 
         public Form5(Login l, int id)
@@ -42,8 +43,9 @@ namespace UiDesignDemo
             label1.Visible = false;
             this.id = id;
             GetDoctor();
+            this.Text = "Редагування лікаря";
         }
-        
+
         private bool CheckLogAndPass()
         {
             SqlCommand command = l.connection.CreateCommand();
@@ -93,7 +95,7 @@ namespace UiDesignDemo
             DataTable table = new DataTable();
             adapter.Fill(table);
 
-            dateTimePicker1.Value=Convert.ToDateTime(table.Rows[0]["invite_date"].ToString());
+            dateTimePicker1.Value = Convert.ToDateTime(table.Rows[0]["invite_date"].ToString());
             textBox6.Text = table.Rows[0]["name"].ToString();
             dateTimePicker2.Value = Convert.ToDateTime(table.Rows[0]["birth"].ToString());
             comboBox1.SelectedItem = table.Rows[0]["gender"].ToString();
@@ -222,7 +224,7 @@ namespace UiDesignDemo
 
                 mailMessage.Subject = "Приватна клініка Hospital";
                 mailMessage.IsBodyHtml = true;
-                mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>"+ "password:" + textBox17.Text + "</h>";
+                mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
                 smtpClient.Host = "smtp.gmail.com";
                 smtpClient.Port = 587;
                 smtpClient.EnableSsl = true;
@@ -238,11 +240,6 @@ namespace UiDesignDemo
             UploadImage();
         }
 
-        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            UploadImage();
-        }
-
         private void Form5_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing && !control)
@@ -253,11 +250,6 @@ namespace UiDesignDemo
         }
 
         private void panel2_MouseClick(object sender, MouseEventArgs e)
-        {
-            UploadImage();
-        }
-
-        private void pictureBox2_MouseClick_1(object sender, MouseEventArgs e)
         {
             UploadImage();
         }
@@ -312,5 +304,5 @@ namespace UiDesignDemo
             this.pictureBox2.Image.Save("123");
         }
     }
-    }
+}
 

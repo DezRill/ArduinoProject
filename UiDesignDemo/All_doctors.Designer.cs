@@ -277,7 +277,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "All_doctors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "All_doctors";
+            this.Text = "Профіль лікаря";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.All_doctors_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

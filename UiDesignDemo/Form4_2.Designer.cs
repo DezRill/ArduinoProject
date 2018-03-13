@@ -479,7 +479,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form4_2";
+            this.Text = "Огляд пацієнта";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_2_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -117,7 +117,6 @@
             this.label10.Size = new System.Drawing.Size(168, 23);
             this.label10.TabIndex = 83;
             this.label10.Text = "Рекомендації:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBox8
             // 
@@ -128,6 +127,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(119, 20);
             this.textBox8.TabIndex = 82;
+            this.textBox8.Text = "Експрес-огляд";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
@@ -452,6 +452,7 @@
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 141;
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // comboBox2
             // 

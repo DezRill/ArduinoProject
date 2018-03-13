@@ -42,7 +42,7 @@ namespace UiDesignDemo
             }
         }
 
-        private bool CheckPassports()
+        private bool CheckPassport()
         {
             SqlCommand command = l.connection.CreateCommand();
             command.CommandText = "SELECT id FROM dbo.patients WHERE passport=@passport";
@@ -83,7 +83,7 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
                 command.Parameters.AddWithValue("@reg_date", dateTimePicker2.Value.Date.ToString());
 
-                if (CheckPassports())
+                if (CheckPassport())
                 {
                     command.ExecuteNonQuery();
                     MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
