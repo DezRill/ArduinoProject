@@ -124,11 +124,8 @@ D:\Programs\C#\ArduinoProject\UiDesignDemo\bin\Debug\Microsoft.VisualStudio.Debu
 D:\Programs\C#\ArduinoProject\UiDesignDemo\bin\Debug\ru\Microsoft.VisualStudio.DebuggerVisualizers.resources.dll
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.All_doctors.resources
-D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.diagnoses.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Diagram.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form1.resources
-D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form11.resources
-D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form2.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form3.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form3_1.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form4.resources
@@ -142,6 +139,5 @@ D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Properties.Res
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.FirstUC.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.UserControls.SecondUC.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.GenerateResource.Cache
-D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb

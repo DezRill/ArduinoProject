@@ -56,11 +56,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(45, 199);
+            this.label1.Location = new System.Drawing.Point(12, 197);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 18);
+            this.label1.Size = new System.Drawing.Size(350, 18);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Введуть номер паспорта для пошуку:";
+            this.label1.Text = "Введуть номер або id паспорта для пошуку:";
             // 
             // button2
             // 
@@ -99,11 +99,10 @@
             this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 24F);
             this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.maskedTextBox1.Location = new System.Drawing.Point(55, 235);
-            this.maskedTextBox1.Mask = ">LL000000";
+            this.maskedTextBox1.Mask = ">AA0000009";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(258, 39);
             this.maskedTextBox1.TabIndex = 86;
-            this.maskedTextBox1.Text = "АА000000";
             this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBox1.Enter += new System.EventHandler(this.maskedTextBox1_Enter);
             // 

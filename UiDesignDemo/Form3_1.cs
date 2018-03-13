@@ -45,9 +45,9 @@ namespace UiDesignDemo
         private bool CheckPassports()
         {
             SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "SELECT id FROM dbo.patients WHERE passport=@passport OR pass_id=@pass_id";
-            command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
-            command.Parameters.AddWithValue("@pass_id", maskedTextBox4.Text);
+            command.CommandText = "SELECT id FROM dbo.patients WHERE passport=@passport";
+            if (checkBox1.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
+            else if (checkBox2.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox4.Text);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -68,10 +68,11 @@ namespace UiDesignDemo
         private void AddPatient()
         {
             SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.patients(passport, name, birth, gender, town, phone, mail, adress, photo, reg_date, pass_id) VALUES(@passport, @name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @reg_date, @pass_id)";
+            command.CommandText = "INSERT INTO dbo.patients(passport, name, birth, gender, town, phone, mail, adress, photo, reg_date) VALUES(@passport, @name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @reg_date)";
             try
             {
-                command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
+                if (checkBox1.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
+                else if (checkBox2.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox4.Text);
                 command.Parameters.AddWithValue("@name", textBox6.Text);
                 command.Parameters.AddWithValue("@birth", dateTimePicker1.Value.Date.ToString());
                 command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
@@ -81,49 +82,38 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@mail", textBox5.Text);
                 command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
                 command.Parameters.AddWithValue("@reg_date", dateTimePicker2.Value.Date.ToString());
-                command.Parameters.AddWithValue("@pass_id", maskedTextBox4.Text);
 
-                if (maskedTextBox1.Text=="" && maskedTextBox4.Text=="")
+                if (CheckPassports())
                 {
-                    MessageBox.Show("Необхідно ввести номер паспорта або ID паспорта!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (CheckPassports())
-                    {
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
-                        MailAddress toAddress = new MailAddress(textBox5.Text);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+                    MailAddress toAddress = new MailAddress(textBox5.Text);
 
-                        using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
-                        using (SmtpClient smtpClient = new SmtpClient())
-                        {
-
-                            mailMessage.Subject = "Приватна клініка Hospital";
-                            mailMessage.IsBodyHtml = true;
-                            mailMessage.Body = "<h1>Дякую, що Ви обрали нас.</h1>" +
-                                "<p>ВІДПОВІДАЛЬНІСТЬ - ЦЕ ГОЛОВНЕ КРЕДО КОЛЕКТИВУ «HOSPITAL» І МИ ГОТОВІ ЇЇ НЕСТИ!</p>" +
-                                "<h1>ЧОМУ САМЕ HOSPITAL?</h1>" +
-                                "<b>ДЦ «HOSPITAL» почав свою діяльність 12 січня 2018 року. За роки своєї роботи наша клініка значно збільшила свої виробничі можливості, завдяки чому стало можливим виконання широкого спектру лабораторних досліджень. Високі виробничі потужності дозволили створити широку мережу маніпуляційних кабінетів для забору біоматеріалу для лабораторного обстеження. Девізом ДЦ «Hospital» є: «Якість у нас в крові». <u>Якісне лікування – запорука успішного лікування.</u></b>";
-                            smtpClient.Host = "smtp.gmail.com";
-                            smtpClient.Port = 587;
-                            smtpClient.EnableSsl = true;
-                            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                            smtpClient.UseDefaultCredentials = false;
-                            smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
-                            smtpClient.Send(mailMessage);
-                        }
-                        control = true;
-                        Form1 frm = new Form1(l);
-                        frm.Show();
-                        this.Close();
-                    }
-                    else
+                    using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+                    using (SmtpClient smtpClient = new SmtpClient())
                     {
-                        MessageBox.Show("Такий пацієнт вже існує!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        mailMessage.Subject = "Приватна клініка Hospital";
+                        mailMessage.IsBodyHtml = true;
+                        mailMessage.Body = "<h1>Дякую, що Ви обрали нас.</h1>" +
+                            "<p>ВІДПОВІДАЛЬНІСТЬ - ЦЕ ГОЛОВНЕ КРЕДО КОЛЕКТИВУ «HOSPITAL» І МИ ГОТОВІ ЇЇ НЕСТИ!</p>" +
+                            "<h1>ЧОМУ САМЕ HOSPITAL?</h1>" +
+                            "<b>ДЦ «HOSPITAL» почав свою діяльність 12 січня 2018 року. За роки своєї роботи наша клініка значно збільшила свої виробничі можливості, завдяки чому стало можливим виконання широкого спектру лабораторних досліджень. Високі виробничі потужності дозволили створити широку мережу маніпуляційних кабінетів для забору біоматеріалу для лабораторного обстеження. Девізом ДЦ «Hospital» є: «Якість у нас в крові». <u>Якісне лікування – запорука успішного лікування.</u></b>";
+                        smtpClient.Host = "smtp.gmail.com";
+                        smtpClient.Port = 587;
+                        smtpClient.EnableSsl = true;
+                        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtpClient.UseDefaultCredentials = false;
+                        smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                        smtpClient.Send(mailMessage);
                     }
+                    control = true;
+                    Form1 frm = new Form1(l);
+                    frm.Show();
+                    this.Close();
                 }
+                else MessageBox.Show("Такий пацієнт вже існує!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch
             {
@@ -277,6 +267,36 @@ namespace UiDesignDemo
             errorMessage = "e-mail address must be valid e-mail address format.\n" +
                "For example 'someone@example.com' ";
             return false;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+                maskedTextBox1.Enabled = true;
+                maskedTextBox4.Enabled = false;
+            }
+            else
+            {
+                maskedTextBox1.Enabled = false;
+                maskedTextBox4.Enabled = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+                maskedTextBox1.Enabled = false;
+                maskedTextBox4.Enabled = true;
+            }
+            else
+            {
+                maskedTextBox1.Enabled = false;
+                maskedTextBox4.Enabled = false;
+            }
         }
     }
 }

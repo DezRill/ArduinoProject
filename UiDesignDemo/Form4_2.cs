@@ -12,15 +12,12 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 
-using System.IO;
-
 namespace UiDesignDemo
 {
     public partial class Form4_2 : Form
     {
         Form4 f;
         string begin, end;
-        public Login l;
         public Patient patient;
 
         bool control = false;
@@ -34,6 +31,7 @@ namespace UiDesignDemo
             dateTimePicker4.Value = DateTime.Now.Date;
             begin = DateTime.Now.ToString("HH:mm");
             textBox2.Text = f.patient.Mail;
+            GetDoctors();
 
         }
 
@@ -51,10 +49,24 @@ namespace UiDesignDemo
             command.ExecuteNonQuery();
         }
 
+        private void GetDoctors()
+        {
+            SqlCommand command = f.l.connection.CreateCommand();
+            command.CommandText = "SELECT position FROM dbo.doctors GROUP BY position";
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                comboBox1.Items.Add(table.Rows[i]["position"].ToString());
+            }
+        }
+
         private void SaveHistory()
         {
             SqlCommand command = f.l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end) VALUES (@patient_id, @doctor_name, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end)";
+            command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end, inspection, direction) VALUES (@patient_id, @doctor_name, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end, @inspection, @direction)";
 
             command.Parameters.AddWithValue("@patient_id", f.patient.Id);
             command.Parameters.AddWithValue("@doctor_name", f.l.doc.Name);
@@ -68,6 +80,9 @@ namespace UiDesignDemo
             command.Parameters.AddWithValue("@diagnosis", textBox9.Text);
             command.Parameters.AddWithValue("@hos_begin", dateTimePicker3.Value.Date.ToString());
             command.Parameters.AddWithValue("@hos_end", dateTimePicker4.Value.Date.ToString());
+            command.Parameters.AddWithValue("@inspection", textBox3.Text);
+            if (checkBox1.Checked) command.Parameters.AddWithValue("@direction", comboBox1.SelectedItem.ToString());
+            else command.Parameters.AddWithValue("@direction", "");
 
             command.ExecuteNonQuery();
         }
@@ -88,34 +103,19 @@ namespace UiDesignDemo
             }
         }
 
-        private void Form4_2_Load(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            if (checkBox1.Checked)
+            {
+                comboBox1.Enabled = true;
+            }
+            else comboBox1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // kuzichkaa @gmail.com"
-            //ankuzmynykh @gmail.com
-            //olusjkalike@gmail.com
             MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
-            //   MailAddress toAddress = new MailAddress(f.patient.Mail);
             MailAddress toAddress = new MailAddress(textBox2.Text);
 
             using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
@@ -133,31 +133,22 @@ namespace UiDesignDemo
                 smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
                 smtpClient.Send(mailMessage);
             }
-                try
-                {
-                    end = DateTime.Now.ToString("HH:mm");
-                    SaveSession();
-                    SaveHistory();
+            try
+            {
+                end = DateTime.Now.ToString("HH:mm");
+                SaveSession();
+                SaveHistory();
 
-                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    control = true;
-                    f.Show();
-                    this.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Не всі поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-
-
-
-
-
-
-            
+                control = true;
+                f.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не всі поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

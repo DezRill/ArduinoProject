@@ -143,12 +143,6 @@
     <Compile Include="All_doctors.Designer.cs">
       <DependentUpon>All_doctors.cs</DependentUpon>
     </Compile>
-    <Compile Include="diagnoses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="diagnoses.Designer.cs">
-      <DependentUpon>diagnoses.cs</DependentUpon>
-    </Compile>
     <Compile Include="Diagram.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,18 +154,6 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form11.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form11.Designer.cs">
-      <DependentUpon>Form11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
@@ -245,20 +227,11 @@
     <EmbeddedResource Include="All_doctors.resx">
       <DependentUpon>All_doctors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="diagnoses.resx">
-      <DependentUpon>diagnoses.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Diagram.resx">
       <DependentUpon>Diagram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form11.resx">
-      <DependentUpon>Form11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>

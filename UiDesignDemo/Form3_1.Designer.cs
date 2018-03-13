@@ -63,6 +63,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -409,6 +411,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox1.Enabled = false;
             this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 14F);
             this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.maskedTextBox1.Location = new System.Drawing.Point(434, 358);
@@ -446,6 +449,7 @@
             // maskedTextBox4
             // 
             this.maskedTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox4.Enabled = false;
             this.maskedTextBox4.Font = new System.Drawing.Font("Verdana", 14F);
             this.maskedTextBox4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.maskedTextBox4.Location = new System.Drawing.Point(435, 441);
@@ -467,11 +471,33 @@
             this.label6.TabIndex = 88;
             this.label6.Text = "ID номер паспорта:";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(812, 363);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 90;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(812, 446);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 91;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // Form3_1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1248, 640);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.maskedTextBox4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.maskedTextBox2);
@@ -555,5 +581,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

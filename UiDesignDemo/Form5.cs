@@ -43,7 +43,19 @@ namespace UiDesignDemo
             this.id = id;
             GetDoctor();
         }
-        //main_doctor
+        
+        private bool CheckLogAndPass()
+        {
+            SqlCommand command = l.connection.CreateCommand();
+            command.CommandText = "SELECT id FROM dbo.doctors WHERE login=@login";
+            command.Parameters.AddWithValue("@login", textBox16.Text);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0) return false;
+            else return true;
+        }
 
         private void UploadImage()
         {
@@ -122,13 +134,17 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@login", textBox16.Text);
                 command.Parameters.AddWithValue("@password", textBox17.Text);
 
-                command.ExecuteNonQuery();
-                MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (CheckLogAndPass())
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                control = true;
-                Form8 frm = new Form8(l);
-                frm.Show();
-                this.Close();
+                    control = true;
+                    Form8 frm = new Form8(l);
+                    frm.Show();
+                    this.Close();
+                }
+                else MessageBox.Show("Такий лікар вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch
             {
@@ -160,38 +176,18 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@login", textBox16.Text);
                 command.Parameters.AddWithValue("@password", textBox17.Text);
 
-                command.ExecuteNonQuery();
+                if (CheckLogAndPass())
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //// kuzichkaa @gmail.com"
-                ////ankuzmynykh @gmail.com
-                ////olusjkalike@gmail.com
-                //MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
-                ////   MailAddress toAddress = new MailAddress(f.patient.Mail);
-                //MailAddress toAddress = new MailAddress(textBox5.Text);
+                    control = true;
+                    Form8 frm = new Form8(l);
+                    frm.Show();
+                    this.Close();
+                }
+                else MessageBox.Show("Такий лікар вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                //using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
-                //using (SmtpClient smtpClient = new SmtpClient())
-                //{
-
-                //    mailMessage.Subject = "Приватна клініка Hospital";
-                //    mailMessage.IsBodyHtml = true;
-                //    mailMessage.Body = "<h>"+textBox16.Text+"</h>" + "<br></br>"+ "<h>" + textBox17.Text + "</h>";
-                //    smtpClient.Host = "smtp.gmail.com";
-                //    smtpClient.Port = 587;
-                //    smtpClient.EnableSsl = true;
-                //    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                //    smtpClient.UseDefaultCredentials = false;
-                //    smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
-                //    smtpClient.Send(mailMessage);
-                //}
-
-                MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                control = true;
-                Form8 frm = new Form8(l);
-                frm.Show();
-                this.Close();
             }
             catch
             {

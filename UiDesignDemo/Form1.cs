@@ -55,7 +55,9 @@ namespace UiDesignDemo
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var message = MessageBox.Show("Ви дійсно хочете вийти?", "Попередження", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (message == DialogResult.Yes) Application.Exit();
+            else return;
         }
 
         private void button17_Click_1(object sender, EventArgs e)
@@ -85,6 +87,13 @@ namespace UiDesignDemo
                 MessageBox.Show("Заборонено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
+        }
+
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+            var message = MessageBox.Show("Ви дійсно хочете вийти?", "Попередження", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (message == DialogResult.Yes) Application.Exit();
+            else return;
         }
     }
 }
