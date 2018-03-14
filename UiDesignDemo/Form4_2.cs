@@ -118,6 +118,48 @@ namespace UiDesignDemo
             else comboBox1.Enabled = false;
         }
 
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox7.Text.IndexOf(",") == -1) && (textBox7.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox6.Text.IndexOf(",") == -1) && (textBox6.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox10.Text.IndexOf(",") == -1) && (textBox10.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox8.Text.IndexOf(",") == -1) && (textBox8.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '/') && (textBox7.Text.IndexOf("/") == -1) && (textBox7.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+    
+
         private void button1_Click(object sender, EventArgs e)
         {
 

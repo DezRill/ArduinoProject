@@ -97,231 +97,231 @@
             // textBox10
             // 
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox10.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox10.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox10.Location = new System.Drawing.Point(17, 399);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(277, 33);
+            this.textBox10.Size = new System.Drawing.Size(301, 24);
             this.textBox10.TabIndex = 52;
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label11.Location = new System.Drawing.Point(12, 449);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(266, 25);
+            this.label11.Size = new System.Drawing.Size(199, 18);
             this.label11.TabIndex = 51;
             this.label11.Text = "Адреса проживання:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Location = new System.Drawing.Point(12, 519);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(222, 25);
+            this.label10.Size = new System.Drawing.Size(167, 18);
             this.label10.TabIndex = 50;
             this.label10.Text = "Номер телефона:";
             // 
             // textBox9
             // 
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox9.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox9.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox9.Location = new System.Drawing.Point(18, 687);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(277, 33);
+            this.textBox9.Size = new System.Drawing.Size(301, 24);
             this.textBox9.TabIndex = 49;
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox8
             // 
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox8.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox8.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox8.Location = new System.Drawing.Point(17, 483);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(277, 33);
+            this.textBox8.Size = new System.Drawing.Size(301, 24);
             this.textBox8.TabIndex = 48;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label9.Location = new System.Drawing.Point(12, 299);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 25);
+            this.label9.Size = new System.Drawing.Size(63, 18);
             this.label9.TabIndex = 47;
             this.label9.Text = "Стать:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(12, 81);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(335, 25);
+            this.label8.Size = new System.Drawing.Size(247, 18);
             this.label8.TabIndex = 46;
             this.label8.Text = "Дата прийняття на роботу:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Location = new System.Drawing.Point(12, 227);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(236, 25);
+            this.label7.Size = new System.Drawing.Size(177, 18);
             this.label7.TabIndex = 45;
             this.label7.Text = "Дата народження:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(13, 653);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(216, 25);
+            this.label6.Size = new System.Drawing.Size(161, 18);
             this.label6.TabIndex = 44;
             this.label6.Text = "Номер паспорта:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(12, 371);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(244, 25);
+            this.label5.Size = new System.Drawing.Size(181, 18);
             this.label5.TabIndex = 43;
             this.label5.Text = "Місто проживання:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(12, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 25);
+            this.label4.Size = new System.Drawing.Size(42, 18);
             this.label4.TabIndex = 42;
             this.label4.Text = "ПІП";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(13, 582);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 25);
+            this.label3.Size = new System.Drawing.Size(60, 18);
             this.label3.TabIndex = 41;
             this.label3.Text = "Email:";
             // 
             // textBox6
             // 
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox6.Location = new System.Drawing.Point(17, 181);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(277, 33);
+            this.textBox6.Size = new System.Drawing.Size(301, 24);
             this.textBox6.TabIndex = 38;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox5
             // 
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox5.Location = new System.Drawing.Point(18, 607);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(277, 33);
+            this.textBox5.Size = new System.Drawing.Size(301, 24);
             this.textBox5.TabIndex = 37;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox2.Location = new System.Drawing.Point(17, 546);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 33);
+            this.textBox2.Size = new System.Drawing.Size(301, 24);
             this.textBox2.TabIndex = 34;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox11
             // 
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox11.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox11.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox11.Location = new System.Drawing.Point(376, 113);
+            this.textBox11.Location = new System.Drawing.Point(384, 113);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(277, 33);
+            this.textBox11.Size = new System.Drawing.Size(301, 24);
             this.textBox11.TabIndex = 55;
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(371, 85);
+            this.label12.Location = new System.Drawing.Point(379, 85);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(210, 25);
+            this.label12.Size = new System.Drawing.Size(154, 18);
             this.label12.TabIndex = 54;
             this.label12.Text = "Номер диплома:";
             // 
             // textBox13
             // 
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox13.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox13.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox13.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox13.Location = new System.Drawing.Point(376, 186);
+            this.textBox13.Location = new System.Drawing.Point(384, 186);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(277, 33);
+            this.textBox13.Size = new System.Drawing.Size(301, 24);
             this.textBox13.TabIndex = 59;
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(371, 158);
+            this.label14.Location = new System.Drawing.Point(379, 158);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(189, 25);
+            this.label14.Size = new System.Drawing.Size(139, 18);
             this.label14.TabIndex = 58;
             this.label14.Text = "Спеціальність:";
             // 
             // textBox15
             // 
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox15.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox15.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.textBox15.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.textBox15.Location = new System.Drawing.Point(376, 261);
+            this.textBox15.Location = new System.Drawing.Point(384, 261);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(277, 33);
+            this.textBox15.Size = new System.Drawing.Size(301, 24);
             this.textBox15.TabIndex = 63;
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(371, 233);
+            this.label16.Location = new System.Drawing.Point(379, 233);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 25);
+            this.label16.Size = new System.Drawing.Size(81, 18);
             this.label16.TabIndex = 62;
             this.label16.Text = "Посада:";
             // 
@@ -372,11 +372,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Font = new System.Drawing.Font("Verdana", 11.75F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(371, 299);
+            this.label13.Location = new System.Drawing.Point(379, 299);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(318, 25);
+            this.label13.Size = new System.Drawing.Size(236, 18);
             this.label13.TabIndex = 73;
             this.label13.Text = "Коротка характеристика:";
             // 
@@ -390,11 +390,11 @@
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 20.25F);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 12.25F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(18, 110);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(277, 40);
+            this.dateTimePicker1.Size = new System.Drawing.Size(301, 27);
             this.dateTimePicker1.TabIndex = 75;
             // 
             // dateTimePicker2
@@ -403,17 +403,17 @@
             this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Verdana", 20.25F);
+            this.dateTimePicker2.Font = new System.Drawing.Font("Verdana", 12.25F);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(18, 256);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(277, 40);
+            this.dateTimePicker2.Size = new System.Drawing.Size(301, 27);
             this.dateTimePicker2.TabIndex = 76;
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 20.25F);
+            this.comboBox1.Font = new System.Drawing.Font("Verdana", 12.25F);
             this.comboBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -421,13 +421,13 @@
             "Жінка"});
             this.comboBox1.Location = new System.Drawing.Point(17, 327);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 40);
+            this.comboBox1.Size = new System.Drawing.Size(300, 26);
             this.comboBox1.TabIndex = 77;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(376, 327);
+            this.textBox1.Location = new System.Drawing.Point(384, 327);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(277, 393);
@@ -628,6 +628,7 @@
             this.Name = "Form5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form5_FormClosing);
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

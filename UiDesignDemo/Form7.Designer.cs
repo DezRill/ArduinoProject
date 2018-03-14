@@ -43,7 +43,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.DimGray;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(1272, 5);
+            this.button5.Location = new System.Drawing.Point(1199, 5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(29, 27);
             this.button5.TabIndex = 5;
@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(556, 5);
+            this.label1.Location = new System.Drawing.Point(506, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 20);
             this.label1.TabIndex = 7;
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 682);
+            this.ClientSize = new System.Drawing.Size(1234, 682);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DG1);
             this.Controls.Add(this.button5);

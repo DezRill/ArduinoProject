@@ -157,7 +157,7 @@
             this.textBox1.Location = new System.Drawing.Point(553, 89);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(724, 24);
+            this.textBox1.Size = new System.Drawing.Size(683, 24);
             this.textBox1.TabIndex = 29;
             // 
             // textBox2
@@ -169,7 +169,7 @@
             this.textBox2.Location = new System.Drawing.Point(931, 292);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(346, 24);
+            this.textBox2.Size = new System.Drawing.Size(305, 24);
             this.textBox2.TabIndex = 32;
             // 
             // textBox5
@@ -217,7 +217,7 @@
             this.textBox8.Location = new System.Drawing.Point(931, 227);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(346, 24);
+            this.textBox8.Size = new System.Drawing.Size(305, 24);
             this.textBox8.TabIndex = 46;
             // 
             // textBox9
@@ -229,7 +229,7 @@
             this.textBox9.Location = new System.Drawing.Point(931, 353);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(346, 24);
+            this.textBox9.Size = new System.Drawing.Size(305, 24);
             this.textBox9.TabIndex = 47;
             // 
             // textBox11
@@ -262,7 +262,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 542);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1296, 28);
+            this.panel2.Size = new System.Drawing.Size(1248, 28);
             this.panel2.TabIndex = 7;
             // 
             // panel3
@@ -274,7 +274,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1296, 65);
+            this.panel3.Size = new System.Drawing.Size(1248, 65);
             this.panel3.TabIndex = 6;
             // 
             // button5
@@ -285,7 +285,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.DimGray;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(1264, 3);
+            this.button5.Location = new System.Drawing.Point(1215, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(29, 27);
             this.button5.TabIndex = 4;
@@ -352,7 +352,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1139, 493);
+            this.button6.Location = new System.Drawing.Point(1088, 488);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(148, 43);
             this.button6.TabIndex = 87;
@@ -370,7 +370,7 @@
             this.textBox3.Location = new System.Drawing.Point(931, 157);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(346, 24);
+            this.textBox3.Size = new System.Drawing.Size(305, 24);
             this.textBox3.TabIndex = 88;
             // 
             // comboBox2
@@ -465,8 +465,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1296, 570);
+            this.ClientSize = new System.Drawing.Size(1248, 570);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button9);

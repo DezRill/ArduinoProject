@@ -303,6 +303,26 @@ namespace UiDesignDemo
             videoSource.SignalToStop();
             this.pictureBox2.Image.Save("123");
         }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            if (videoDevices.Count > 0)
+            {
+                foreach (FilterInfo device in videoDevices)
+                {
+                    comboBox2.Items.Add(device.Name);
+                }
+
+                comboBox2.SelectedIndex = 0;
+            }
+            else
+            {
+                comboBox2.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+            }
+        }
     }
 }
 

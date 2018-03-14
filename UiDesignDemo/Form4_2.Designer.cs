@@ -93,6 +93,7 @@
             this.textBox10.Size = new System.Drawing.Size(121, 20);
             this.textBox10.TabIndex = 52;
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
             // 
             // label10
             // 
@@ -115,6 +116,7 @@
             this.textBox8.Size = new System.Drawing.Size(121, 20);
             this.textBox8.TabIndex = 48;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             // 
             // label9
             // 
@@ -181,6 +183,8 @@
             this.textBox7.Size = new System.Drawing.Size(121, 20);
             this.textBox7.TabIndex = 39;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
             // textBox6
             // 
@@ -192,6 +196,7 @@
             this.textBox6.Size = new System.Drawing.Size(121, 20);
             this.textBox6.TabIndex = 38;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // textBox4
             // 
@@ -203,6 +208,7 @@
             this.textBox4.Size = new System.Drawing.Size(121, 20);
             this.textBox4.TabIndex = 36;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // label6
             // 

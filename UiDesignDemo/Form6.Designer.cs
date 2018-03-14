@@ -92,9 +92,10 @@
             this.textBox10.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox10.Location = new System.Drawing.Point(6, 212);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(119, 20);
+            this.textBox10.Size = new System.Drawing.Size(148, 20);
             this.textBox10.TabIndex = 85;
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
             // 
             // label11
             // 
@@ -125,10 +126,10 @@
             this.textBox8.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox8.Location = new System.Drawing.Point(6, 266);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(119, 20);
+            this.textBox8.Size = new System.Drawing.Size(148, 20);
             this.textBox8.TabIndex = 82;
-            this.textBox8.Text = "Експрес-огляд";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             // 
             // label9
             // 
@@ -192,9 +193,10 @@
             this.textBox7.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox7.Location = new System.Drawing.Point(6, 44);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(119, 20);
+            this.textBox7.Size = new System.Drawing.Size(148, 20);
             this.textBox7.TabIndex = 73;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
             // textBox6
             // 
@@ -203,9 +205,10 @@
             this.textBox6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox6.Location = new System.Drawing.Point(6, 98);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(119, 20);
+            this.textBox6.Size = new System.Drawing.Size(148, 20);
             this.textBox6.TabIndex = 72;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // textBox4
             // 
@@ -214,9 +217,10 @@
             this.textBox4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox4.Location = new System.Drawing.Point(6, 157);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(119, 20);
+            this.textBox4.Size = new System.Drawing.Size(148, 20);
             this.textBox4.TabIndex = 70;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // label17
             // 
@@ -236,7 +240,7 @@
             this.textBox11.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.textBox11.Location = new System.Drawing.Point(195, 161);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(312, 20);
+            this.textBox11.Size = new System.Drawing.Size(339, 20);
             this.textBox11.TabIndex = 102;
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

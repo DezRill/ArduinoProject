@@ -65,15 +65,15 @@ namespace UiDesignDemo
             command.Parameters.AddWithValue("@birth", dateTimePicker3.Value.Date.ToString());
             command.Parameters.AddWithValue("@email", textBox13.Text);
             command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-            if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", Convert.ToDouble(textBox7.Text));
+            if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", (textBox7.Text));
             else command.Parameters.AddWithValue("@temperature", "");
-            if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", Convert.ToDouble(textBox6.Text));
+            if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", (textBox6.Text));
             else command.Parameters.AddWithValue("@oxygen", "");
-            if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", Convert.ToDouble(textBox4.Text));
+            if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", (textBox4.Text));
             else command.Parameters.AddWithValue("@pressure", "");
-            if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", Convert.ToDouble(textBox10.Text));
+            if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", (textBox10.Text));
             else command.Parameters.AddWithValue("@growth", "");
-            if (textBox8.Text != "") command.Parameters.AddWithValue("weight", Convert.ToDouble(textBox8.Text));
+            if (textBox8.Text != "") command.Parameters.AddWithValue("weight", (textBox8.Text));
             else command.Parameters.AddWithValue("weight", "");
             command.Parameters.AddWithValue("@symptoms", textBox2.Text);
             command.Parameters.AddWithValue("@recommendations", textBox3.Text);
@@ -120,6 +120,46 @@ namespace UiDesignDemo
         {
             if (checkBox1.Checked) comboBox2.Enabled = true;
             else comboBox2.Enabled = false;
+        }
+
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox7.Text.IndexOf(",") == -1) && (textBox7.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox6.Text.IndexOf(",") == -1) && (textBox6.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '/') && (textBox4.Text.IndexOf("/") == -1) && (textBox4.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox10.Text.IndexOf(",") == -1) && (textBox10.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox8.Text.IndexOf(",") == -1) && (textBox8.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)
