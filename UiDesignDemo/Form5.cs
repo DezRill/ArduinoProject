@@ -55,8 +55,18 @@ namespace UiDesignDemo
             DataTable table = new DataTable();
             adapter.Fill(table);
 
-            if (table.Rows.Count > 0) return false;
-            else return true;
+            if (editing && table.Rows.Count > 0)
+            {
+                int thisID;
+                thisID = Convert.ToInt32(table.Rows[0]["id"].ToString());
+                if (id == thisID) return true;
+                else return false;
+            }
+            else
+            {
+                if (table.Rows.Count > 0) return false;
+                else return true;
+            }
         }
 
         private void UploadImage()
@@ -138,6 +148,25 @@ namespace UiDesignDemo
 
                 if (CheckLogAndPass())
                 {
+                    MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+                    MailAddress toAddress = new MailAddress(textBox5.Text);
+
+                    using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+                    using (SmtpClient smtpClient = new SmtpClient())
+                    {
+
+                        mailMessage.Subject = "Приватна клініка Hospital";
+                        mailMessage.IsBodyHtml = true;
+                        mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
+                        smtpClient.Host = "smtp.gmail.com";
+                        smtpClient.Port = 587;
+                        smtpClient.EnableSsl = true;
+                        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtpClient.UseDefaultCredentials = false;
+                        smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                        smtpClient.Send(mailMessage);
+                    }
+
                     command.ExecuteNonQuery();
                     MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -180,6 +209,25 @@ namespace UiDesignDemo
 
                 if (CheckLogAndPass())
                 {
+                    MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+                    MailAddress toAddress = new MailAddress(textBox5.Text);
+
+                    using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+                    using (SmtpClient smtpClient = new SmtpClient())
+                    {
+
+                        mailMessage.Subject = "Приватна клініка Hospital";
+                        mailMessage.IsBodyHtml = true;
+                        mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
+                        smtpClient.Host = "smtp.gmail.com";
+                        smtpClient.Port = 587;
+                        smtpClient.EnableSsl = true;
+                        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtpClient.UseDefaultCredentials = false;
+                        smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                        smtpClient.Send(mailMessage);
+                    }
+
                     command.ExecuteNonQuery();
                     MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -190,13 +238,13 @@ namespace UiDesignDemo
                 }
                 else MessageBox.Show("Такий лікар вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
+        }
             catch
             {
                 MessageBox.Show("Не всі дані заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+}
 
         private void button15_Click(object sender, EventArgs e)
         {
@@ -210,29 +258,6 @@ namespace UiDesignDemo
         {
             if (editing) UpdateDoctor();
             else AddDoctor();
-            MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // kuzichkaa @gmail.com"
-            //ankuzmynykh @gmail.com
-            //olusjkalike@gmail.com
-            MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
-            //   MailAddress toAddress = new MailAddress(f.patient.Mail);
-            MailAddress toAddress = new MailAddress(textBox5.Text);
-
-            using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
-            using (SmtpClient smtpClient = new SmtpClient())
-            {
-
-                mailMessage.Subject = "Приватна клініка Hospital";
-                mailMessage.IsBodyHtml = true;
-                mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
-                smtpClient.Host = "smtp.gmail.com";
-                smtpClient.Port = 587;
-                smtpClient.EnableSsl = true;
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
-                smtpClient.Send(mailMessage);
-            }
         }
 
         private void label1_MouseClick(object sender, MouseEventArgs e)
@@ -256,21 +281,16 @@ namespace UiDesignDemo
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (pictureBox2.Image != null) //если в pictureBox есть изображение
+            if (pictureBox2.Image != null)
             {
-                //создание диалогового окна "Сохранить как..", для сохранения изображения
                 SaveFileDialog savedialog = new SaveFileDialog();
                 savedialog.Title = "Зберегти як ...";
-                //отображать ли предупреждение, если пользователь указывает имя уже существующего файла
                 savedialog.OverwritePrompt = true;
-                //отображать ли предупреждение, если пользователь указывает несуществующий путь
                 savedialog.CheckPathExists = true;
                 savedialog.FileName = textBox9.Text;
-                //список форматов файла, отображаемый в поле "Тип файла"
                 savedialog.Filter = "Image Files(*.JPG)|*.JPG|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
-                //отображается ли кнопка "Справка" в диалоговом окне
                 savedialog.ShowHelp = true;
-                if (savedialog.ShowDialog() == DialogResult.OK) //если в диалоговом окне нажата кнопка "ОК"
+                if (savedialog.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {

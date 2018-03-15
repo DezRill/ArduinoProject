@@ -15,10 +15,6 @@ using System.Text.RegularExpressions;
 
 using AForge.Video;
 
-
-using System.Net;
-using System.Net.Mail;
-
 namespace UiDesignDemo
 {
     public partial class Form4 : Form

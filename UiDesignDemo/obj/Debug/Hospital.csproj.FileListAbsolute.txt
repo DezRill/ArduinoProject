@@ -139,3 +139,4 @@ D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
 D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\ru\Microsoft.VisualStudio.DebuggerVisualizers.resources.dll
+D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
