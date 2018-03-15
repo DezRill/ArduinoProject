@@ -112,9 +112,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(21, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 22);
+            this.label4.Size = new System.Drawing.Size(49, 22);
             this.label4.TabIndex = 17;
-            this.label4.Text = "ПІП";
+            this.label4.Text = "ПІБ";
             // 
             // label5
             // 

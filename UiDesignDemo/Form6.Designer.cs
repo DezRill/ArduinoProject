@@ -229,9 +229,9 @@
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label17.Location = new System.Drawing.Point(191, 127);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 23);
+            this.label17.Size = new System.Drawing.Size(50, 23);
             this.label17.TabIndex = 103;
-            this.label17.Text = "ПІП";
+            this.label17.Text = "ПІБ";
             // 
             // textBox11
             // 

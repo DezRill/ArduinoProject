@@ -25,6 +25,7 @@ namespace UiDesignDemo
             {
                 label3.Visible = true;
                 button1.Visible = true;
+                button2.Visible = true;
             }
             GetDoctors();
         }
@@ -132,14 +133,10 @@ namespace UiDesignDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (l.doc.Position == "Головний лікар")
-            {
-                control = true;
-                Form5 frm = new Form5(l);
-                frm.Show();
-                this.Close();
-            }
-            else MessageBox.Show("У вас немає права додавати лікарів", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            control = true;
+            Form5 frm = new Form5(l);
+            frm.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
