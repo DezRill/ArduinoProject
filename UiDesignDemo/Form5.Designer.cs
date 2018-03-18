@@ -566,6 +566,7 @@
             this.label2.Size = new System.Drawing.Size(144, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Натисніть ЛКМ ";
+            this.label2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label2_MouseClick);
             // 
             // label1
             // 
@@ -577,6 +578,7 @@
             this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "ФОТО ";
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick_1);
             // 
             // Form5
             // 

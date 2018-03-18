@@ -95,5 +95,19 @@ namespace UiDesignDemo
             if (message == DialogResult.Yes) Application.Exit();
             else return;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form7 frm = new Form7(this, 2);
+            frm.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form7 frm = new Form7(this, 1);
+            frm.Show();
+            this.Hide();
+        }
     }
 }

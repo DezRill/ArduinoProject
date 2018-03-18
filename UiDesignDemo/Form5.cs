@@ -343,6 +343,16 @@ namespace UiDesignDemo
                 button3.Visible = false;
             }
         }
+
+        private void label2_MouseClick(object sender, MouseEventArgs e)
+        {
+            UploadImage();
+        }
+
+        private void label1_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            UploadImage();
+        }
     }
 }
 

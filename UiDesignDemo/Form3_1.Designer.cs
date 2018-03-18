@@ -407,6 +407,7 @@
             this.label2.Size = new System.Drawing.Size(144, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Натисніть ЛКМ ";
+            this.label2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label2_MouseClick);
             // 
             // maskedTextBox1
             // 

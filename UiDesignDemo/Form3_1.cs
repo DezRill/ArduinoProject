@@ -298,5 +298,10 @@ namespace UiDesignDemo
                 maskedTextBox4.Enabled = false;
             }
         }
+
+        private void label2_MouseClick(object sender, MouseEventArgs e)
+        {
+            UploadImage();
+        }
     }
 }
