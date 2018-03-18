@@ -54,6 +54,7 @@
             // DG1
             // 
             this.DG1.AllowUserToAddRows = false;
+            this.DG1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DG1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG1.Location = new System.Drawing.Point(12, 34);
             this.DG1.Name = "DG1";
