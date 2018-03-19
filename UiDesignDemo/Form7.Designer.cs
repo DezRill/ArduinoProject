@@ -32,6 +32,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.DG1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             this.DG1.Location = new System.Drawing.Point(12, 34);
             this.DG1.Name = "DG1";
             this.DG1.ReadOnly = true;
-            this.DG1.Size = new System.Drawing.Size(1366, 636);
+            this.DG1.Size = new System.Drawing.Size(1366, 571);
             this.DG1.TabIndex = 6;
             // 
             // label1
@@ -72,11 +74,36 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Картка історії хвороб";
             // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(12, 621);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(446, 27);
+            this.textBox1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Verdana", 12.25F);
+            this.button1.Location = new System.Drawing.Point(476, 621);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 30);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Пошук";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 682);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DG1);
             this.Controls.Add(this.button5);
@@ -97,5 +124,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView DG1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
