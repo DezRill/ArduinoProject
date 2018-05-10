@@ -125,126 +125,145 @@ namespace UiDesignDemo
 
         private void AddDoctor()
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.doctors(name, birth, gender, town, phone, mail, adress, photo, passport, diploma_num, specialty, position, invite_date, short_char, login, password) VALUES (@name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @passport, @diploma_num, @specialty, @position, @invite_date, @short_char, @login, @password)";
             try
             {
-                command.Parameters.AddWithValue("@name", textBox6.Text);
-                command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
-                command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@town", textBox10.Text);
-                command.Parameters.AddWithValue("@phone", textBox2.Text);
-                command.Parameters.AddWithValue("@mail", textBox5.Text);
-                command.Parameters.AddWithValue("@adress", textBox8.Text);
-                command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
-                command.Parameters.AddWithValue("@passport", textBox9.Text);
-                command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
-                command.Parameters.AddWithValue("@specialty", textBox13.Text);
-                command.Parameters.AddWithValue("@position", textBox15.Text);
-                command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
-                command.Parameters.AddWithValue("@short_char", textBox1.Text);
-                command.Parameters.AddWithValue("@login", textBox16.Text);
-                command.Parameters.AddWithValue("@password", textBox17.Text);
-
-                if (CheckLogAndPass())
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "INSERT INTO dbo.doctors(name, birth, gender, town, phone, mail, adress, photo, passport, diploma_num, specialty, position, invite_date, short_char, login, password) VALUES (@name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @passport, @diploma_num, @specialty, @position, @invite_date, @short_char, @login, @password)";
+                try
                 {
-                    MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
-                    MailAddress toAddress = new MailAddress(textBox5.Text);
+                    command.Parameters.AddWithValue("@name", textBox6.Text);
+                    command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
+                    command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@town", textBox10.Text);
+                    command.Parameters.AddWithValue("@phone", textBox2.Text);
+                    command.Parameters.AddWithValue("@mail", textBox5.Text);
+                    command.Parameters.AddWithValue("@adress", textBox8.Text);
+                    command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
+                    command.Parameters.AddWithValue("@passport", textBox9.Text);
+                    command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
+                    command.Parameters.AddWithValue("@specialty", textBox13.Text);
+                    command.Parameters.AddWithValue("@position", textBox15.Text);
+                    command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
+                    command.Parameters.AddWithValue("@short_char", textBox1.Text);
+                    command.Parameters.AddWithValue("@login", textBox16.Text);
+                    command.Parameters.AddWithValue("@password", textBox17.Text);
 
-                    using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
-                    using (SmtpClient smtpClient = new SmtpClient())
+                    if (CheckLogAndPass())
                     {
+                        MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+                        MailAddress toAddress = new MailAddress(textBox5.Text);
 
-                        mailMessage.Subject = "Приватна клініка Hospital";
-                        mailMessage.IsBodyHtml = true;
-                        mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
-                        smtpClient.Host = "smtp.gmail.com";
-                        smtpClient.Port = 587;
-                        smtpClient.EnableSsl = true;
-                        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtpClient.UseDefaultCredentials = false;
-                        smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
-                        smtpClient.Send(mailMessage);
+                        using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+                        using (SmtpClient smtpClient = new SmtpClient())
+                        {
+
+                            mailMessage.Subject = "Приватна клініка Hospital";
+                            mailMessage.IsBodyHtml = true;
+                            mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
+                            smtpClient.Host = "smtp.gmail.com";
+                            smtpClient.Port = 587;
+                            smtpClient.EnableSsl = true;
+                            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtpClient.UseDefaultCredentials = false;
+                            smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                            smtpClient.Send(mailMessage);
+                        }
+
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        control = true;
+                        Form8 frm = new Form8(l);
+                        frm.Show();
+                        this.Close();
                     }
-
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    control = true;
-                    Form8 frm = new Form8(l);
-                    frm.Show();
-                    this.Close();
+                    else MessageBox.Show("Такий лікар вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else MessageBox.Show("Такий лікар вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch
+                {
+                    MessageBox.Show("Не всі дані заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch
             {
-                MessageBox.Show("Не всі дані заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
             }
         }
 
         private void UpdateDoctor()
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "UPDATE dbo.doctors SET name=@name, birth=@birth, gender=@gender, town=@town, phone=@phone, mail=@mail, adress=@adress, photo=@photo, passport=@passport, diploma_num=@diploma_num, specialty=@specialty, position=@position, invite_date=@invite_date, short_char=@short_char, login=@login, password=@password WHERE id=@id";
             try
             {
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@name", textBox6.Text);
-                command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
-                command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@town", textBox10.Text);
-                command.Parameters.AddWithValue("@phone", textBox2.Text);
-                command.Parameters.AddWithValue("@mail", textBox5.Text);
-                command.Parameters.AddWithValue("@adress", textBox8.Text);
-                command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
-                command.Parameters.AddWithValue("@passport", textBox9.Text);
-                command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
-                command.Parameters.AddWithValue("@specialty", textBox13.Text);
-                command.Parameters.AddWithValue("@position", textBox15.Text);
-                command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
-                command.Parameters.AddWithValue("@short_char", textBox1.Text);
-                command.Parameters.AddWithValue("@login", textBox16.Text);
-                command.Parameters.AddWithValue("@password", textBox17.Text);
-
-                if (CheckLogAndPass())
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "UPDATE dbo.doctors SET name=@name, birth=@birth, gender=@gender, town=@town, phone=@phone, mail=@mail, adress=@adress, photo=@photo, passport=@passport, diploma_num=@diploma_num, specialty=@specialty, position=@position, invite_date=@invite_date, short_char=@short_char, login=@login, password=@password WHERE id=@id";
+                try
                 {
-                    MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
-                    MailAddress toAddress = new MailAddress(textBox5.Text);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@name", textBox6.Text);
+                    command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
+                    command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@town", textBox10.Text);
+                    command.Parameters.AddWithValue("@phone", textBox2.Text);
+                    command.Parameters.AddWithValue("@mail", textBox5.Text);
+                    command.Parameters.AddWithValue("@adress", textBox8.Text);
+                    command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
+                    command.Parameters.AddWithValue("@passport", textBox9.Text);
+                    command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
+                    command.Parameters.AddWithValue("@specialty", textBox13.Text);
+                    command.Parameters.AddWithValue("@position", textBox15.Text);
+                    command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
+                    command.Parameters.AddWithValue("@short_char", textBox1.Text);
+                    command.Parameters.AddWithValue("@login", textBox16.Text);
+                    command.Parameters.AddWithValue("@password", textBox17.Text);
 
-                    using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
-                    using (SmtpClient smtpClient = new SmtpClient())
+                    if (CheckLogAndPass())
                     {
+                        MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+                        MailAddress toAddress = new MailAddress(textBox5.Text);
 
-                        mailMessage.Subject = "Приватна клініка Hospital";
-                        mailMessage.IsBodyHtml = true;
-                        mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
-                        smtpClient.Host = "smtp.gmail.com";
-                        smtpClient.Port = 587;
-                        smtpClient.EnableSsl = true;
-                        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtpClient.UseDefaultCredentials = false;
-                        smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
-                        smtpClient.Send(mailMessage);
+                        using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+                        using (SmtpClient smtpClient = new SmtpClient())
+                        {
+
+                            mailMessage.Subject = "Приватна клініка Hospital";
+                            mailMessage.IsBodyHtml = true;
+                            mailMessage.Body = "<h>Ваші дані:</h>" + "<br></br>" + "<h>" + "login:" + textBox16.Text + "</h>" + "<br></br>" + "<h>" + "password:" + textBox17.Text + "</h>";
+                            smtpClient.Host = "smtp.gmail.com";
+                            smtpClient.Port = 587;
+                            smtpClient.EnableSsl = true;
+                            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtpClient.UseDefaultCredentials = false;
+                            smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                            smtpClient.Send(mailMessage);
+                        }
+
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        control = true;
+                        Form8 frm = new Form8(l);
+                        frm.Show();
+                        this.Close();
                     }
+                    else MessageBox.Show("Такий лікар вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    control = true;
-                    Form8 frm = new Form8(l);
-                    frm.Show();
-                    this.Close();
                 }
-                else MessageBox.Show("Такий лікар вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-        }
+                catch
+                {
+                    MessageBox.Show("Не всі дані заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             catch
             {
-                MessageBox.Show("Не всі дані заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
             }
-
-}
+        }
 
         private void button15_Click(object sender, EventArgs e)
         {

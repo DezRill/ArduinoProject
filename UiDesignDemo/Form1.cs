@@ -65,9 +65,19 @@ namespace UiDesignDemo
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
             control = true;
-            Form6 frm = new Form6(l);
-            frm.Show();
-            this.Close();
+
+            try
+            {
+                Form6 frm = new Form6(l);
+                frm.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void button18_Click_1(object sender, EventArgs e)
@@ -75,9 +85,19 @@ namespace UiDesignDemo
             bunifuTransition2.HideSync(secondUC1);
             bunifuTransition1.ShowSync(firstUC1);
             control = true;
-            Diagram frm = new Diagram(l);
-            frm.Show();
-            this.Close();
+
+            try
+            {
+                Diagram frm = new Diagram(l);
+                frm.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -98,16 +118,36 @@ namespace UiDesignDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form7 frm = new Form7(this, 2);
-            frm.Show();
-            this.Hide();
+            try
+            {
+                Form7 frm = new Form7(this, 2);
+                frm.Show();
+                this.Hide();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form7 frm = new Form7(this, 1);
-            frm.Show();
-            this.Hide();
+            try
+            {
+                Form7 frm = new Form7(this, 1);
+                frm.Show();
+                this.Hide();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
     }
 }

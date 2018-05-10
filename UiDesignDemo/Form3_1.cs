@@ -67,57 +67,67 @@ namespace UiDesignDemo
 
         private void AddPatient()
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.patients(passport, name, birth, gender, town, phone, mail, adress, photo, reg_date) VALUES(@passport, @name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @reg_date)";
             try
             {
-                if (checkBox1.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
-                else if (checkBox2.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox4.Text);
-                command.Parameters.AddWithValue("@name", textBox6.Text);
-                command.Parameters.AddWithValue("@birth", dateTimePicker1.Value.Date.ToString());
-                command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@town", textBox10.Text);
-                command.Parameters.AddWithValue("@adress", textBox8.Text);
-                command.Parameters.AddWithValue("@phone", maskedTextBox2.Text);
-                command.Parameters.AddWithValue("@mail", textBox5.Text);
-                command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
-                command.Parameters.AddWithValue("@reg_date", dateTimePicker2.Value.Date.ToString());
-
-                if (CheckPassport())
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "INSERT INTO dbo.patients(passport, name, birth, gender, town, phone, mail, adress, photo, reg_date) VALUES(@passport, @name, @birth, @gender, @town, @phone, @mail, @adress, @photo, @reg_date)";
+                try
                 {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
-                    MailAddress toAddress = new MailAddress(textBox5.Text);
+                    if (checkBox1.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
+                    else if (checkBox2.Checked) command.Parameters.AddWithValue("@passport", maskedTextBox4.Text);
+                    command.Parameters.AddWithValue("@name", textBox6.Text);
+                    command.Parameters.AddWithValue("@birth", dateTimePicker1.Value.Date.ToString());
+                    command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@town", textBox10.Text);
+                    command.Parameters.AddWithValue("@adress", textBox8.Text);
+                    command.Parameters.AddWithValue("@phone", maskedTextBox2.Text);
+                    command.Parameters.AddWithValue("@mail", textBox5.Text);
+                    command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
+                    command.Parameters.AddWithValue("@reg_date", dateTimePicker2.Value.Date.ToString());
 
-                    using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
-                    using (SmtpClient smtpClient = new SmtpClient())
+                    if (CheckPassport())
                     {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MailAddress fromMailAddress = new MailAddress("hospitalmaindoctor@gmail.com");
+                        MailAddress toAddress = new MailAddress(textBox5.Text);
 
-                        mailMessage.Subject = "Приватна клініка Hospital";
-                        mailMessage.IsBodyHtml = true;
-                        mailMessage.Body = "<h1>Дякую, що Ви обрали нас.</h1>" +
-                            "<p>ВІДПОВІДАЛЬНІСТЬ - ЦЕ ГОЛОВНЕ КРЕДО КОЛЕКТИВУ «HOSPITAL» І МИ ГОТОВІ ЇЇ НЕСТИ!</p>" +
-                            "<h1>ЧОМУ САМЕ HOSPITAL?</h1>" +
-                            "<b>«HOSPITAL» почав свою діяльність 12 січня 2018 року. За час нашої роботи наша клініка значно збільшила свої виробничі можливості, завдяки чому стало можливим виконання широкого спектру лабораторних досліджень. Високі виробничі потужності дозволили створити широку мережу маніпуляційних кабінетів для забору біоматеріалу для лабораторного обстеження. Девізом «Hospital» є: «Якість у нас в крові». <u>Якісне лікування – запорука успішного лікування.</u></b>";
-                        smtpClient.Host = "smtp.gmail.com";
-                        smtpClient.Port = 587;
-                        smtpClient.EnableSsl = true;
-                        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtpClient.UseDefaultCredentials = false;
-                        smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
-                        smtpClient.Send(mailMessage);
+                        using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+                        using (SmtpClient smtpClient = new SmtpClient())
+                        {
+
+                            mailMessage.Subject = "Приватна клініка Hospital";
+                            mailMessage.IsBodyHtml = true;
+                            mailMessage.Body = "<h1>Дякую, що Ви обрали нас.</h1>" +
+                                "<p>ВІДПОВІДАЛЬНІСТЬ - ЦЕ ГОЛОВНЕ КРЕДО КОЛЕКТИВУ «HOSPITAL» І МИ ГОТОВІ ЇЇ НЕСТИ!</p>" +
+                                "<h1>ЧОМУ САМЕ HOSPITAL?</h1>" +
+                                "<b>«HOSPITAL» почав свою діяльність 12 січня 2018 року. За час нашої роботи наша клініка значно збільшила свої виробничі можливості, завдяки чому стало можливим виконання широкого спектру лабораторних досліджень. Високі виробничі потужності дозволили створити широку мережу маніпуляційних кабінетів для забору біоматеріалу для лабораторного обстеження. Девізом «Hospital» є: «Якість у нас в крові». <u>Якісне лікування – запорука успішного лікування.</u></b>";
+                            smtpClient.Host = "smtp.gmail.com";
+                            smtpClient.Port = 587;
+                            smtpClient.EnableSsl = true;
+                            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtpClient.UseDefaultCredentials = false;
+                            smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
+                            smtpClient.Send(mailMessage);
+                        }
+                        control = true;
+                        Form1 frm = new Form1(l);
+                        frm.Show();
+                        this.Close();
                     }
-                    control = true;
-                    Form1 frm = new Form1(l);
-                    frm.Show();
-                    this.Close();
+                    else MessageBox.Show("Такий пацієнт вже існує!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else MessageBox.Show("Такий пацієнт вже існує!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch
+                {
+                    MessageBox.Show("Не всі дані заповнено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch
             {
-                MessageBox.Show("Не всі дані заповнено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
             }
         }
 

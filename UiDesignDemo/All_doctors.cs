@@ -60,10 +60,19 @@ namespace UiDesignDemo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            control = true;
-            Form8 frm = new Form8(l);
-            frm.Show();
-            this.Close();
+            try
+            {
+                control = true;
+                Form8 frm = new Form8(l);
+                frm.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void All_doctors_FormClosing(object sender, FormClosingEventArgs e)

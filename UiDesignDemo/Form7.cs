@@ -107,22 +107,17 @@ namespace UiDesignDemo
 
         void Search()
         {
-
-                for (int i = 0; i < DG1.RowCount; i++)
-                {
-                    DG1.Rows[i].Selected = false;
-                    for (int j = 0; j < DG1.ColumnCount; j++)
-                        if (DG1.Rows[i].Cells[j].Value != null)
-                            if (DG1.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
-                            {
-                                DG1.Rows[i].Selected = true;
-                                break;
-                            }
-                }
-            
-          
-
-            
+            for (int i = 0; i < DG1.RowCount; i++)
+            {
+                DG1.Rows[i].Selected = false;
+                for (int j = 0; j < DG1.ColumnCount; j++)
+                    if (DG1.Rows[i].Cells[j].Value != null)
+                        if (DG1.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
+                        {
+                            DG1.Rows[i].Selected = true;
+                            break;
+                        }
+            }
         }
     }
 }

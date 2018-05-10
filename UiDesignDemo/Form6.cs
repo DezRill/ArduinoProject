@@ -43,46 +43,66 @@ namespace UiDesignDemo
 
         private void SaveSession()
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.sessions(doctor_id, session_begin, session_end, date) VALUES (@doctor_id, @session_begin, @session_end, @date)";
+            try
+            {
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "INSERT INTO dbo.sessions(doctor_id, session_begin, session_end, date) VALUES (@doctor_id, @session_begin, @session_end, @date)";
 
-            command.Parameters.AddWithValue("@doctor_id", l.doc.Id);
-            command.Parameters.AddWithValue("@session_begin", begin);
-            command.Parameters.AddWithValue("@session_end", end);
-            command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
+                command.Parameters.AddWithValue("@doctor_id", l.doc.Id);
+                command.Parameters.AddWithValue("@session_begin", begin);
+                command.Parameters.AddWithValue("@session_end", end);
+                command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void SaveHistory()
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(doctor_name, doctor_position, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, inspection, direction) VALUES (@doctor_name, @doctor_position, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @inspection, @direction)";
+            try
+            {
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "INSERT INTO dbo.history(doctor_name, doctor_position, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, inspection, direction) VALUES (@doctor_name, @doctor_position, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @inspection, @direction)";
 
-            command.Parameters.AddWithValue("@doctor_name", l.doc.Name);
-            command.Parameters.AddWithValue("@doctor_position", l.doc.Position);
-            command.Parameters.AddWithValue("@name", textBox11.Text);
-            command.Parameters.AddWithValue("@birth", dateTimePicker3.Value.Date.ToString());
-            command.Parameters.AddWithValue("@email", textBox13.Text);
-            command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
-            if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", textBox7.Text);
-            else command.Parameters.AddWithValue("@temperature", "");
-            if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", textBox6.Text);
-            else command.Parameters.AddWithValue("@oxygen", "");
-            if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", textBox4.Text);
-            else command.Parameters.AddWithValue("@pressure", "");
-            if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", textBox10.Text);
-            else command.Parameters.AddWithValue("@growth", "");
-            if (textBox8.Text != "") command.Parameters.AddWithValue("weight", textBox8.Text);
-            else command.Parameters.AddWithValue("weight", "");
-            command.Parameters.AddWithValue("@symptoms", textBox2.Text);
-            command.Parameters.AddWithValue("@recommendations", textBox3.Text);
-            command.Parameters.AddWithValue("diagnosis", textBox9.Text);
-            command.Parameters.AddWithValue("@inspection", textBox1.Text);
-            if (checkBox1.Checked) command.Parameters.AddWithValue("@direction", comboBox2.SelectedItem.ToString());
-            else command.Parameters.AddWithValue("@direction", "");
+                command.Parameters.AddWithValue("@doctor_name", l.doc.Name);
+                command.Parameters.AddWithValue("@doctor_position", l.doc.Position);
+                command.Parameters.AddWithValue("@name", textBox11.Text);
+                command.Parameters.AddWithValue("@birth", dateTimePicker3.Value.Date.ToString());
+                command.Parameters.AddWithValue("@email", textBox13.Text);
+                command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
+                if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", textBox7.Text);
+                else command.Parameters.AddWithValue("@temperature", "");
+                if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", textBox6.Text);
+                else command.Parameters.AddWithValue("@oxygen", "");
+                if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", textBox4.Text);
+                else command.Parameters.AddWithValue("@pressure", "");
+                if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", textBox10.Text);
+                else command.Parameters.AddWithValue("@growth", "");
+                if (textBox8.Text != "") command.Parameters.AddWithValue("weight", textBox8.Text);
+                else command.Parameters.AddWithValue("weight", "");
+                command.Parameters.AddWithValue("@symptoms", textBox2.Text);
+                command.Parameters.AddWithValue("@recommendations", textBox3.Text);
+                command.Parameters.AddWithValue("diagnosis", textBox9.Text);
+                command.Parameters.AddWithValue("@inspection", textBox1.Text);
+                if (checkBox1.Checked) command.Parameters.AddWithValue("@direction", comboBox2.SelectedItem.ToString());
+                else command.Parameters.AddWithValue("@direction", "");
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
 
         }
 

@@ -31,21 +31,30 @@ namespace UiDesignDemo
             begin = DateTime.Now.ToString("HH:mm");
             textBox2.Text = f.patient.Mail;
             GetDoctors();
-
         }
 
         private void SaveSession()
         {
-            SqlCommand command = f.l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.sessions(doctor_id, patient_id, session_begin, session_end, date) VALUES (@doctor_id, @patient_id, @session_begin, @session_end, @date)";
+            try
+            {
+                SqlCommand command = f.l.connection.CreateCommand();
+                command.CommandText = "INSERT INTO dbo.sessions(doctor_id, patient_id, session_begin, session_end, date) VALUES (@doctor_id, @patient_id, @session_begin, @session_end, @date)";
 
-            command.Parameters.AddWithValue("@doctor_id", f.l.doc.Id);
-            command.Parameters.AddWithValue("@patient_id", f.patient.Id);
-            command.Parameters.AddWithValue("@session_begin", begin);
-            command.Parameters.AddWithValue("@session_end", end);
-            command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
+                command.Parameters.AddWithValue("@doctor_id", f.l.doc.Id);
+                command.Parameters.AddWithValue("@patient_id", f.patient.Id);
+                command.Parameters.AddWithValue("@session_begin", begin);
+                command.Parameters.AddWithValue("@session_end", end);
+                command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                f.l.Show();
+            }
         }
 
         private void GetDoctors()
@@ -56,6 +65,7 @@ namespace UiDesignDemo
             DataTable table = new DataTable();
             adapter.Fill(table);
 
+
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 comboBox1.Items.Add(table.Rows[i]["position"].ToString());
@@ -65,32 +75,42 @@ namespace UiDesignDemo
 
         private void SaveHistory()
         {
-            SqlCommand command = f.l.connection.CreateCommand();
-            command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, doctor_position, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end, inspection, direction) VALUES (@patient_id, @doctor_name, @doctor_position, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end, @inspection, @direction)";
+            try
+            {
+                SqlCommand command = f.l.connection.CreateCommand();
+                command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, doctor_position, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end, inspection, direction) VALUES (@patient_id, @doctor_name, @doctor_position, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end, @inspection, @direction)";
 
-            command.Parameters.AddWithValue("@patient_id", f.patient.Id);
-            command.Parameters.AddWithValue("@doctor_name", f.l.doc.Name);
-            command.Parameters.AddWithValue("@doctor_position", f.l.doc.Position);
-            if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", textBox7.Text);
-            else command.Parameters.AddWithValue("@temperature", "");
-            if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", textBox6.Text);
-            else command.Parameters.AddWithValue("@oxygen", "");
-            if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", textBox4.Text);
-            else command.Parameters.AddWithValue("@pressure", "");
-            if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", textBox10.Text);
-            else command.Parameters.AddWithValue("@growth", "");
-            if (textBox8.Text != "") command.Parameters.AddWithValue("weight", textBox8.Text);
-            else command.Parameters.AddWithValue("weight", "");
-            command.Parameters.AddWithValue("@symptoms", textBox1.Text);
-            command.Parameters.AddWithValue("@recommendations", textBox5.Text);
-            command.Parameters.AddWithValue("@diagnosis", textBox9.Text);
-            command.Parameters.AddWithValue("@hos_begin", dateTimePicker3.Value.Date.ToString());
-            command.Parameters.AddWithValue("@hos_end", dateTimePicker4.Value.Date.ToString());
-            command.Parameters.AddWithValue("@inspection", textBox3.Text);
-            if (checkBox1.Checked) command.Parameters.AddWithValue("@direction", comboBox1.SelectedItem.ToString());
-            else command.Parameters.AddWithValue("@direction", "");
+                command.Parameters.AddWithValue("@patient_id", f.patient.Id);
+                command.Parameters.AddWithValue("@doctor_name", f.l.doc.Name);
+                command.Parameters.AddWithValue("@doctor_position", f.l.doc.Position);
+                if (textBox7.Text != "") command.Parameters.AddWithValue("@temperature", textBox7.Text);
+                else command.Parameters.AddWithValue("@temperature", "");
+                if (textBox6.Text != "") command.Parameters.AddWithValue("@oxygen", textBox6.Text);
+                else command.Parameters.AddWithValue("@oxygen", "");
+                if (textBox4.Text != "") command.Parameters.AddWithValue("@pressure", textBox4.Text);
+                else command.Parameters.AddWithValue("@pressure", "");
+                if (textBox10.Text != "") command.Parameters.AddWithValue("@growth", textBox10.Text);
+                else command.Parameters.AddWithValue("@growth", "");
+                if (textBox8.Text != "") command.Parameters.AddWithValue("weight", textBox8.Text);
+                else command.Parameters.AddWithValue("weight", "");
+                command.Parameters.AddWithValue("@symptoms", textBox1.Text);
+                command.Parameters.AddWithValue("@recommendations", textBox5.Text);
+                command.Parameters.AddWithValue("@diagnosis", textBox9.Text);
+                command.Parameters.AddWithValue("@hos_begin", dateTimePicker3.Value.Date.ToString());
+                command.Parameters.AddWithValue("@hos_end", dateTimePicker4.Value.Date.ToString());
+                command.Parameters.AddWithValue("@inspection", textBox3.Text);
+                if (checkBox1.Checked) command.Parameters.AddWithValue("@direction", comboBox1.SelectedItem.ToString());
+                else command.Parameters.AddWithValue("@direction", "");
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                f.l.Show();
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)

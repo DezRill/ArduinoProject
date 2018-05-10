@@ -104,11 +104,21 @@ namespace UiDesignDemo
 
         private void DeleteDoctor(int id)
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "DELETE FROM dbo.doctors WHERE id=@id";
-            command.Parameters.AddWithValue("@id", id);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Успішно видалено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "DELETE FROM dbo.doctors WHERE id=@id";
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Успішно видалено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void GetDoctors()
@@ -125,7 +135,7 @@ namespace UiDesignDemo
                 CreatePositionLabel(i, table.Rows[i]["position"].ToString());
                 if (l.doc.Position == "Головний лікар")
                 {
-                    if (table.Rows[i]["position"].ToString()=="Головний лікар") CreateCommandButtons(i, Convert.ToInt32(table.Rows[i]["id"].ToString()), true);
+                    if (table.Rows[i]["position"].ToString() == "Головний лікар") CreateCommandButtons(i, Convert.ToInt32(table.Rows[i]["id"].ToString()), true);
                     else CreateCommandButtons(i, Convert.ToInt32(table.Rows[i]["id"].ToString()), false);
                 }
             }

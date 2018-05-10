@@ -143,6 +143,16 @@ namespace UiDesignDemo.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap frente_alemc3a1n_del_trabajo {
+            get {
+                object obj = ResourceManager.GetObject("frente-alemc3a1n-del-trabajo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hfmea {
             get {
                 object obj = ResourceManager.GetObject("hfmea", resourceCulture);

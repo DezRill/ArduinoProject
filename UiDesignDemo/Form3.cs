@@ -35,36 +35,46 @@ namespace UiDesignDemo
 
         private void FindPatient()
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "SELECT * FROM dbo.patients WHERE passport=@passport";
-            command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            if (table.Rows.Count!=0)
+            try
             {
-                patient = new Patient();
-                patient.Id = Convert.ToInt32(table.Rows[0]["id"].ToString());
-                patient.Passport = table.Rows[0]["passport"].ToString();
-                patient.Name = table.Rows[0]["name"].ToString();
-                patient.Birth = Convert.ToDateTime(table.Rows[0]["birth"].ToString());
-                patient.Gender = table.Rows[0]["gender"].ToString();
-                patient.Town = table.Rows[0]["town"].ToString();
-                patient.Phone = table.Rows[0]["phone"].ToString();
-                patient.Mail = table.Rows[0]["mail"].ToString();
-                patient.Adress = table.Rows[0]["adress"].ToString();
-                patient.Photo = ConvertBinaryToImage((byte[])table.Rows[0]["photo"]);
-                patient.Reg_Date = Convert.ToDateTime(table.Rows[0]["reg_date"].ToString());
-                adapter.Dispose();
-                table.Dispose();
-                control = true;
-                Form4 frm = new Form4(l, patient);
-                frm.Show();
-                this.Close();
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "SELECT * FROM dbo.patients WHERE passport=@passport";
+                command.Parameters.AddWithValue("@passport", maskedTextBox1.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count != 0)
+                {
+                    patient = new Patient();
+                    patient.Id = Convert.ToInt32(table.Rows[0]["id"].ToString());
+                    patient.Passport = table.Rows[0]["passport"].ToString();
+                    patient.Name = table.Rows[0]["name"].ToString();
+                    patient.Birth = Convert.ToDateTime(table.Rows[0]["birth"].ToString());
+                    patient.Gender = table.Rows[0]["gender"].ToString();
+                    patient.Town = table.Rows[0]["town"].ToString();
+                    patient.Phone = table.Rows[0]["phone"].ToString();
+                    patient.Mail = table.Rows[0]["mail"].ToString();
+                    patient.Adress = table.Rows[0]["adress"].ToString();
+                    patient.Photo = ConvertBinaryToImage((byte[])table.Rows[0]["photo"]);
+                    patient.Reg_Date = Convert.ToDateTime(table.Rows[0]["reg_date"].ToString());
+                    adapter.Dispose();
+                    table.Dispose();
+                    control = true;
+                    Form4 frm = new Form4(l, patient);
+                    frm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Такого пацієнта не існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Такого пацієнта не існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
             }
         }
 

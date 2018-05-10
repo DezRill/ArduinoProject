@@ -68,27 +68,37 @@ namespace UiDesignDemo
 
         private void UpdatePatient()
         {
-            SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "UPDATE dbo.patients SET passport=@passport, name=@name, birth=@birth, gender=@gender, town=@town, phone=@phone, mail=@mail, adress=@adress, photo=@photo, reg_date=@reg_date WHERE id=@id";
-            command.Parameters.AddWithValue("@id", patient.Id);
-            command.Parameters.AddWithValue("@passport", patient.Passport);
-            command.Parameters.AddWithValue("@name", patient.Name);
-            command.Parameters.AddWithValue("@birth", patient.Birth.Date.ToString());
-            command.Parameters.AddWithValue("@gender", patient.Gender);
-            command.Parameters.AddWithValue("@town", patient.Town);
-            command.Parameters.AddWithValue("@phone", patient.Phone);
-            command.Parameters.AddWithValue("@mail", patient.Mail);
-            command.Parameters.AddWithValue("@adress", patient.Adress);
-            command.Parameters.AddWithValue("@photo", ConvertImageToBinary(patient.Photo));
-            command.Parameters.AddWithValue("@reg_date", patient.Reg_Date.Date.ToString());
             try
             {
-                command.ExecuteNonQuery();
-                MessageBox.Show("Успішно збережено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SqlCommand command = l.connection.CreateCommand();
+                command.CommandText = "UPDATE dbo.patients SET passport=@passport, name=@name, birth=@birth, gender=@gender, town=@town, phone=@phone, mail=@mail, adress=@adress, photo=@photo, reg_date=@reg_date WHERE id=@id";
+                command.Parameters.AddWithValue("@id", patient.Id);
+                command.Parameters.AddWithValue("@passport", patient.Passport);
+                command.Parameters.AddWithValue("@name", patient.Name);
+                command.Parameters.AddWithValue("@birth", patient.Birth.Date.ToString());
+                command.Parameters.AddWithValue("@gender", patient.Gender);
+                command.Parameters.AddWithValue("@town", patient.Town);
+                command.Parameters.AddWithValue("@phone", patient.Phone);
+                command.Parameters.AddWithValue("@mail", patient.Mail);
+                command.Parameters.AddWithValue("@adress", patient.Adress);
+                command.Parameters.AddWithValue("@photo", ConvertImageToBinary(patient.Photo));
+                command.Parameters.AddWithValue("@reg_date", patient.Reg_Date.Date.ToString());
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Успішно збережено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Усі поля повинні бути заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch
             {
-                MessageBox.Show("Усі поля повинні бути заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
             }
         }
 
@@ -163,16 +173,36 @@ namespace UiDesignDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form4_2 frm = new Form4_2(this);
-            frm.Show();
-            this.Hide();
+            try
+            {
+                Form4_2 frm = new Form4_2(this);
+                frm.Show();
+                this.Hide();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form7 frm = new Form7(this);
-            frm.Show();
-            this.Hide();
+            try
+            {
+                Form7 frm = new Form7(this);
+                frm.Show();
+                this.Hide();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
