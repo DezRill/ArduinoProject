@@ -96,7 +96,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::UiDesignDemo.Properties.Resources.frente_alemc3a1n_del_trabajo;
+            this.button2.BackgroundImage = global::UiDesignDemo.Properties.Resources._2_43;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
