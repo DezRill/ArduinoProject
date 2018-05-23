@@ -142,3 +142,6 @@ D:\+1_Disc_1+\Курсовий\ArduinoProject\UiDesignDemo\bin\Debug\ru\Microsof
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.CopyComplete
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resources
+D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form12.resources
+D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form13.resources
+D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form14.resources

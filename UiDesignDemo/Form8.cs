@@ -83,9 +83,18 @@ namespace UiDesignDemo
             void editEvent(object sender, EventArgs e)
             {
                 control = true;
-                Form5 frm = new Form5(l, id);
-                frm.Show();
-                this.Close();
+                try
+                {
+                    Form5 frm = new Form5(l, id);
+                    frm.Show();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                    l.Show();
+                }
             }
 
             void deleteEvent(object sender, EventArgs e)
@@ -94,7 +103,6 @@ namespace UiDesignDemo
                 if (message == DialogResult.Yes)
                 {
                     DeleteDoctor(id);
-
                     panel4.Controls.Clear();
                     GetDoctors();
                 }

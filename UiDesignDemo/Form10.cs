@@ -51,7 +51,7 @@ namespace UiDesignDemo
                     this.Close();
                     f.Show();
                 }
-                catch(Exception ex)
+                catch
                 {
                     MessageBox.Show("Не вдалося зберігти налаштування", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

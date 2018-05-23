@@ -149,5 +149,22 @@ namespace UiDesignDemo
                 l.Show();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form12 frm = new Form12(l);
+                frm.Show();
+                this.Hide();
+            }
+            catch
+            {
+                control = true;
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
+        }
     }
 }
