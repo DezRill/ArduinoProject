@@ -228,6 +228,7 @@
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Account.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
