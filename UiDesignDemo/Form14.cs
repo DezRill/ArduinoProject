@@ -36,8 +36,8 @@ namespace UiDesignDemo
             command.CommandText = "INSERT INTO dbo.schedule(doctor_id, date, time_begin, time_end) VALUES (@doctor_id, @date, @time_begin, @time_end)";
             command.Parameters.AddWithValue("@doctor_id", id);
             command.Parameters.AddWithValue("@date", dateTimePicker1.Value.Date);
-            command.Parameters.AddWithValue("@time_begin", dateTimePicker2.Value.ToString("HH:mm"));
-            command.Parameters.AddWithValue("@time_end", dateTimePicker3.Value.ToString("HH:mm"));
+            command.Parameters.AddWithValue("@time_begin", maskedTextBox1.Text);
+            command.Parameters.AddWithValue("@time_end", maskedTextBox2.Text);
 
             command.ExecuteNonQuery();
         }

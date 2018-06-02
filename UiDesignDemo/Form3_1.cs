@@ -202,6 +202,7 @@ namespace UiDesignDemo
             videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
             videoSource.Start();
         }
+
         private void video_NewFrame (object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
@@ -213,7 +214,6 @@ namespace UiDesignDemo
             videoSource.Stop();
             videoSource.SignalToStop();
             this.pictureBox2.Image.Save("123");
-            
         }
 
         private void button4_Click(object sender, EventArgs e)
