@@ -46,7 +46,7 @@ namespace UiDesignDemo
             connection.Open();
         }
 
-        private Image ConvertBinaryToImage(byte[] data)
+        public static Image ConvertBinaryToImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))
             {

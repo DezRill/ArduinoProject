@@ -26,6 +26,7 @@ namespace UiDesignDemo
 
         private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoSource;
+
         public Form3_1(Login l)
         {
             InitializeComponent();
@@ -56,7 +57,7 @@ namespace UiDesignDemo
             else return true;
         }
 
-        private byte[] ConvertImageToBinary(Image img)
+        public static byte[] ConvertImageToBinary(Image img)
         {
             using (MemoryStream ms = new MemoryStream())
             {
