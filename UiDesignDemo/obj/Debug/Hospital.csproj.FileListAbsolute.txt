@@ -145,3 +145,5 @@ D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form10.resourc
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form12.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form13.resources
 D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form14.resources
+D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form15.resources
+D:\Programs\C#\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Form16.resources

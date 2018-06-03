@@ -83,22 +83,19 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@adress", patient.Adress);
                 command.Parameters.AddWithValue("@photo", ConvertImageToBinary(patient.Photo));
                 command.Parameters.AddWithValue("@reg_date", patient.Reg_Date.Date.ToString());
-                try
-                {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Успішно збережено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch
-                {
-                    MessageBox.Show("Усі поля повинні бути заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                command.ExecuteNonQuery();
+                MessageBox.Show("Успішно збережено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch
+            catch (Exception ex)
             {
-                control = true;
-                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-                l.Show();
+                if (ex.Message.Contains("Provider"))
+                {
+                    control = true;
+                    MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                    l.Show();
+                }
+                else MessageBox.Show("Усі поля повинні бути заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

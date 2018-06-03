@@ -17,7 +17,7 @@ namespace UiDesignDemo
         DataTable doctors = new DataTable();
         Login l;
 
-        void GetDoctors(DataTable table)
+        private void GetDoctors(DataTable table)
         {
             SqlCommand command = l.connection.CreateCommand();
             command.CommandText = "SELECT name, position, id FROM dbo.doctors";
@@ -25,7 +25,7 @@ namespace UiDesignDemo
             adapter.Fill(table);
         }
 
-        void CreateNameLabel(int i, string name)
+        private void CreateNameLabel(int i, string name)
         {
             Label label = new Label();
             label.AutoSize = true;
@@ -36,7 +36,7 @@ namespace UiDesignDemo
             panel1.Controls.Add(label);
         }
 
-        void CreatePositionLabel(int i, string position)
+        private void CreatePositionLabel(int i, string position)
         {
             Label label = new Label();
             label.AutoSize = true;
@@ -47,7 +47,7 @@ namespace UiDesignDemo
             panel1.Controls.Add(label);
         }
 
-        void CreateCommandButton(int i, string id)
+        private void CreateCommandButton(int i, string id)
         {
             Button button = new Button();
             button.Name = id;
@@ -76,9 +76,7 @@ namespace UiDesignDemo
             }
         }
 
-        
-
-        void RenderDoctors()
+        private void RenderDoctors()
         {
             for (int i = 0; i < doctors.Rows.Count; i++)
             {
@@ -88,7 +86,7 @@ namespace UiDesignDemo
             }
         }
 
-        void RenderConcretteDoctors(string name)
+        private void RenderConcretteDoctors(string name)
         {
             int j = 0;
             for (int i = 0; i < doctors.Rows.Count; i++)
@@ -103,12 +101,12 @@ namespace UiDesignDemo
             }
         }
 
-        void RenderConcrettePositions(string position)
+        private void RenderConcrettePositions(string position)
         {
             int j = 0;
             for (int i = 0; i < doctors.Rows.Count; i++)
             {
-                if (doctors.Rows[i]["position"].ToString().StartsWith(position))
+                if (doctors.Rows[i]["position"].ToString() == position)
                 {
                     CreateNameLabel(j, doctors.Rows[i]["name"].ToString());
                     CreatePositionLabel(j, doctors.Rows[i]["position"].ToString());
@@ -124,6 +122,7 @@ namespace UiDesignDemo
             this.l = l;
             GetDoctors(doctors);
             RenderDoctors();
+            FillComboBox();
         }
 
         private void Form12_FormClosing(object sender, FormClosingEventArgs e)
@@ -157,18 +156,32 @@ namespace UiDesignDemo
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private DataTable GetPositions()
         {
-            if (textBox2.Text != "")
+            SqlCommand command = l.connection.CreateCommand();
+            command.CommandText = "SELECT DISTINCT position FROM dbo.doctors";
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        private void FillComboBox()
+        {
+            comboBox1.Items.Add("Всі");
+            DataTable table = GetPositions();
+            for (int i = 0; i < table.Rows.Count; i++)
             {
-                panel1.Controls.Clear();
-                RenderConcrettePositions(textBox2.Text);
+                comboBox1.Items.Add(table.Rows[i]["position"].ToString());
             }
-            else
-            {
-                panel1.Controls.Clear();
-                RenderDoctors();
-            }
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            if (comboBox1.SelectedIndex == 0) RenderDoctors();
+            else RenderConcrettePositions(comboBox1.SelectedItem.ToString());
         }
     }
 }

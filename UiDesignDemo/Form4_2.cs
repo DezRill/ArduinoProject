@@ -48,19 +48,23 @@ namespace UiDesignDemo
 
                 command.ExecuteNonQuery();
             }
-            catch
+            catch (Exception ex)
             {
-                control = true;
-                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-                f.l.Show();
+                if (ex.Message.Contains("Provider"))
+                {
+                    control = true;
+                    MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                    f.l.Show();
+                }
+                else MessageBox.Show("Не всі обов'язкові поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void GetDoctors()
         {
             SqlCommand command = f.l.connection.CreateCommand();
-            command.CommandText = "SELECT position FROM dbo.doctors GROUP BY position";
+            command.CommandText = "SELECT DISTINCT position FROM dbo.doctors";
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -104,12 +108,16 @@ namespace UiDesignDemo
 
                 command.ExecuteNonQuery();
             }
-            catch
+            catch (Exception ex)
             {
-                control = true;
-                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-                f.l.Show();
+                if (ex.Message.Contains("Provider"))
+                {
+                    control = true;
+                    MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                    f.l.Show();
+                }
+                else MessageBox.Show("Не всі обов'язкові поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -178,8 +186,6 @@ namespace UiDesignDemo
             }
         }
 
-    
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -201,22 +207,15 @@ namespace UiDesignDemo
                 smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "doctorhospital");
                 smtpClient.Send(mailMessage);
             }
-            try
-            {
-                end = DateTime.Now.ToString("HH:mm");
-                SaveSession();
-                SaveHistory();
+            end = DateTime.Now.ToString("HH:mm");
+            SaveSession();
+            SaveHistory();
 
-                MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Успішно збережено.", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                control = true;
-                f.Show();
-                this.Close();
-            }
-            catch
-            {
-                MessageBox.Show("Не всі обов'язкові поля заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            control = true;
+            f.Show();
+            this.Close();
         }
     }
 }

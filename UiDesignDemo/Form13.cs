@@ -27,19 +27,19 @@ namespace UiDesignDemo
             adapter.Fill(table);
         }
 
-        static DateTime GetMonday(DateTime date)
+        private static DateTime GetMonday(DateTime date)
         {
             while (date.DayOfWeek != DayOfWeek.Monday) date = date.AddDays(-1);
             return date;
         }
 
-        static DateTime GetFriday(DateTime date)
+        private static DateTime GetFriday(DateTime date)
         {
             while (date.DayOfWeek != DayOfWeek.Friday) date = date.AddDays(1);
             return date;
         }
 
-        void RenderThisWeek()
+        private void RenderThisWeek()
         {
             DG1.Rows.Clear();
             for (int i = 0; i < table.Rows.Count; i++)
@@ -51,7 +51,7 @@ namespace UiDesignDemo
             }
         }
 
-        void RenderAllTime()
+        private void RenderAllTime()
         {
             DG1.Rows.Clear();
             for (int i = 0; i < table.Rows.Count; i++)

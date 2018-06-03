@@ -17,7 +17,7 @@ namespace UiDesignDemo
         int id;
         bool control = false;
 
-        bool CheckDate()
+        private bool CheckDate()
         {
             SqlCommand command = l.connection.CreateCommand();
             command.CommandText = "SELECT * FROM dbo.schedule WHERE doctor_id=@doctor_id AND date=@date";
@@ -30,7 +30,7 @@ namespace UiDesignDemo
             else return true;
         }
 
-        void AddDay()
+        private void AddDay()
         {
             SqlCommand command = l.connection.CreateCommand();
             command.CommandText = "INSERT INTO dbo.schedule(doctor_id, date, time_begin, time_end) VALUES (@doctor_id, @date, @time_begin, @time_end)";
@@ -70,7 +70,14 @@ namespace UiDesignDemo
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex.Message.Contains("Provider"))
+                {
+                    control = true;
+                    MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                    l.Show();
+                }
+                else MessageBox.Show("Не всі дані заповнено!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

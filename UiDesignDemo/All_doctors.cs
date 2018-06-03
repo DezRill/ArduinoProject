@@ -83,5 +83,22 @@ namespace UiDesignDemo
                 e.Cancel = true;
             }
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            control = true;
+            try
+            {
+                Form16 frm = new Form16(l);
+                frm.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                l.Show();
+            }
+        }
     }
 }
