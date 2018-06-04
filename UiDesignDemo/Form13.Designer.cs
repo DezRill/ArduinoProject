@@ -61,6 +61,7 @@
             this.Column3});
             this.DG1.Location = new System.Drawing.Point(158, 49);
             this.DG1.Name = "DG1";
+            this.DG1.ReadOnly = true;
             this.DG1.Size = new System.Drawing.Size(540, 399);
             this.DG1.TabIndex = 11;
             // 
@@ -68,18 +69,21 @@
             // 
             this.Column1.HeaderText = "Дата";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 150;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Початок робочого дня";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 165;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Кінець робочого дня";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 165;
             // 
             // comboBox1

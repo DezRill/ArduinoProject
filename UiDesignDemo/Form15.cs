@@ -120,6 +120,7 @@ namespace UiDesignDemo
         {
             Done();
 
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
             this.Close();
