@@ -24,6 +24,7 @@ namespace UiDesignDemo
             this.l = l;
             begin = DateTime.Now.ToString("HH:mm");
             GetDoctors();
+            ControlExtension.Draggable(this, true);
         }
 
         private void GetDoctors()
@@ -73,7 +74,7 @@ namespace UiDesignDemo
             try
             {
                 SqlCommand command = l.connection.CreateCommand();
-                command.CommandText = "INSERT INTO dbo.history(doctor_name, doctor_position, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, inspection, direction) VALUES (@doctor_name, @doctor_position, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @inspection, @direction)";
+                command.CommandText = "INSERT INTO dbo.history(doctor_name, doctor_position, name, birth, email, gender, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, date, inspection, direction) VALUES (@doctor_name, @doctor_position, @name, @birth, @email, @gender, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @date, @inspection, @direction)";
 
                 command.Parameters.AddWithValue("@doctor_name", l.doc.Name);
                 command.Parameters.AddWithValue("@doctor_position", l.doc.Position);
@@ -94,6 +95,7 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@symptoms", textBox2.Text);
                 command.Parameters.AddWithValue("@recommendations", textBox3.Text);
                 command.Parameters.AddWithValue("diagnosis", textBox9.Text);
+                command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
                 command.Parameters.AddWithValue("@inspection", textBox1.Text);
                 if (checkBox1.Checked) command.Parameters.AddWithValue("@direction", comboBox2.SelectedItem.ToString());
                 else command.Parameters.AddWithValue("@direction", "");

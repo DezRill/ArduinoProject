@@ -31,6 +31,7 @@ namespace UiDesignDemo
         {
             InitializeComponent();
             this.l = l;
+            ControlExtension.Draggable(this, true);
         }
 
         private void UploadImage()
@@ -310,6 +311,12 @@ namespace UiDesignDemo
         private void label2_MouseClick(object sender, MouseEventArgs e)
         {
             UploadImage();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0) pictureBox2.Image = Properties.Resources.patient_male;
+            else pictureBox2.Image = Properties.Resources.patient_female;
         }
     }
 }

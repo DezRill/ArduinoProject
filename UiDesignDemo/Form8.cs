@@ -28,6 +28,7 @@ namespace UiDesignDemo
                 button2.Visible = true;
             }
             GetDoctors();
+            ControlExtension.Draggable(this, true);
         }
 
         private void CreateNameLabel(int i, string text)
@@ -168,7 +169,7 @@ namespace UiDesignDemo
         private void button15_Click(object sender, EventArgs e)
         {
             control = true;
-            Form1 frm = new Form1(l);
+            All_doctors frm = new All_doctors(l);
             frm.Show();
             this.Close();
         }

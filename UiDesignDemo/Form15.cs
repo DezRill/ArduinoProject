@@ -24,6 +24,7 @@ namespace UiDesignDemo
             InitializeComponent();
             this.l = l;
             FillComboBox();
+            ControlExtension.Draggable(this, true);
         }
 
         private void button15_Click(object sender, EventArgs e)

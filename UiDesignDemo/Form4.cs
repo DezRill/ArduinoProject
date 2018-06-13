@@ -26,6 +26,7 @@ namespace UiDesignDemo
         bool control = false;
         private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoSource;
+
         public Form4(Login l, Patient patient)
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace UiDesignDemo
             dateTimePicker1.Value = patient.Reg_Date;
 
             this.patient = patient;
+            ControlExtension.Draggable(this, true);
         }
 
         private void UploadImage()
@@ -292,6 +294,12 @@ namespace UiDesignDemo
             videoSource.Stop();
             videoSource.SignalToStop();
             this.pictureBox2.Image.Save("123");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0) pictureBox2.Image = Properties.Resources.patient_male;
+            else pictureBox2.Image = Properties.Resources.patient_female;
         }
     }
 }

@@ -47,6 +47,7 @@ namespace UiDesignDemo
             InitializeComponent();
             this.l = l;
             this.id = id;
+            ControlExtension.Draggable(this, true);
         }
 
         private void button15_Click(object sender, EventArgs e)

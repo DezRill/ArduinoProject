@@ -163,6 +163,26 @@ namespace UiDesignDemo.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap doctor_female {
+            get {
+                object obj = ResourceManager.GetObject("doctor_female", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap doctor_male {
+            get {
+                object obj = ResourceManager.GetObject("doctor_male", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap frente_alemc3a1n_del_trabajo {
             get {
                 object obj = ResourceManager.GetObject("frente-alemc3a1n-del-trabajo", resourceCulture);
@@ -196,6 +216,26 @@ namespace UiDesignDemo.Properties {
         internal static System.Drawing.Bitmap mini1 {
             get {
                 object obj = ResourceManager.GetObject("mini1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap patient_female {
+            get {
+                object obj = ResourceManager.GetObject("patient_female", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap patient_male {
+            get {
+                object obj = ResourceManager.GetObject("patient_male", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

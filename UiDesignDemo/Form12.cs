@@ -123,6 +123,7 @@ namespace UiDesignDemo
             GetDoctors(doctors);
             RenderDoctors();
             FillComboBox();
+            ControlExtension.Draggable(this, true);
         }
 
         private void Form12_FormClosing(object sender, FormClosingEventArgs e)

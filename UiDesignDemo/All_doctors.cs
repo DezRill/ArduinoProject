@@ -30,6 +30,7 @@ namespace UiDesignDemo
             textBox9.Text = l.doc.Adress;
             textBox10.Clear();
             pictureBox2.Image = l.doc.Photo;
+            ControlExtension.Draggable(this, true);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,16 +39,17 @@ namespace UiDesignDemo
             {
                 Form5 frm = new Form5(l);
                 frm.Show();
-                this.Hide();
+                this.Close();
             }
             else MessageBox.Show("У вас немає права додавати лікарів", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            control = true;
             Form1 frm = new Form1(l);
             frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -107,6 +107,7 @@ namespace UiDesignDemo
         {
             InitializeComponent();
             LoadSettings();
+            ControlExtension.Draggable(this, true);
         }
 
         private void button1_Click(object sender, EventArgs e)

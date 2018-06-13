@@ -43,6 +43,7 @@ namespace UiDesignDemo
             first = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             BuildDiagram();
             BuildDiagramLastMonth();
+            ControlExtension.Draggable(this, true);
         }
 
         private void GetSickCount()
@@ -93,7 +94,7 @@ namespace UiDesignDemo
         private void GetSickCountLastMonth()
         {
             SqlCommand command = l.connection.CreateCommand();
-            command.CommandText = "SELECT COUNT(diagnosis) AS Total FROM dbo.history WHERE hos_begin>=@some_date";
+            command.CommandText = "SELECT COUNT(diagnosis) AS Total FROM dbo.history WHERE date>=@some_date";
             command.Parameters.AddWithValue("@some_date", first);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
@@ -101,7 +102,7 @@ namespace UiDesignDemo
             total_lm = Convert.ToInt32(table.Rows[0]["Total"].ToString());
 
             command = l.connection.CreateCommand();
-            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='ГРВІ' AND hos_begin>=@some_date";
+            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='ГРВІ' AND date>=@some_date";
             command.Parameters.AddWithValue("@some_date", first);
             adapter = new SqlDataAdapter(command);
             table = new DataTable();
@@ -109,7 +110,7 @@ namespace UiDesignDemo
             orvi_count_lm = Convert.ToInt32(table.Rows[0]["Count"].ToString());
 
             command = l.connection.CreateCommand();
-            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='Кір' AND hos_begin>=@some_date";
+            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='Кір' AND date>=@some_date";
             command.Parameters.AddWithValue("@some_date", first);
             adapter = new SqlDataAdapter(command);
             table = new DataTable();
@@ -117,7 +118,7 @@ namespace UiDesignDemo
             measles_count_lm = Convert.ToInt32(table.Rows[0]["Count"].ToString());
 
             command = l.connection.CreateCommand();
-            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='ВІЧ' AND hos_begin>=@some_date";
+            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='ВІЧ' AND date>=@some_date";
             command.Parameters.AddWithValue("@some_date", first);
             adapter = new SqlDataAdapter(command);
             table = new DataTable();
@@ -125,7 +126,7 @@ namespace UiDesignDemo
             HIV_count_lm = Convert.ToInt32(table.Rows[0]["Count"].ToString());
 
             command = l.connection.CreateCommand();
-            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='Туберкульоз' AND hos_begin>=@some_date";
+            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='Туберкульоз' AND date>=@some_date";
             command.Parameters.AddWithValue("@some_date", first);
             adapter = new SqlDataAdapter(command);
             table = new DataTable();
@@ -133,7 +134,7 @@ namespace UiDesignDemo
             tuberculosis_count_lm = Convert.ToInt32(table.Rows[0]["Count"].ToString());
 
             command = l.connection.CreateCommand();
-            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='ВСД' AND hos_begin>=@some_date";
+            command.CommandText = "SELECT COUNT(diagnosis) AS Count FROM dbo.history WHERE diagnosis='ВСД' AND date>=@some_date";
             command.Parameters.AddWithValue("@some_date", first);
             adapter = new SqlDataAdapter(command);
             table = new DataTable();

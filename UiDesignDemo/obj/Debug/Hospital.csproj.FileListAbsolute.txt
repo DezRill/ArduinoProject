@@ -180,3 +180,4 @@ D:\ДИПЛОМ\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.exe
 D:\ДИПЛОМ\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.pdb
 D:\ДИПЛОМ\ArduinoProject\UiDesignDemo\obj\Debug\UiDesignDemo.Schedule.resources
 D:\ДИПЛОМ\ArduinoProject\UiDesignDemo\obj\Debug\Hospital.csproj.UiDesignDemo.exe.config
+D:\Programs\C#\ArduinoProject\UiDesignDemo\bin\Debug\Control.Draggable.dll

@@ -26,6 +26,7 @@ namespace UiDesignDemo
             comboBox1.SelectedIndex = 0;
             GetDirections();
             SelectAll();
+            ControlExtension.Draggable(this, true);
         }
 
         private void GetDirections()
@@ -42,7 +43,7 @@ namespace UiDesignDemo
             DG1.Rows.Clear();
             for (int i = 0; i < directions.Rows.Count; i++)
             {
-                DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), directions.Rows[i]["patient_birth"].ToString(), directions.Rows[i]["date"].ToString(), directions.Rows[i]["time"].ToString());
+                DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), Convert.ToDateTime(directions.Rows[i]["patient_birth"].ToString()).ToShortDateString(), Convert.ToDateTime(directions.Rows[i]["date"].ToString()).ToShortDateString(), directions.Rows[i]["time"].ToString());
             }
         }
 
@@ -53,7 +54,7 @@ namespace UiDesignDemo
             {
                 if (Convert.ToDateTime(directions.Rows[i]["date"].ToString()).Date < DateTime.Now.Date)
                 {
-                    DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), directions.Rows[i]["patient_birth"].ToString(), directions.Rows[i]["date"].ToString(), directions.Rows[i]["time"].ToString());
+                    DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), Convert.ToDateTime(directions.Rows[i]["patient_birth"].ToString()).ToShortDateString(), Convert.ToDateTime(directions.Rows[i]["date"].ToString()).ToShortDateString(), directions.Rows[i]["time"].ToString());
                 }
             }
         }
@@ -65,7 +66,7 @@ namespace UiDesignDemo
             {
                 if (Convert.ToDateTime(directions.Rows[i]["date"].ToString()).Date == DateTime.Now.Date)
                 {
-                    DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), directions.Rows[i]["patient_birth"].ToString(), directions.Rows[i]["date"].ToString(), directions.Rows[i]["time"].ToString());
+                    DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), Convert.ToDateTime(directions.Rows[i]["patient_birth"].ToString()).ToShortDateString(), Convert.ToDateTime(directions.Rows[i]["patient_birth"].ToString()).ToShortDateString(), directions.Rows[i]["time"].ToString());
                 }
             }
         }
@@ -77,7 +78,7 @@ namespace UiDesignDemo
             {
                 if (Convert.ToDateTime(directions.Rows[i]["date"].ToString()).Date > DateTime.Now.Date)
                 {
-                    DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), directions.Rows[i]["patient_birth"].ToString(), directions.Rows[i]["date"].ToString(), directions.Rows[i]["time"].ToString());
+                    DG1.Rows.Add(directions.Rows[i]["patient_name"].ToString(), Convert.ToDateTime(directions.Rows[i]["patient_birth"].ToString()).ToShortDateString(), Convert.ToDateTime(directions.Rows[i]["patient_birth"].ToString()).ToShortDateString(), directions.Rows[i]["time"].ToString());
                 }
             }
         }

@@ -31,6 +31,7 @@ namespace UiDesignDemo
             begin = DateTime.Now.ToString("HH:mm");
             textBox2.Text = f.patient.Mail;
             GetDoctors();
+            ControlExtension.Draggable(this, true);
         }
 
         private void SaveSession()
@@ -82,7 +83,7 @@ namespace UiDesignDemo
             try
             {
                 SqlCommand command = f.l.connection.CreateCommand();
-                command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, doctor_position, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, hos_begin, hos_end, inspection, direction) VALUES (@patient_id, @doctor_name, @doctor_position, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @hos_begin, @hos_end, @inspection, @direction)";
+                command.CommandText = "INSERT INTO dbo.history(patient_id, doctor_name, doctor_position, temperature, oxygen, pressure, growth, weight, symptoms, recommendations, diagnosis, date, hos_begin, hos_end, inspection, direction) VALUES (@patient_id, @doctor_name, @doctor_position, @temperature, @oxygen, @pressure, @growth, @weight, @symptoms, @recommendations, @diagnosis, @date, @hos_begin, @hos_end, @inspection, @direction)";
 
                 command.Parameters.AddWithValue("@patient_id", f.patient.Id);
                 command.Parameters.AddWithValue("@doctor_name", f.l.doc.Name);
@@ -100,6 +101,7 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@symptoms", textBox1.Text);
                 command.Parameters.AddWithValue("@recommendations", textBox5.Text);
                 command.Parameters.AddWithValue("@diagnosis", textBox9.Text);
+                command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString());
                 command.Parameters.AddWithValue("@hos_begin", dateTimePicker3.Value.Date.ToString());
                 command.Parameters.AddWithValue("@hos_end", dateTimePicker4.Value.Date.ToString());
                 command.Parameters.AddWithValue("@inspection", textBox3.Text);

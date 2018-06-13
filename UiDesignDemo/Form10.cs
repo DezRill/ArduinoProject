@@ -25,6 +25,7 @@ namespace UiDesignDemo
             textBox2.Text = f.settings.InitialCatalog;
             textBox3.Text = f.settings.UserID;
             textBox4.Text = f.settings.Password;
+            ControlExtension.Draggable(this, true);
         }
 
         private void button15_Click(object sender, EventArgs e)

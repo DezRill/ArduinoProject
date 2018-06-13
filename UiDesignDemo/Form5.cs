@@ -33,6 +33,7 @@ namespace UiDesignDemo
             InitializeComponent();
             this.l = l;
             this.Text = "Створення нового лікаря";
+            ControlExtension.Draggable(this, true);
         }
 
         public Form5(Login l, int id)
@@ -44,6 +45,7 @@ namespace UiDesignDemo
             this.id = id;
             GetDoctor();
             this.Text = "Редагування лікаря";
+            ControlExtension.Draggable(this, true);
         }
 
         private bool CheckLogAndPass()
@@ -111,10 +113,10 @@ namespace UiDesignDemo
             comboBox1.SelectedItem = table.Rows[0]["gender"].ToString();
             textBox10.Text = table.Rows[0]["town"].ToString();
             textBox8.Text = table.Rows[0]["adress"].ToString();
-            textBox2.Text = table.Rows[0]["phone"].ToString();
+            maskedTextBox1.Text = table.Rows[0]["phone"].ToString();
             textBox5.Text = table.Rows[0]["mail"].ToString();
             textBox9.Text = table.Rows[0]["passport"].ToString();
-            textBox11.Text = table.Rows[0]["diploma_num"].ToString();
+            maskedTextBox2.Text = table.Rows[0]["diploma_num"].ToString();
             textBox13.Text = table.Rows[0]["specialty"].ToString();
             textBox15.Text = table.Rows[0]["position"].ToString();
             textBox1.Text = table.Rows[0]["short_char"].ToString();
@@ -133,12 +135,12 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
                 command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
                 command.Parameters.AddWithValue("@town", textBox10.Text);
-                command.Parameters.AddWithValue("@phone", textBox2.Text);
+                command.Parameters.AddWithValue("@phone", maskedTextBox1.Text);
                 command.Parameters.AddWithValue("@mail", textBox5.Text);
                 command.Parameters.AddWithValue("@adress", textBox8.Text);
                 command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
                 command.Parameters.AddWithValue("@passport", textBox9.Text);
-                command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
+                command.Parameters.AddWithValue("@diploma_num", maskedTextBox2.Text);
                 command.Parameters.AddWithValue("@specialty", textBox13.Text);
                 command.Parameters.AddWithValue("@position", textBox15.Text);
                 command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
@@ -201,12 +203,12 @@ namespace UiDesignDemo
                 command.Parameters.AddWithValue("@birth", dateTimePicker2.Value.Date.ToString());
                 command.Parameters.AddWithValue("@gender", comboBox1.SelectedItem.ToString());
                 command.Parameters.AddWithValue("@town", textBox10.Text);
-                command.Parameters.AddWithValue("@phone", textBox2.Text);
+                command.Parameters.AddWithValue("@phone", maskedTextBox1.Text);
                 command.Parameters.AddWithValue("@mail", textBox5.Text);
                 command.Parameters.AddWithValue("@adress", textBox8.Text);
                 command.Parameters.AddWithValue("@photo", ConvertImageToBinary(pictureBox2.Image));
                 command.Parameters.AddWithValue("@passport", textBox9.Text);
-                command.Parameters.AddWithValue("@diploma_num", textBox11.Text);
+                command.Parameters.AddWithValue("@diploma_num", maskedTextBox2.Text);
                 command.Parameters.AddWithValue("@specialty", textBox13.Text);
                 command.Parameters.AddWithValue("@position", textBox15.Text);
                 command.Parameters.AddWithValue("@invite_date", dateTimePicker1.Value.Date.ToString());
@@ -255,7 +257,6 @@ namespace UiDesignDemo
                     l.Show();
                 }
                 else MessageBox.Show("Не всі дані заповнені!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
@@ -365,6 +366,12 @@ namespace UiDesignDemo
         private void label1_MouseClick_1(object sender, MouseEventArgs e)
         {
             UploadImage();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0) pictureBox2.Image = Properties.Resources.doctor_male;
+            else pictureBox2.Image = Properties.Resources.doctor_female;
         }
     }
 }

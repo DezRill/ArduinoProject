@@ -330,6 +330,7 @@
             this.comboBox1.Size = new System.Drawing.Size(360, 31);
             this.comboBox1.TabIndex = 56;
             this.comboBox1.Visible = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dateTimePicker2
             // 

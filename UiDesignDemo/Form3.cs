@@ -23,6 +23,7 @@ namespace UiDesignDemo
         {
             InitializeComponent();
             this.l = l;
+            ControlExtension.Draggable(this, true);
         }
 
         private Image ConvertBinaryToImage(byte[] data)

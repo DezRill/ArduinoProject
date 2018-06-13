@@ -46,7 +46,7 @@ namespace UiDesignDemo
             {
                 if (Convert.ToDateTime(table.Rows[i]["date"].ToString()).Date >= GetMonday(DateTime.Now.Date) && Convert.ToDateTime(table.Rows[i]["date"].ToString()).Date <= GetFriday(DateTime.Now.Date))
                 {
-                    DG1.Rows.Add(table.Rows[i]["date"].ToString(), table.Rows[i]["time_begin"].ToString(), table.Rows[i]["time_end"].ToString());
+                    DG1.Rows.Add(Convert.ToDateTime(table.Rows[i]["date"].ToString()).ToShortDateString(), table.Rows[i]["time_begin"].ToString(), table.Rows[i]["time_end"].ToString());
                 }
             }
         }
@@ -56,7 +56,7 @@ namespace UiDesignDemo
             DG1.Rows.Clear();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                DG1.Rows.Add(table.Rows[i]["date"].ToString(), table.Rows[i]["time_begin"].ToString(), table.Rows[i]["time_end"].ToString());
+                DG1.Rows.Add(Convert.ToDateTime(table.Rows[i]["date"].ToString()).ToShortDateString(), table.Rows[i]["time_begin"].ToString(), table.Rows[i]["time_end"].ToString());
             }
         }
 
@@ -68,6 +68,7 @@ namespace UiDesignDemo
             this.id = id;
             GetSchedule(table);
             RenderThisWeek();
+            ControlExtension.Draggable(this, true);
         }
 
         private void button15_Click(object sender, EventArgs e)
