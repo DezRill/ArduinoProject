@@ -182,6 +182,12 @@ namespace UiDesignDemo
             panel1.Controls.Clear();
             if (comboBox1.SelectedIndex == 0) RenderDoctors();
             else RenderConcrettePositions(comboBox1.SelectedItem.ToString());
+        }      
+             
+
+        private void label1_Layout(object sender, LayoutEventArgs e)
+        {
+            this.label1.BackColor = System.Drawing.Color.Transparent;
         }
     }
 }

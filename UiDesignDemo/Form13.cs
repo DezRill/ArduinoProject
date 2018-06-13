@@ -100,5 +100,10 @@ namespace UiDesignDemo
                 e.Cancel = true;
             }
         }
+
+        private void label2_Layout(object sender, LayoutEventArgs e)
+        {
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+        }
     }
 }
