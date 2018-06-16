@@ -71,7 +71,8 @@
             this.DG1.Location = new System.Drawing.Point(287, 75);
             this.DG1.Name = "DG1";
             this.DG1.ReadOnly = true;
-            this.DG1.Size = new System.Drawing.Size(700, 478);
+            this.DG1.RowHeadersVisible = false;
+            this.DG1.Size = new System.Drawing.Size(670, 478);
             this.DG1.TabIndex = 11;
             // 
             // Column1
@@ -139,7 +140,7 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.ForeColor = System.Drawing.Color.White;
             this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
-            this.button15.Location = new System.Drawing.Point(993, 1);
+            this.button15.Location = new System.Drawing.Point(941, 3);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(29, 27);
             this.button15.TabIndex = 9;
@@ -167,7 +168,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 577);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1022, 32);
+            this.panel3.Size = new System.Drawing.Size(973, 32);
             this.panel3.TabIndex = 19;
             // 
             // panel2
@@ -180,7 +181,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1022, 33);
+            this.panel2.Size = new System.Drawing.Size(973, 33);
             this.panel2.TabIndex = 18;
             // 
             // button2
@@ -202,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1022, 609);
+            this.ClientSize = new System.Drawing.Size(973, 609);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);

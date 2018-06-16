@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DGVPrinterHelper;
 
 namespace UiDesignDemo
 {
@@ -49,6 +50,7 @@ namespace UiDesignDemo
                 button5.Location = new Point(button5.Location.X - 400, button5.Location.Y);
                 label1.Location = new Point(label1.Location.X - 150, label1.Location.Y);
                 label1.Text = "Всі пацієнти";
+                button2.Enabled = false;
             }
             form4 = false;
             ControlExtension.Draggable(this, true);
@@ -120,6 +122,38 @@ namespace UiDesignDemo
                             break;
                         }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PrintHistory();
+        }
+
+        void PrintHistory()
+        {
+            DGVPrinter printer = new DGVPrinter();
+            switch(form4)
+            {
+                case true:
+                    {
+                        printer.Title = "Історія хвороби пацієнта";
+                        printer.SubTitle = f4.patient.Name;
+                    }
+                    break;
+                case false:
+                    {
+                        printer.Title = "Всі експрес огляди";
+                    }
+                    break;
+            }
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "Органайзер лікаря";
+            printer.FooterSpacing = 15;
+            printer.printDocument.DefaultPageSettings.Landscape = true;
+            printer.PrintDataGridView(DG1);
         }
     }
 }

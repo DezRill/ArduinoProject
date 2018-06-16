@@ -156,6 +156,7 @@
       <DependentUpon>All_doctors.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionSettings.cs" />
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="Diagram.cs">
       <SubType>Form</SubType>
     </Compile>
