@@ -40,7 +40,7 @@ namespace UiDesignDemo
                 DG1.Width += 100;
                 button5.Location = new Point(button5.Location.X + 100, button5.Location.Y);
                 label1.Location = new Point(label1.Location.X + 100, label1.Location.Y);
-                label1.Text = "Всі експрес-огляди";
+                label1.Text = "Всі експрес огляди";
             }
             else if (action == 2)
             {
@@ -50,7 +50,6 @@ namespace UiDesignDemo
                 button5.Location = new Point(button5.Location.X - 400, button5.Location.Y);
                 label1.Location = new Point(label1.Location.X - 150, label1.Location.Y);
                 label1.Text = "Всі пацієнти";
-                button2.Enabled = false;
             }
             form4 = false;
             ControlExtension.Draggable(this, true);
@@ -142,7 +141,7 @@ namespace UiDesignDemo
                     break;
                 case false:
                     {
-                        printer.Title = "Всі експрес огляди";
+                        printer.Title = label1.Text;
                     }
                     break;
             }
