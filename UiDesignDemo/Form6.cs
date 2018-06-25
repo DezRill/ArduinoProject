@@ -185,6 +185,12 @@ namespace UiDesignDemo
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Print print = new Print(l.doc.Name, textBox1.Text, textBox9.Text, textBox3.Text);
+            print.Show();
+        }
+
         private void button15_Click(object sender, EventArgs e)
         {
             control = true;

@@ -51,7 +51,7 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.ForeColor = System.Drawing.Color.White;
             this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
-            this.button15.Location = new System.Drawing.Point(993, 1);
+            this.button15.Location = new System.Drawing.Point(990, 3);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(29, 27);
             this.button15.TabIndex = 4;

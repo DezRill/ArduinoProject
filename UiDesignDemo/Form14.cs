@@ -90,5 +90,10 @@ namespace UiDesignDemo
                 e.Cancel = true;
             }
         }
+
+        private void label5_Layout(object sender, LayoutEventArgs e)
+        {
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+        }
     }
 }

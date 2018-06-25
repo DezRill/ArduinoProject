@@ -128,7 +128,7 @@ namespace UiDesignDemo
             {
                 control = true;
                 MessageBox.Show("Не вдалось під'єднатись до бази даних. Будь ласка, зверніться до системного адміністратора", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+              
                 l.Show();
             }
         }
@@ -174,7 +174,7 @@ namespace UiDesignDemo
             {
                 Form15 frm = new Form15(l);
                 frm.Show();
-                this.Close();
+             
             }
             catch
             {

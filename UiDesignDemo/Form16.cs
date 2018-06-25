@@ -107,5 +107,10 @@ namespace UiDesignDemo
             else if (comboBox1.SelectedIndex == 2) SelectThisDay();
             else if (comboBox1.SelectedIndex == 3) SelectFutureDays();
         }
+
+        private void label3_Layout(object sender, LayoutEventArgs e)
+        {
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+        }
     }
 }

@@ -22,3 +22,5 @@ D:\Programs\C#\ArduinoProject\UnitTests\obj\Debug\UnitTests.csproj.CoreCompileIn
 D:\Programs\C#\ArduinoProject\UnitTests\obj\Debug\UnitTests.csproj.CopyComplete
 D:\Programs\C#\ArduinoProject\UnitTests\obj\Debug\UnitTests.dll
 D:\Programs\C#\ArduinoProject\UnitTests\obj\Debug\UnitTests.pdb
+D:\ДИПЛОМ\ArduinoProject\UnitTests\obj\Debug\UnitTests.dll
+D:\ДИПЛОМ\ArduinoProject\UnitTests\obj\Debug\UnitTests.pdb

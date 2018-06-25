@@ -126,5 +126,10 @@ namespace UiDesignDemo
             frm.Show();
             this.Close();
         }
+
+        private void label3_Layout(object sender, LayoutEventArgs e)
+        {
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+        }
     }
 }

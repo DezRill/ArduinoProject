@@ -84,7 +84,7 @@ namespace UiDesignDemo
             control = true;
             Form14 frm = new Form14(l, id);
             frm.Show();
-            this.Close();
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

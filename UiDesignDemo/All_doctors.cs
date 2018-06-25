@@ -94,6 +94,7 @@ namespace UiDesignDemo
                 Form16 frm = new Form16(l);
                 frm.Show();
                 this.Close();
+               
             }
             catch
             {
