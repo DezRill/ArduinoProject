@@ -205,6 +205,12 @@
     <Compile Include="Form16.Designer.cs">
       <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form17.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form17.Designer.cs">
+      <DependentUpon>Form17.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
